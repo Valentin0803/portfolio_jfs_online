@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d0d0d;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .mask-fade {
+    mask-image: linear-gradient(
+      to right,
+      transparent 10%,
+      black 25%,
+      black 75%,
+      transparent 90%
+    );
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.leagueSpartan {
+  font-family: var(--font-leagueSpartan);
+}
+
+.spanMask {
+  color: #0d0d0d;
+  background-color: #ffee53;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform-origin: center;
+  transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titreService {
+  color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to right, #ffffff, #ffffff) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+}
+
+.titreService:hover > .spanMask {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
