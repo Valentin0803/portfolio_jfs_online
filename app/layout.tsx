@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/ui/SmoothScroll";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Head from "next/head";
