@@ -44,7 +44,7 @@ export const Process = () => {
             <div className="mt-auto">
               <ImageDescription
                 src="/img/calandly.webp"
-                className="w-60 rounded-lg mt-5 ml-2"
+                className="w-fit rounded-lg mx-auto"
               />
             </div>
           </Card>

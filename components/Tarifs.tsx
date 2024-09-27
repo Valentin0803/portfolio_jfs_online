@@ -56,7 +56,7 @@ export const TarifSection = () => {
         </Card>
         <Card className="grid  border-jaune border-4">
           <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(65,65,65,0.7)] rounded-xl w-fit px-4 h-fit">
-            Pack Vidép Avancée
+            Pack Vidéo Avancée
           </CardTitle>
           <CardDescription className="mt-5">
             Idéale pour des vidéos plus dynamique et impactante.
