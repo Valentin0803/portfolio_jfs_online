@@ -1,9 +1,7 @@
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
-import Player from "./Player";
 import { Gallery } from "./ui/gallery";
 import VimeoPlayer from "./VimeoPlayer";
 import YouTubePlayer from "./YoutubePlayer";
-import { div } from "framer-motion/client";
 import Image from "next/image";
 import photoStadeRenACar from "@/public/projects/RENT_A_CAR/photostade.png";
 

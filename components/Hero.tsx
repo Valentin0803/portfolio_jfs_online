@@ -5,16 +5,6 @@ import VimeoPlayer from "./VimeoPlayer";
 export const Hero = () => {
   const words =
     "De la captation d’événement sur terre ou dans les airs, à la présentation de votre entreprise en passant par la photographie événementielle nous saurons réaliser votre projet.";
-  const logos = [
-    "/img/logo/webp/Kunkel_Palettes_Bois_Logo.webp",
-    "/img/logo/webp/cescop.webp",
-    "/img/logo/webp/combatStress.webp",
-    "/img/logo/webp/logo-acs.webp",
-    "/img/logo/webp/ccasCenon.webp",
-    "/img/logo/webp/logo-artso.webp",
-    "/img/logo/webp/logo-cotral.webp",
-    "/img/logo/webp/Rent-a-car.webp",
-  ];
   return (
     <section
       id="APropos"

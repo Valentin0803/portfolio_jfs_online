@@ -12,7 +12,6 @@ interface PlayerProps {
 
 const Player: React.FC<PlayerProps> = ({
   videoPath,
-  type = "video/mp4",
   controls = false,
   autoplay = false,
   loop = false,

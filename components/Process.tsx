@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Card, CardDescription, CardTitle } from "./ui/card";
+import { Card, CardTitle } from "./ui/card";
 
 export const Process = () => {
   return (
