@@ -1,6 +1,11 @@
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import Player from "./Player";
 import { Gallery } from "./ui/gallery";
+import VimeoPlayer from "./VimeoPlayer";
+import YouTubePlayer from "./YoutubePlayer";
+import { div } from "framer-motion/client";
+import Image from "next/image";
+import photoStadeRenACar from "@/public/projects/RENT_A_CAR/photostade.png";
 
 export const Projects = () => {
   const cards = dataCarousel.map((card, index) => (
@@ -22,12 +27,13 @@ const dataCarousel = [
     title: "CCAS de Cenon",
     src: "/projects/MINIATURES/CCAS.jpg",
     content: (
-      <Player
-        videoPath="CCAS_DE_CENON/VIDEO/CCAS_Cenon.mp4"
-        className="rounded-lg border-4 border-[#918C79] "
-        autoplay
-        muted
-        controls
+      <VimeoPlayer
+        videoId="1013125524"
+        autoplay={true}
+        muted={true}
+        controls={true}
+        loop={true}
+        className="rounded-lg border-[#918C79] border-4"
       />
     ),
   },
@@ -36,12 +42,13 @@ const dataCarousel = [
     title: "Künkel",
     src: "/projects/MINIATURES/kunkel.jpg",
     content: (
-      <Player
-        videoPath="KUNKEL/VIDEO/KUNKEL FPV.mp4"
-        className="rounded-lg border-4 border-[#918C79] "
-        autoplay
-        muted
-        controls
+      <VimeoPlayer
+        videoId="1013125599"
+        autoplay={true}
+        muted={true}
+        controls={true}
+        loop={true}
+        className="rounded-lg border-[#918C79] border-4"
       />
     ),
   },
@@ -50,13 +57,23 @@ const dataCarousel = [
     title: "Rent a Car",
     src: "/projects/MINIATURES/rentacar.jpg",
     content: (
-      <Player
-        videoPath="RENT_A_CAR/banniereLNB.mp4"
-        className="rounded-lg border-4 border-[#918C79] "
-        autoplay
-        muted
-        controls
-      />
+      <div>
+        <VimeoPlayer
+          videoId="1013125482"
+          autoplay={true}
+          muted={true}
+          controls={true}
+          loop={true}
+          className="rounded-lg "
+        />
+        <Image
+          src={photoStadeRenACar}
+          width={700}
+          height={700}
+          alt="Photo stade motion design rent a car"
+          className="mx-auto"
+        />
+      </div>
     ),
   },
   {
@@ -70,12 +87,13 @@ const dataCarousel = [
     title: "Alpes Connectiques Services",
     src: "/projects/MINIATURES/acs.jpg",
     content: (
-      <Player
-        videoPath="ACS/acs.mp4"
-        className="rounded-lg border-4 border-[#918C79] "
-        autoplay
-        muted
-        controls
+      <YouTubePlayer
+        videoId="f4WcU0btaQM" // Remplace par l'ID de ta vidéo
+        autoplay={true}
+        muted={true}
+        controls={true}
+        loop={true}
+        className="rounded-lg shadow-lg" // Ajouter des classes ici
       />
     ),
   },
@@ -84,13 +102,15 @@ const dataCarousel = [
     title: "Quartier Ouest",
     src: "/projects/MINIATURES/quartierouest.jpg",
     content: (
-      <div className="mx-auto w-fit ">
-        <Player
-          videoPath="QUARTIER OUEST/Quartier Ouest.mp4"
-          className="rounded-lg border-4 border-[#918C79] h-[60vh] pl-auto mx-auto"
-          autoplay
-          muted
-          controls
+      <div className="mx-60">
+        <VimeoPlayer
+          videoId="1013125627"
+          autoplay={true}
+          muted={true}
+          controls={true}
+          loop={true}
+          className="rounded-lg border-[#918C79] border-4"
+          vertical={true}
         />
       </div>
     ),
@@ -100,13 +120,15 @@ const dataCarousel = [
     title: "Combat stress",
     src: "/projects/MINIATURES/combatStress.jpg",
     content: (
-      <div className="mx-auto w-fit">
-        <Player
-          videoPath="COMBAT STRESS/CS2k24_VF.mp4"
-          className="rounded-lg border-4 border-[#918C79] h-[60vh] pl-auto"
-          autoplay
-          muted
-          controls
+      <div className="lg:mx-60">
+        <VimeoPlayer
+          videoId="1013125561"
+          autoplay={true}
+          muted={true}
+          controls={true}
+          loop={true}
+          className="rounded-lg border-[#918C79] border-4"
+          vertical={true}
         />
       </div>
     ),

@@ -1,9 +1,6 @@
-import { div } from "framer-motion/client";
-import CarrouselLogo from "./CarrouselLogo";
-import Player from "./Player";
-import { SparklesCore } from "./ui/sparkles";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Link from "next/link";
+import VimeoPlayer from "./VimeoPlayer";
 
 export const Hero = () => {
   const words =
@@ -24,11 +21,13 @@ export const Hero = () => {
       className="grid lg:grid-cols-2 gap-10 px-5 pb-10 pt-32 lg:pt-56 lg:px-28 lg:mb-24 row content-start"
     >
       <div className="w-full lg:order-2 lg:pr-10">
-        <Player
-          videoPath="SHOWREEL/TeaserJFS2023.mp4"
-          className="rounded-lg border-4 border-[#918C79] "
-          autoplay
-          muted
+        <VimeoPlayer
+          videoId="1013125657" // Remplace par l'ID de ta vidéo
+          autoplay={true}
+          muted={true}
+          controls={false}
+          loop={true}
+          className="rounded-lg"
         />
       </div>
       <div className="items-center px-5 lg:my-auto lg:mx-14 sm:mx-1 lg:order-1">
