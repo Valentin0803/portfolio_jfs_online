@@ -4,7 +4,7 @@ export const Contact = () => {
   return (
     <section
       id="Contact"
-      className="font-leagueSpartan grid grid-cols-1 lg:grid-cols-2 gap-4 place-content-center bg-[#918C79] h-fit px-5 py-5 lg:px-36 lg:py-auto"
+      className="font-leagueSpartan grid grid-cols-1 lg:grid-cols-3 gap-4 place-content-center bg-[#918C79] h-fit px-5 py-5 lg:px-36 lg:py-auto"
     >
       <div className="flex flex-col justify-center content-center">
         <h2 className="font-akira">Nous contacter</h2>
@@ -13,7 +13,7 @@ export const Contact = () => {
           services ?
         </span>
       </div>
-      <div className="flex sm:flex-col mx-auto lg:content-center lg:justify-between">
+      <div className="flex flex-col mx-auto lg:content-center lg:justify-between">
         <Link href="/contact">
           <button className="flex gap-4 px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-[#918C79] hover:border-jaune hover:text-white transition-colors duration-500">
             <svg
@@ -33,7 +33,8 @@ export const Contact = () => {
             Envoie un mail
           </button>
         </Link>
-
+      </div>
+      <div className="flex flex-col mx-auto lg:content-center lg:justify-between">
         <Link href="https://zcal.co/martin-ribot/30min" target="_blank">
           <button className="flex gap-4 px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-[#918C79] hover:border-jaune hover:text-white transition-colors duration-500">
             <svg

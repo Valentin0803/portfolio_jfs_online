@@ -13,12 +13,12 @@ export const TarifSection = () => {
     }
   };
   return (
-    <section id="NosTarifs" className="">
+    <section id="NosTarifs" className="my-10">
       <div>
-        <h2 className="font-leagueSpartan top-0 text-jaune text-3xl mx-10 mb-5 lg:mx-36 lg:mt-24">
+        <h2 className="font-leagueSpartan text-jaune text-3xl mx-10 mb-5 lg:mx-36 lg:mt-24">
           Notre tarification
         </h2>
-        <span className="font-leagueSpartan top-0 text-white text-xl mx-10 mb-5 lg:mx-40">
+        <span className="font-leagueSpartan text-white text-xl mx-20 mb-5 lg:mx-40">
           Découvrez nos tarifs pour la création de vidéos de présentation
           d&apos;entreprise.
         </span>
