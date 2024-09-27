@@ -77,7 +77,7 @@ const dataCarousel = [
   {
     category: "Marque employeurs",
     title: "Cotral Lab",
-    src: "/projects/MINIATURES/Cotrallab.jpg",
+    src: "/projects/MINIATURES/cotrallab.jpg",
     content: <Gallery />,
   },
   {

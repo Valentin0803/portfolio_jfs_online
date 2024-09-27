@@ -13,7 +13,7 @@ export const Contact = () => {
           services ?
         </span>
       </div>
-      <div className="flex content-center justify-between">
+      <div className="flex sm:flex-col mx-auto lg:content-center lg:justify-between">
         <Link href="/contact">
           <button className="flex gap-4 px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-[#918C79] hover:border-jaune hover:text-white transition-colors duration-500">
             <svg

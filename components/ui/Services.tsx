@@ -27,7 +27,7 @@ const Service = ({ service, key }: { service: ServiceType; key: number }) => {
   return (
     <div className="service" key={key}>
       <div className="heading-mask">
-        <div className="heading-mask-top flex items-start justify-center h-[10vh] lg:h-[12vh]">
+        <div className="heading-mask-top flex items-start justify-center h-[25vh] lg:h-[12vh]">
           <h2
             ref={textRef}
             className="titreService flex items-center relative h-full w-full font-akira  text-xl "

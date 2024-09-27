@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <section
       id="APropos"
-      className="grid lg:grid-cols-2 gap-10 px-5 pb-10 pt-32 lg:pt-56 lg:px-28 lg:mb-24 row content-start"
+      className="grid lg:grid-cols-2 gap-10 px-5 pb-10 pt-44 lg:pt-56 lg:px-28 lg:mb-24 row content-start"
     >
       <div className="w-full lg:order-2 lg:pr-10">
         <VimeoPlayer

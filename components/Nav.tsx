@@ -29,7 +29,7 @@ function Nav() {
         </Link>
       </div>
       <div className="">
-        <ul className="font-leagueSpartan flex flex-col fixed lg:text-lg lg:right-10 md:right-10 right-5 top-5 mt-5">
+        <ul className="font-leagueSpartan flex flex-col fixed  text-sm lg:right-10 md:right-10 right-5 top-5 mt-5">
           <li>
             <a
               href="#APropos"
