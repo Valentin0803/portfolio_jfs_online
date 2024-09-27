@@ -100,7 +100,7 @@ const dataCarousel = [
     title: "Quartier Ouest",
     src: "/projects/MINIATURES/quartierouest.jpg",
     content: (
-      <div className="mx-60">
+      <div className="lg:mx-60">
         <VimeoPlayer
           videoId="1013125627"
           autoplay={true}
