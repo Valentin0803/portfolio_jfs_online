@@ -1,6 +1,3 @@
-import { div } from "framer-motion/client";
-import { ParallaxScroll } from "./parallax-scroll";
-import photoCotralLab from "@/public/data/cotralLabPhotos";
 import Image from "next/image";
 
 export const Gallery = () => {

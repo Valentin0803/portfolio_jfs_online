@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-let interval: any;
+let interval: NodeJS.Timeout;
 
 export const FlipWords = ({
   words,

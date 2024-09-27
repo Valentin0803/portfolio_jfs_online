@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 //import data
-import dataServices from "../public/data/dataServices";
+import dataServices, { ServiceType } from "../public/data/dataServices";
 import Service from "./ui/Services";
 //import Componenents
 
@@ -14,8 +14,8 @@ const NosServicesSection = () => {
       </h2>
       <div className="flex flex-col justify-center lg:my-auto">
         <div className="line min-h-[1px] bg-white opacity-40"></div>
-        {services.map((service) => (
-          <Service service={service} key={service.id} />
+        {services.map((service: ServiceType, index: number) => (
+          <Service service={service} key={index} />
         ))}
       </div>
     </section>

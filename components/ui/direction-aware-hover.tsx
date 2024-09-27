@@ -9,13 +9,11 @@ export const DirectionAwareHover = ({
   imageUrl,
   children,
   childrenClassName,
-  imageClassName,
   className,
 }: {
   imageUrl: StaticImageData;
   children: React.ReactNode | string;
   childrenClassName?: string;
-  imageClassName?: string;
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);

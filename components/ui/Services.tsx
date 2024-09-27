@@ -1,15 +1,16 @@
 "use client";
+import { ServiceType } from "@/public/data/dataServices";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
-const Service = ({ service }: any) => {
+const Service = ({ service, key }: { service: ServiceType; key: number }) => {
   const textRef = useRef(null);
   useGSAP(() => {
     const textElements = textRef.current;
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textElements,
         start: "center 100%",
@@ -24,7 +25,7 @@ const Service = ({ service }: any) => {
   });
 
   return (
-    <div className="service" key={service.key}>
+    <div className="service" key={key}>
       <div className="heading-mask">
         <div className="heading-mask-top flex items-start justify-center h-[10vh] lg:h-[12vh]">
           <h2

@@ -20,7 +20,7 @@ export const TarifSection = () => {
         </h2>
         <span className="font-leagueSpartan top-0 text-white text-xl mx-10 mb-5 lg:mx-40">
           Découvrez nos tarifs pour la création de vidéos de présentation
-          d'entreprise.
+          d&apos;entreprise.
         </span>
       </div>
       <div className="grid lg:grid-cols-3 gap-8 mt-10 sm:mx-24 xl:mx-56">
@@ -75,7 +75,8 @@ export const TarifSection = () => {
           </ul>
           <br />
           <span className="italic text-sm">
-            Bonus: pack de 10 photos professionnelles de l'équipe ou des locaux
+            Bonus: pack de 10 photos professionnelles de l&apos;équipe ou des
+            locaux
           </span>
           <hr className="opacity-50 my-6" />
           <div className="h-[5vh] place-self-end justify-self-center">
@@ -93,7 +94,7 @@ export const TarifSection = () => {
           </CardTitle>
           <CardDescription className="mt-5">
             Une vidéo immersive pour subliemer votre marque et maximiser
-            l'impact visuel.
+            l&apos;impact visuel.
           </CardDescription>
           <h2 className="font-leagueSpartan font-bold text-3xl mt-4 text-center">
             4980€ HT

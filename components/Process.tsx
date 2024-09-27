@@ -7,7 +7,7 @@ export const Process = () => {
     <section className="md:grid-cols-1 pb-10 pt-10 bg-[#918C79]">
       <div>
         <h2 className="font-leagueSpartan top-0 text-white text-center text-4xl mx-10 mb-10 lg:mx-40">
-          Processus de création d'une vidéo
+          Processus de création d&apos;une vidéo
         </h2>
         <p className="font-leagueSpartan lg:mx-52 xl:mx-80 md:mx-20 mx-5 mb-10">
           Nous suivons un processus rigoureux pour garantir la qualité et la
@@ -15,10 +15,10 @@ export const Process = () => {
           la prise de rendez-vous initiale à la livraison finale, notre équipe
           travaille en étroite collaboration avec vous. Cela inclut une phase de
           pré-production détaillée, où nous élaborons le script et définissons
-          les besoins spécifiques, jusqu'au tournage et à la post-production.
-          Chaque projet est peaufiné à travers un processus d'aller-retour pour
-          que vous soyez pleinement satisfait avant la livraison finale de votre
-          vidéo.
+          les besoins spécifiques, jusqu&apos;au tournage et à la
+          post-production. Chaque projet est peaufiné à travers un processus
+          d&apos;aller-retour pour que vous soyez pleinement satisfait avant la
+          livraison finale de votre vidéo.
         </p>
       </div>
       <div className="hidden mx-auto w-2/3 border-[rgba(255,255,255,0.10)] dark:bg-gris bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] rounded-xl px-10 py-10 lg:block ">
