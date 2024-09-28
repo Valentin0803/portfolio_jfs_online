@@ -63,7 +63,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${leagueSpartan.variable} ${akira.variable}`}
+      className={`${leagueSpartan.variable} ${akira.variable} dark`}
       suppressHydrationWarning
     >
       <Head>
