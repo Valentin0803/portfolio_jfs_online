@@ -93,7 +93,7 @@ export const TarifSection = () => {
             Vidéo Premium
           </CardTitle>
           <CardDescription className="mt-5">
-            Une vidéo immersive pour subliemer votre marque et maximiser
+            Une vidéo immersive pour sublimer votre marque et maximiser
             l&apos;impact visuel.
           </CardDescription>
           <h2 className="font-leagueSpartan font-bold text-3xl mt-4 text-center">
