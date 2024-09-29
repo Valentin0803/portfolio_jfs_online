@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <SpeedInsights />
+      <Analytics />
       <Head>
         <title>JFS Visual</title>
         <meta
