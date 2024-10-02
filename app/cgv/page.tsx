@@ -637,7 +637,7 @@ export default function cgv() {
         <br />
         Téléphone : 0750159946
         <br />
-        Adresse : JFS VISUAL. 52 rue du sous lieutenant l'hotellier, 61000
+        Adresse : JFS VISUAL. 52 rue du sous lieutenant l&apos;hotellier, 61000
         Alençon
         <br />
         Courriel : jfsvisual@gmail.com

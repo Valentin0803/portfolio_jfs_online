@@ -50,7 +50,7 @@ export default function politiqueDeConfidentialite() {
       </div>
       <div>
         <ul>
-          <li>Formulaire d'inscription au site Web</li>
+          <li>Formulaire d&apos;inscription au site Web</li>
         </ul>
       </div>
       <div>
