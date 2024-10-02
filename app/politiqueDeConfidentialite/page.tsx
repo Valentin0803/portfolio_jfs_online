@@ -126,7 +126,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>Code postal :&nbsp; 61000</div>
-      <div>Courriel :&nbsp; m.ribot.jfs@gmail.com</div>
+      <div>Courriel :&nbsp; jfsvisual@gmail.com</div>
       <div>Téléphone :&nbsp; 0750159946</div>
       <div>
         Section du site web :&nbsp;&nbsp;
@@ -151,7 +151,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>Code postal :&nbsp; 61000</div>
-      <div>Courriel :&nbsp; m.ribot.jfs@gmail.com</div>
+      <div>Courriel :&nbsp; jfsvisual@gmail.com</div>
       <div>Téléphone :&nbsp; 0750159946</div>
       <div>
         Section du site web :&nbsp;&nbsp;
