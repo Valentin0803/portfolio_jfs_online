@@ -7,10 +7,10 @@ export default function cgv() {
         Les présentes conditions générales de vente, ci-après CGV, ont été
         conclues entre, d’une part, la société Just For a Shot Visual, SAS au
         capital de deux mille cent euros (2100) Euros, dont le siège social est
-        situé 52 rue du sous lieutenant l'hotellier, 61000 Alençon, immatriculée
-        auprès du Registre du Commerce et des Sociétés de [Alencon] sous le
-        numéro 953 071 479, ci-après dénommée le vendeur, et, d’autre part,
-        toute personne physique ou morale souhaitant procéder à l’achat de
+        situé 52 rue du sous lieutenant l&apos;hotellier, 61000 Alençon,
+        immatriculée auprès du Registre du Commerce et des Sociétés de [Alencon]
+        sous le numéro 953 071 479, ci-après dénommée le vendeur, et, d’autre
+        part, toute personne physique ou morale souhaitant procéder à l’achat de
         services proposés par le vendeur, ci-après dénommée l’acheteur.
       </p>
       <br />
@@ -590,7 +590,7 @@ export default function cgv() {
         <br />
         JFS VISUAL
         <br />
-        52 rue du sous lieutenant l'hotellier, 61000 Alençon
+        52 rue du sous lieutenant l&apos;hotellier, 61000 Alençon
         <br />
         <br />
       </p>
