@@ -19,6 +19,14 @@ export const PiedPage = () => {
           Conditions de ventes générales
         </Link>
       </span>
+      <span>
+        <Link
+          className="hover:text-white hover:size-5/6 duration-150"
+          href="/politiqueDeConfidentialite"
+        >
+          Politique de confidentialité
+        </Link>
+      </span>
     </div>
   );
 };
