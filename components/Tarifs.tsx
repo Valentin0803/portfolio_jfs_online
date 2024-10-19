@@ -129,7 +129,7 @@ export const TarifSection = () => {
       </div>
 
       <div className="font-leagueSpartan pl-10 lg:pt-10 lg:ml-56">
-        <span>*Voix off professionnel sous devis</span> <br />
+        <span>*Voix off professionnel sur devis</span> <br />
         <span>**Prix hors déplacement 1€HT/km</span>
       </div>
     </section>
@@ -139,7 +139,9 @@ export const TarifSection = () => {
 const Step = ({ title }: { title: string }) => {
   return (
     <li className="flex gap-2 items-start">
-      <CheckIcon />
+      <div>
+        <CheckIcon />
+      </div>
       <p className="text-white">{title}</p>
     </li>
   );
