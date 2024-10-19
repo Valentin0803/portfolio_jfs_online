@@ -108,8 +108,8 @@ export const TarifSection = () => {
             <Step title="Sound design sur mesure" />
             <Step title="Sous-titres (possible en multilingue)" />
             <Step title="Déclinaison de la vidéo pour réseaux sociaux (9/16 ou carré)" />
-            <Step title="Pack de 20 photos professionnelles de l'équipe ou des locaux " />
-            <Step title="Vidéo livée en 4k avec correction colorimétrique avancée" />
+            <Step title="Pack de 20 photos professionnelles de l'équipe ou des locaux" />
+            <Step title="Vidéo livrée en 4k avec correction colorimétrique avancée" />
           </ul>
           <br />
           <span className="italic text-sm">
