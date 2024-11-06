@@ -10,12 +10,9 @@ import { PiedPage } from "@/components/PiedPage";
 import { Projects } from "@/components/Projets";
 import { BandeauLogo } from "@/components/BandeauLogo";
 
-import { GoogleAnalytics } from "nextjs-google-analytics";
-
 export default function Home() {
   return (
     <div>
-      <GoogleAnalytics trackPageViews />
       <Hero />
       <BandeauLogo />
       <Projects />

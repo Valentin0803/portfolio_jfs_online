@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -68,6 +69,8 @@ export default function RootLayout({
       className={`${leagueSpartan.variable} ${akira.variable} dark`}
       suppressHydrationWarning
     >
+      <GoogleAnalytics gaId="G-FSLKRXKP9M" />
+
       <SpeedInsights />
       <Analytics />
       <Head>
