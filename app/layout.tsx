@@ -69,7 +69,7 @@ export default function RootLayout({
       className={`${leagueSpartan.variable} ${akira.variable} dark`}
       suppressHydrationWarning
     >
-      <GoogleAnalytics gaId="G-FSLKRXKP9M" />
+      <GoogleAnalytics gaId="G-BYDD8ELGMN" />
 
       <SpeedInsights />
       <Analytics />
