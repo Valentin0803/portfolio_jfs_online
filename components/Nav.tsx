@@ -57,15 +57,7 @@ function Nav() {
               NOS SERVICES
             </a>
           </li>
-          <li>
-            <a
-              href="#NosTarifs"
-              onClick={(e) => handleScroll(e, "#NosTarifs")}
-              className="hover:text-jaune duration-300 "
-            >
-              NOS TARIFS
-            </a>
-          </li>
+
           <li>
             <a
               href="#Contact"
