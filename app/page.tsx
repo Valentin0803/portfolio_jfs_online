@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import NosServicesSection from "@/components/NosServicesSection";
 import { Team } from "@/components/Team";
 import { Process } from "@/components/Process";
-import { TarifSection } from "@/components/Tarifs";
 import { Contact } from "@/components/Contact";
 import { PiedPage } from "@/components/PiedPage";
 import { Projects } from "@/components/Projets";

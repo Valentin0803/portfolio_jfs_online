@@ -25,13 +25,6 @@ export const Hero = () => {
                 className=" text-3xl pt-5 font-leagueSpartan font-thin text-white"
               />
             </div>
-            <div className="pt-12">
-              {/* <Link href="https://zcal.co/martin-ribot/30min" target="_blank">
-                <button className="px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-gris hover:border-jaune hover:text-white transition-colors duration-500">
-                  Prenez rendez-vous
-                </button>
-              </Link> */}
-            </div>
           </div>
           <div className="w-2/3 mx-auto">
             <VimeoPlayer
@@ -42,6 +35,13 @@ export const Hero = () => {
               loop={true}
               className="rounded-lg"
             />
+          </div>
+          <div className="pt-12">
+            <Link href="https://zcal.co/martin-ribot/30min" target="_blank">
+              <button className="px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-gris hover:border-jaune hover:text-white transition-colors duration-500">
+                Prenez rendez-vous
+              </button>
+            </Link>
           </div>
         </div>
       </div>

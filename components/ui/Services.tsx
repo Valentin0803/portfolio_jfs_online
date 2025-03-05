@@ -6,13 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
-const Service = ({
-  service,
-  serviceKey,
-}: {
-  service: ServiceType;
-  serviceKey: number;
-}) => {
+const Service = ({ service }: { service: ServiceType }) => {
   const textRef = useRef(null);
 
   useGSAP(() => {
