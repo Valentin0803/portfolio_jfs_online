@@ -10,7 +10,7 @@ export const Hero = () => {
       id="APropos"
       className="gap-10 px-5 pb-10 pt-44 lg:pt-20 lg:px-28 lg:mb-24 "
     >
-      <div className="flex content-center items-center px-5 lg:my-auto lg:mx-14 sm:mx-1 lg:order-1">
+      <div className="content-center items-center px-5 my-auto lg:mx-14 sm:mx-1 lg:order-1">
         <div className="text-center">
           <div className="pb-10 h-3/4">
             <h1 className="font-akira text-2xl lg:text-4xl tracking-[.1em]">
