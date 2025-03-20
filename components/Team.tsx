@@ -27,6 +27,10 @@ export const Team = () => {
           <p className="font-body text-jaune text-xl tracking-[.25em]">
             Chargé de production
           </p>
+
+          <p className="font-body text-white text-l tracking-[.25em]">
+            tel : 07.81.10.37.21
+          </p>
         </DirectionAwareHover>
         <DirectionAwareHover
           imageUrl={Lucas}
