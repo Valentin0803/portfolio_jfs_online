@@ -1,5 +1,6 @@
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import { Gallery } from "./ui/gallery";
+import { GalleryCS } from "./ui/gallery-cs";
 import VimeoPlayer from "./VimeoPlayer";
 import YouTubePlayer from "./YoutubePlayer";
 import Image from "next/image";
@@ -118,16 +119,21 @@ const dataCarousel = [
     title: "Combat stress",
     src: "/projects/MINIATURES/combatStress.jpg",
     content: (
-      <div className="lg:mx-60">
-        <VimeoPlayer
-          videoId="1013125561"
-          autoplay={true}
-          muted={true}
-          controls={true}
-          loop={true}
-          className="rounded-lg border-[#918C79] border-4"
-          vertical={true}
-        />
+      <div>
+        <div className="lg:mx-60">
+          <VimeoPlayer
+            videoId="1013125561"
+            autoplay={true}
+            muted={true}
+            controls={true}
+            loop={true}
+            className="rounded-lg border-[#918C79] border-4"
+            vertical={true}
+          />
+        </div>
+        <div>
+          <GalleryCS />
+        </div>
       </div>
     ),
   },
