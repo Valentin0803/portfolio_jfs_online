@@ -17,7 +17,7 @@ export const Hero = () => {
               JFS VISUAL
             </h1>
             <h2 className="font-leagueSpartan font-extralight text-2xl lg:text-4xl text-blanc tracking-[.2em]">
-              <span className="text-jaune">PRODUCTION </span>AUDIOVISUEL
+              <span className="text-jaune">PRODUCTION </span>AUDIOVISUELLE
             </h2>
             <div>
               <TextGenerateEffect
