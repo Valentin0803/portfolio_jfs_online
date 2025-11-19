@@ -197,8 +197,10 @@ export default function cgv() {
         vigueur au jour de sa commande.
         <br />
         <br />
-        Lors d’une commande supérieure à 750 € HT, le vendeur demandera à
-        l’acheteur un acompte à hauteur de 40% du prix total HT.
+        À la signature du devis, l'acheteur règle un acompte de 50% du montant
+        total HT. Les 50% restants sont à régler après livraison. Cette clause
+        ne s'applique pas aux contrats avec engagement, pour lesquels les
+        règlements s'effectuent aux dates définies dans le contrat.
         <br />
         <br />
         Les modalités de la commande et les présentes CGV sont envoyées à
