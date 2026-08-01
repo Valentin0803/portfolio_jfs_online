@@ -35,7 +35,7 @@ export default function Contact() {
                     name="nom"
                     type="text"
                     autoComplete="family-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function Contact() {
                     name="prenom"
                     type="text"
                     autoComplete="given-name"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -87,7 +87,7 @@ export default function Contact() {
                     id="societe"
                     name="societe"
                     type="text"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                     name="phone"
                     pattern="^(\+33|0)[1-9](\d{2}){4}$"
                     placeholder="06 12 34 56 78"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                     required
                   />
                 </div>
@@ -122,7 +122,7 @@ export default function Contact() {
                   <textarea
                     id="message"
                     name="message"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-jaune sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-or sm:text-sm sm:leading-6"
                     required
                   ></textarea>
                 </div>
@@ -132,7 +132,7 @@ export default function Contact() {
           <div>
             <button
               type="submit"
-              className="px-12 py-4 rounded-full bg-jaune font-bold border-jaune border text-black tracking-widest uppercase transform hover:scale-105 hover:bg-gris hover:border-jaune hover:text-white transition-colors duration-500"
+              className="px-12 py-4 rounded-full bg-or font-bold border-or border text-charcoal tracking-widest uppercase transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-creme transition-colors duration-500"
             >
               <div className="flex gap-2">
                 <svg
