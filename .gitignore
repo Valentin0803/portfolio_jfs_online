@@ -37,3 +37,6 @@ next-env.d.ts
 
 public/projects/**/*.mp4
 .next.next
+
+# claude worktrees
+.worktrees/
