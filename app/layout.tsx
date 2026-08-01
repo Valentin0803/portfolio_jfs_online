@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 export const metadata = {
   title: "JFS Visual",
   description:
-    "De la captation d’événement sur terre ou dans les airs, à la présentation de votre entreprise en passant par la photographie événementielle nous saurons réaliser votre projet.",
+    "Production vidéo premium pour agences immobilières — tournage, montage, drone, gestion administrative incluse. Niveau de production au-dessus du standard français.",
   icons: {
     icon: [
       {
