@@ -39,7 +39,7 @@ export const Offres = () => {
 
         <div className="flex flex-col gap-6">
           <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
-            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5">
+            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
               Journée Contenu
             </CardTitle>
             <CardDescription className="text-creme/70">
@@ -51,7 +51,7 @@ export const Offres = () => {
             </div>
           </Card>
           <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
-            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5">
+            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
               Sur mesure
             </CardTitle>
             <CardDescription className="text-creme/70">
