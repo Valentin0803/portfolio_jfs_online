@@ -14,7 +14,7 @@ export const BandeauLogo = () => {
   ];
   return (
     <div className="mask-fade">
-      <h2 className="text-center text-2xl font-bold font-leagueSpartan mb-4">
+      <h2 className="text-center text-2xl font-bold font-dmSans mb-4 text-creme">
         Ils nous ont fait confiance
       </h2>
       <CarrouselLogo logos={logos} />

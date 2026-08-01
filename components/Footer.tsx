@@ -8,7 +8,7 @@ function Footer() {
         <Magnetic>
           <Link href="https://www.instagram.com/jfsvisual/" target="_blank">
             <svg
-              className="m-5 fill-white hover:fill-jaune hover:transition hover:duration-200"
+              className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="23"
               height="23"
               viewBox="0 0 28 28"
@@ -30,7 +30,7 @@ function Footer() {
             target="_blank"
           >
             <svg
-              className="m-5 fill-white hover:fill-jaune hover:transition hover:duration-200"
+              className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="23"
               height="23"
               viewBox="0 0 20 20"
@@ -49,7 +49,7 @@ function Footer() {
             href="https://www.tiktok.com/@jfs_visual?is_from_webapp=1&sender_device=pc"
           >
             <svg
-              className="m-5 fill-white hover:fill-jaune hover:transition hover:duration-200"
+              className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="22"
               height="27"
               viewBox="0 0 19 24"
@@ -65,7 +65,7 @@ function Footer() {
         <Magnetic>
           <Link target="_blank" href="https://www.youtube.com/@jfsvisual8964">
             <svg
-              className="m-5 fill-white hover:fill-jaune hover:transition hover:duration-200"
+              className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="16"
               height="19"
               viewBox="0 0 13 16"
