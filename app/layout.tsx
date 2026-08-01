@@ -1,27 +1,21 @@
-import localFont from "next/font/local";
-import { League_Spartan } from "next/font/google";
+import { Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-const leagueSpartan = League_Spartan({
+const unbounded = Unbounded({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-leagueSpartan",
+  weight: ["500", "700", "800"],
+  variable: "--font-unbounded",
 });
 
-const akira = localFont({
-  src: [
-    {
-      path: "../public/fonts/Akira/AkiraBold.otf",
-      weight: "700",
-    },
-  ],
-  variable: "--font-akira",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dmSans",
 });
 
 export const metadata = {
@@ -66,22 +60,13 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${leagueSpartan.variable} ${akira.variable} dark`}
+      className={`${unbounded.variable} ${dmSans.variable} dark`}
       suppressHydrationWarning
     >
-      <GoogleAnalytics gaId="G-BYDD8ELGMN" />
-
-      <SpeedInsights />
-      <Analytics />
-      <Head>
-        <title>JFS Visual</title>
-        <meta
-          name="description"
-          content="De la captation d’événement sur terre ou dans les airs, à la présentation de votre entreprise en passant par la photographie événementielle nous saurons réaliser votre projet."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
+        <SpeedInsights />
+        <Analytics />
         <Nav />
         {children}
         <Footer />

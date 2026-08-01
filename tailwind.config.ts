@@ -11,12 +11,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        jaune: "#FFEE53",
-        gris: "#0D0D0D",
+        charcoal: "#0A0907",
+        or: "#C9A24B",
+        creme: "#F3EDE1",
       },
       fontFamily: {
-        akira: ["var(--font-akira)"],
-        leagueSpartan: ["var(--font-leagueSpartan)"],
+        unbounded: ["var(--font-unbounded)"],
+        dmSans: ["var(--font-dmSans)"],
       },
       keyframes: {
         scroll: {
