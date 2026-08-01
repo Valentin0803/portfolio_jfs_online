@@ -12,7 +12,7 @@ export const Projects = () => {
   ));
   return (
     <div id="NotreTravail" className="w-full h-full py-10 ">
-      <h2 className="font-dmSans font-bold top-0 text-or text-3xl ml-10 mb-5 lg:ml-36">
+      <h2 className="font-unbounded font-bold top-0 text-or text-3xl ml-10 mb-5 lg:ml-36">
         Nos Projets
       </h2>
       <div className="mx-10 mb-10 lg:mx-36 rounded-xl overflow-hidden">
@@ -42,7 +42,7 @@ const dataCarousel = [
         muted={true}
         controls={true}
         loop={true}
-        className="rounded-lg border-[#918C79] border-4"
+        className="rounded-lg border-or/30 border-4"
       />
     ),
   },
@@ -57,7 +57,7 @@ const dataCarousel = [
         muted={true}
         controls={true}
         loop={true}
-        className="rounded-lg border-[#918C79] border-4"
+        className="rounded-lg border-or/30 border-4"
       />
     ),
   },
@@ -118,7 +118,7 @@ const dataCarousel = [
           muted={true}
           controls={true}
           loop={true}
-          className="rounded-lg border-[#918C79] border-4"
+          className="rounded-lg border-or/30 border-4"
           vertical={true}
         />
       </div>
@@ -137,7 +137,7 @@ const dataCarousel = [
             muted={true}
             controls={true}
             loop={true}
-            className="rounded-lg border-[#918C79] border-4"
+            className="rounded-lg border-or/30 border-4"
             vertical={true}
           />
         </div>
