@@ -19,7 +19,7 @@ function Nav() {
             viewBox="0 0 111 81"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-14 h-12 fill-white duration-300 hover:fill-jaune hover:size-16"
+            className="w-14 h-12 fill-white duration-300 hover:fill-or hover:size-16"
           >
             <path d="M1.00348 6.08414C1.00348 9.44432 3.6871 12.1683 6.99752 12.1683H38.6845C41.9949 12.1683 44.6786 14.8922 44.6786 18.2524V60.2573C44.6786 62.4592 43.5075 64.4895 41.6148 65.5653C38.7706 67.1817 33.4457 68.9247 23.7059 68.9247C11.0495 68.9247 1 63.8857 1 56.7531L1.00286 72.0231C1.00332 74.4583 2.43484 76.6557 4.63955 77.6161C8.2351 79.1823 14.9851 81 26.9491 81C52.6171 81 56.5396 68.775 56.9085 64.1229C56.9204 63.9732 57.002 57.867 57 57.7168L56.2038 4.96349C56.1672 2.26396 54.0036 0.0935371 51.3438 0.088257L7.00925 1.19264e-05C3.69425 -0.00657883 1.00348 2.71932 1.00348 6.08414Z" />
             <path d="M105.48 5.61664e-05H62.5203C60.0059 5.61664e-05 57.9747 2.08661 58.0002 4.64338L58.7073 76.45C58.7324 78.9703 60.7488 81 63.2274 81H65.4799C68.0086 81 70.0455 78.8907 69.9995 76.3197L69.5044 47.6806C69.4588 45.1318 71.4616 43.032 73.9682 43.0006L79.5418 42.8894C82.0164 42.8584 84.0064 40.8097 84.0064 38.2931V35.1661C84.0064 32.6274 81.9825 30.5694 79.486 30.5694H74.0677C71.5733 30.5694 69.5503 28.5148 69.5473 25.9783L69.5374 17.6092C69.5344 15.0684 71.5591 13.007 74.0577 13.007H105.48C107.976 13.007 110 10.949 110 8.41032V4.59668C110 2.05801 107.976 5.61664e-05 105.48 5.61664e-05Z" />
@@ -29,21 +29,30 @@ function Nav() {
         </Link>
       </div>
       <div className="">
-        <ul className="font-leagueSpartan flex flex-col fixed  text-sm lg:right-10 md:right-10 right-5 top-5 mt-5">
+        <ul className="font-dmSans flex flex-col fixed  text-sm lg:right-10 md:right-10 right-5 top-5 mt-5">
           <li>
             <a
               href="#APropos"
               onClick={(e) => handleScroll(e, "#APropos")}
-              className="hover:text-jaune duration-300"
+              className="hover:text-or duration-300"
             >
               À PROPOS
             </a>
           </li>
           <li>
             <a
+              href="#Offres"
+              onClick={(e) => handleScroll(e, "#Offres")}
+              className="hover:text-or duration-300"
+            >
+              OFFRES
+            </a>
+          </li>
+          <li>
+            <a
               href="#NotreTravail"
               onClick={(e) => handleScroll(e, "#NotreTravail")}
-              className="hover:text-jaune duration-300"
+              className="hover:text-or duration-300"
             >
               NOTRE TRAVAIL
             </a>
@@ -52,7 +61,7 @@ function Nav() {
             <a
               href="#NosServices"
               onClick={(e) => handleScroll(e, "#NosServices")}
-              className="hover:text-jaune duration-300"
+              className="hover:text-or duration-300"
             >
               NOS SERVICES
             </a>
@@ -62,7 +71,7 @@ function Nav() {
             <a
               href="#Contact"
               onClick={(e) => handleScroll(e, "#Contact")}
-              className="hover:text-jaune duration-300"
+              className="hover:text-or duration-300"
             >
               CONTACT
             </a>
