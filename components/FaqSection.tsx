@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -38,14 +39,14 @@ export const FaqSection = () => {
   };
   return (
     <div className="w-full mx-auto mb-10">
-      <h2 className="font-leagueSpartan text-jaune text-3xl my-10 mx-10 lg:mx-36">
+      <h2 className="font-unbounded font-bold text-or text-3xl my-10 mx-10 lg:mx-36">
         FAQ
       </h2>
       {faqData.map((item, index) => (
         <div key={index} className="mb-4">
           <div className="line min-h-[1px] bg-white opacity-50"></div>
           <button
-            className="w-full text-left flex justify-between items-center py-2 px-10 lg:px-36 text-lg font-leagueSpartan focus:outline-none"
+            className="w-full text-left flex justify-between items-center py-2 px-10 lg:px-36 text-lg font-dmSans text-creme focus:outline-none"
             onClick={() => toggleAccordion(index)}
           >
             <span>{item.question}</span>
@@ -65,7 +66,7 @@ export const FaqSection = () => {
             }}
             className="overflow-hidden"
           >
-            <div className="font-leagueSpartan mx-10 pl-4 pr-4 pb-2 lg:mx-44">
+            <div className="font-dmSans text-creme/80 mx-10 pl-4 pr-4 pb-2 lg:mx-44">
               {item.answer}
             </div>
           </motion.div>
