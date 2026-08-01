@@ -64,7 +64,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? ''} />
         <SpeedInsights />
         <Analytics />
         <Nav />
