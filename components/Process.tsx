@@ -4,12 +4,12 @@ import { Card, CardTitle } from "./ui/card";
 
 export const Process = () => {
   return (
-    <section className="md:grid-cols-1 pb-10 pt-10 bg-[#918C79]">
+    <section className="md:grid-cols-1 pb-10 pt-10 bg-charcoal border-y border-white/5">
       <div>
-        <h2 className="font-leagueSpartan top-0 text-white text-center text-4xl mx-10 mb-10 lg:mx-40">
+        <h2 className="font-unbounded font-bold top-0 text-creme text-center text-4xl mx-10 mb-10 lg:mx-40">
           Processus de création d&apos;une vidéo
         </h2>
-        <p className="font-leagueSpartan lg:mx-52 xl:mx-80 md:mx-20 mx-5 mb-10">
+        <p className="font-dmSans text-creme/80 lg:mx-52 xl:mx-80 md:mx-20 mx-5 mb-10">
           Nous suivons un processus rigoureux pour garantir la qualité et la
           satisfaction de nos clients à chaque étape de la production vidéo. De
           la prise de rendez-vous initiale à la livraison finale, notre équipe
@@ -21,7 +21,7 @@ export const Process = () => {
           livraison finale de votre vidéo.
         </p>
       </div>
-      <div className="hidden mx-auto w-2/3 border-[rgba(255,255,255,0.10)] dark:bg-gris bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] rounded-xl px-10 py-10 lg:block ">
+      <div className="hidden mx-auto w-2/3 border-[rgba(255,255,255,0.10)] dark:bg-charcoal bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] rounded-xl px-10 py-10 lg:block ">
         <Image
           src="/img/graphiqueProcess.webp"
           height={800}
@@ -35,7 +35,7 @@ export const Process = () => {
             <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 1
             </CardTitle>
-            <h2 className="font-leagueSpartan font-bold text-3xl mt-4">
+            <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
               Démarrage
             </h2>
             <ul className="list-none mt-2">
@@ -54,7 +54,7 @@ export const Process = () => {
             <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 2
             </CardTitle>
-            <h2 className="font-leagueSpartan font-bold text-3xl mt-4">
+            <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
               Pré-production
             </h2>
             <ul className="list-none mt-2">
@@ -76,7 +76,7 @@ export const Process = () => {
             <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 3
             </CardTitle>
-            <h2 className="font-leagueSpartan font-bold text-3xl mt-4">
+            <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
               Production
             </h2>
             <ul className="list-none mt-2">
@@ -96,7 +96,7 @@ export const Process = () => {
             <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 4
             </CardTitle>
-            <h2 className="font-leagueSpartan font-bold text-3xl mt-4">
+            <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
               Post-production et livraison
             </h2>
             <ul className="list-none mt-2">

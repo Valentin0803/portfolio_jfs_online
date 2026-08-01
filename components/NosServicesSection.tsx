@@ -9,7 +9,7 @@ const NosServicesSection = () => {
   const [services] = useState(dataServices());
   return (
     <section id="NosServices" className="mb-10 lg:h-[85vh]">
-      <h2 className="font-body top-0 text-jaune text-3xl ml-10 mb-5 lg:mb-20 lg:ml-36 ">
+      <h2 className="font-unbounded font-bold top-0 text-or text-3xl ml-10 mb-5 lg:mb-20 lg:ml-36 ">
         Nos Services
       </h2>
       <div className="flex flex-col justify-center lg:my-auto">
