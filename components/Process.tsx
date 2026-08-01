@@ -32,7 +32,7 @@ export const Process = () => {
       <div className="grid xl:grid-cols-4 md:grid-cols-2 lg:mx-40 md:mx-10 gap-5 mt-10">
         <div>
           <Card className="grid h-[500px] grid-rows-[auto,auto,1fr,auto]">
-            <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
+            <CardTitle className="font-dmSans font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 1
             </CardTitle>
             <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
@@ -51,7 +51,7 @@ export const Process = () => {
         </div>
         <div>
           <Card className="grid h-[500px] grid-rows-[auto,auto,1fr,auto]">
-            <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
+            <CardTitle className="font-dmSans font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 2
             </CardTitle>
             <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
@@ -73,7 +73,7 @@ export const Process = () => {
         </div>
         <div>
           <Card className="grid h-[500px] grid-rows-[auto,auto,1fr,auto]">
-            <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
+            <CardTitle className="font-dmSans font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 3
             </CardTitle>
             <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
@@ -93,7 +93,7 @@ export const Process = () => {
         </div>
         <div>
           <Card className="grid h-[500px] grid-rows-[auto,auto,1fr,auto]">
-            <CardTitle className="font-leagueSpartan font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
+            <CardTitle className="font-dmSans font-bold text-2xl bg-[rgba(37,37,37,0.7)] rounded-xl w-fit px-4 h-fit">
               Étape 4
             </CardTitle>
             <h2 className="font-unbounded font-bold text-3xl mt-4 text-creme">
