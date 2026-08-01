@@ -8,12 +8,14 @@ import { Contact } from "@/components/Contact";
 import { PiedPage } from "@/components/PiedPage";
 import { Projects } from "@/components/Projets";
 import { BandeauLogo } from "@/components/BandeauLogo";
+import { Offres } from "@/components/Offres";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <BandeauLogo />
+      <Offres />
       <Projects />
       <NosServicesSection />
       <Process />
