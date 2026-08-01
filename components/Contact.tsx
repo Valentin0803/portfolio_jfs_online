@@ -7,7 +7,9 @@ export const Contact = () => {
       className="font-dmSans grid grid-cols-1 lg:grid-cols-3 gap-4 place-content-center bg-charcoal border-t border-white/5 h-fit px-5 py-5 lg:px-36 lg:py-auto"
     >
       <div className="flex flex-col justify-center content-center">
-        <h2 className="font-unbounded text-creme">Nous contacter</h2>
+        <h2 className="font-unbounded font-bold text-3xl text-creme">
+          Nous contacter
+        </h2>
         <span className="text-xl text-creme/80">
           Vous souhaitez en savoir plus sur nos méthodes de travail et nos
           services ?

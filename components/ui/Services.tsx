@@ -31,7 +31,7 @@ const Service = ({ service }: { service: ServiceType }) => {
         <div className="heading-mask-top flex items-start justify-center h-[30vh] lg:h-[12vh]">
           <h2
             ref={textRef}
-            className="titreService flex items-center relative h-full w-full font-unbounded text-xl"
+            className="titreService flex items-center relative h-full w-full font-unbounded font-bold text-xl"
           >
             <span className="pl-10 lg:pl-36 lg:text-5xl">
               {service.titleTop}
