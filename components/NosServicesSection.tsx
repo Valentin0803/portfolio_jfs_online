@@ -1,10 +1,19 @@
 "use client";
-import { useState } from "react";
-import dataServices, { ServiceType } from "../public/data/dataServices";
-import Service from "./ui/Services";
+import { useMemo } from "react";
+import dataServices from "../public/data/dataServices";
+import { RulerCarousel, type CarouselItem } from "./ui/ruler-carousel";
 
 const NosServicesSection = () => {
-  const [services] = useState(dataServices());
+  const items = useMemo<CarouselItem[]>(
+    () =>
+      dataServices().map((service, index) => ({
+        id: index,
+        title: service.titleTop,
+        description: service.descriptionService,
+      })),
+    []
+  );
+
   return (
     <section id="NosServices" className="py-24 lg:py-40 bg-[#100D08]">
       <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
@@ -15,11 +24,7 @@ const NosServicesSection = () => {
           Nos services
         </h2>
       </div>
-      <div className="max-w-3xl mx-auto">
-        {services.map((service: ServiceType, index: number) => (
-          <Service service={service} index={index} key={index} />
-        ))}
-      </div>
+      <RulerCarousel originalItems={items} />
     </section>
   );
 };
