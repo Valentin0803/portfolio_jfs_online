@@ -9,6 +9,17 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
+    question:
+      "Quelle est la différence entre l'Atelier du Réel et la Journée Contenu ?",
+    answer:
+      "L'Atelier du Réel est un accompagnement continu sur 6 mois, pensé pour les agences immobilières qui veulent du contenu régulier sur leurs biens et leur agence. La Journée Contenu est une prestation ponctuelle, ouverte à tous les secteurs, pour tester notre travail ou couvrir un besoin ciblé sans engagement dans la durée.",
+  },
+  {
+    question: "Je m'engage sur combien de temps avec l'Atelier du Réel ?",
+    answer:
+      "L'Atelier du Réel est pensé sur 6 mois — le temps nécessaire pour construire une vraie régularité de contenu et voir les premiers résultats. On en discute ensemble dès le premier échange pour que tout soit clair avant de démarrer.",
+  },
+  {
     question: "Proposez-vous des services de drone pour la capture aérienne ?",
     answer:
       "Nous offrons des prestations de prises de vue aérienne avec des drones stabilisés comme le Mavic, ainsi qu'avec des drones FPV pour des captures dynamiques et immersives. Nous proposons également nos services de télépilotage de drone en tant que prestataire pour d'autres sociétés de production.",
@@ -17,17 +28,7 @@ const faqData: FAQItem[] = [
     question:
       "Est-il nécessaire d'obtenir des autorisations spécifiques pour filmer avec un drone ?",
     answer:
-      "Oui, il est souvent nécessaire d'obtenir des autorisations spécifiques pour filmer avec un drone, en fonction de la zone de vol et du type d'événement. Certaines zones, comme les espaces publics, les zones urbaines ou les sites sensibles, nécessitent des démarches administratives et des autorisations de la part des autorités compétentes. En tant que professionnels certifiés, nous nous chargeons de gérer ces aspects pour vous assurer un tournage en toute conformité avec la réglementation en vigueur.",
-  },
-  {
-    question: "Aidez-vous à élaborer le script et le storyboard ?",
-    answer:
-      "Oui, nous offrons un accompagnement complet dans l'élaboration du script et du storyboard. Nous travaillons en étroite collaboration avec vous pour comprendre vos besoins, définir le message clé à transmettre, et concevoir un scénario visuel qui reflète votre vision. Cela nous permet d'assurer une cohérence artistique et technique tout au long du projet.",
-  },
-  {
-    question: "Combien de temps prend la post-production d'une vidéo ?",
-    answer:
-      "La durée de la post-production dépend de plusieurs facteurs, tels que la complexité du projet, la durée de la vidéo, le nombre d'effets spéciaux ou d'animations à intégrer, et les révisions demandées. En général, cela peut varier de quelques jours à plusieurs semaines. Nous discutons toujours des délais dès le début du projet pour vous fournir un calendrier adapté à vos besoins.",
+      "Oui, en fonction de la zone de vol et du type d'événement — espaces publics, zones urbaines, sites sensibles. C'est justement une partie du travail qu'on prend en charge pour vous : notifications préfecture et démarches administratives sont gérées de bout en bout, pour un tournage en toute conformité.",
   },
 ];
 

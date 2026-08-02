@@ -28,14 +28,22 @@ export const Offres = () => {
           <h3 className="relative font-unbounded font-bold text-creme text-3xl mb-4">
             L&apos;Atelier du Réel
           </h3>
-          <p className="relative font-dmSans text-creme/75 text-base mb-8 max-w-[42ch]">
-            Contenu vidéo continu pour agences immobilières, sur 6 mois :
-            scripts, tournage, drone, montage, gestion administrative des
-            vols incluse, suivi collaboratif via Notion et WhatsApp.
+          <p className="relative font-dmSans text-creme/85 text-base mb-3 max-w-[42ch]">
+            Un flux de contenu continu pendant 6 mois pour attirer plus de
+            mandats et démarquer votre agence — sans que vous ayez rien à
+            gérer.
           </p>
-          <div className="relative font-unbounded font-bold text-or text-4xl mt-auto mb-7">
+          <p className="relative font-dmSans text-creme/50 text-xs mb-8 max-w-[42ch]">
+            Inclus : scripts, tournage, drone, montage, gestion
+            administrative des vols, suivi collaboratif via Notion et
+            WhatsApp.
+          </p>
+          <div className="relative font-unbounded font-bold text-or text-4xl mb-2 mt-auto">
             2 100€ HT/mois
           </div>
+          <p className="relative font-dmSans text-creme/45 text-xs mb-7">
+            Déjà utilisé par Guy Hoquet (Caen)
+          </p>
           <Link href="#Contact" className="relative w-fit">
             <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
               Prendre rendez-vous
@@ -52,9 +60,14 @@ export const Offres = () => {
               1h de préparation/trajet, 2h de tournage, 5h de post-production
               : 5 contenus courts livrés. Ouvert à tous les secteurs.
             </CardDescription>
-            <div className="font-unbounded font-bold text-or text-lg mt-4">
+            <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
               À partir de ~800€
             </div>
+            <Link href="#Contact" className="w-fit">
+              <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
+                Réserver une journée
+              </button>
+            </Link>
           </Card>
           <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
             <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
@@ -64,9 +77,14 @@ export const Offres = () => {
               Vidéo d&apos;entreprise, événementiel, drone à la demande.
               Chaque projet fait l&apos;objet d&apos;un devis dédié.
             </CardDescription>
-            <div className="font-unbounded font-bold text-or text-lg mt-4">
+            <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
               Devis
             </div>
+            <Link href="#Contact" className="w-fit">
+              <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
+                Demander un devis
+              </button>
+            </Link>
           </Card>
         </div>
       </div>

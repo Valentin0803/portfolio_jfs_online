@@ -10,7 +10,7 @@ function dataServices(): ServiceType[] {
       titleTop: "Présentation d'entreprise",
       titleMask: "",
       descriptionService:
-        "Nous mettons notre expertise en vidéo, photographie et drone FPV à votre service. Basée en Normandie et fondée par trois passionnés, notre équipe offre des solutions visuelles sur mesure. Que ce soit pour des vidéos d’entreprise, des contenus promotionnels ou des photos de qualité, nous vous accompagne à chaque étape. Fortement engagés envers votre satisfaction, nous transformons vos idées en productions visuelles de qualité.",
+        "Vidéos d'entreprise, contenus promotionnels et photos de qualité pensés pour votre communication — de l'idée à la production finale.",
     },
     {
       titleTop: "Visite virtuelle immersive",
