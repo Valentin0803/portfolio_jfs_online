@@ -4,21 +4,17 @@ import { Card, CardTitle } from "./ui/card";
 
 export const Process = () => {
   return (
-    <section className="md:grid-cols-1 pb-10 pt-10 bg-charcoal border-y border-white/5">
-      <div>
-        <h2 className="font-unbounded font-bold top-0 text-creme text-center text-4xl mx-10 mb-10 lg:mx-40">
-          Processus de création d&apos;une vidéo
+    <section className="md:grid-cols-1 py-24 lg:py-40 bg-charcoal border-y border-white/5">
+      <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
+        <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
+          Méthode
+        </div>
+        <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-5">
+          Processus de création
         </h2>
-        <p className="font-dmSans text-creme/80 lg:mx-52 xl:mx-80 md:mx-20 mx-5 mb-10">
-          Nous suivons un processus rigoureux pour garantir la qualité et la
-          satisfaction de nos clients à chaque étape de la production vidéo. De
-          la prise de rendez-vous initiale à la livraison finale, notre équipe
-          travaille en étroite collaboration avec vous. Cela inclut une phase de
-          pré-production détaillée, où nous élaborons le script et définissons
-          les besoins spécifiques, jusqu&apos;au tournage et à la
-          post-production. Chaque projet est peaufiné à travers un processus
-          d&apos;aller-retour pour que vous soyez pleinement satisfait avant la
-          livraison finale de votre vidéo.
+        <p className="font-dmSans text-creme/70">
+          De la prise de rendez-vous initiale à la livraison finale, un
+          aller-retour permanent pour votre pleine satisfaction.
         </p>
       </div>
       <div className="hidden mx-auto w-2/3 border-[rgba(255,255,255,0.10)] dark:bg-charcoal bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] rounded-xl px-10 py-10 lg:block ">

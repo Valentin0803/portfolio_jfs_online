@@ -4,27 +4,25 @@ export const Contact = () => {
   return (
     <section
       id="Contact"
-      className="font-dmSans grid grid-cols-1 lg:grid-cols-3 gap-4 place-content-center bg-charcoal border-t border-white/5 h-fit px-5 py-5 lg:px-36 lg:py-auto"
+      className="font-dmSans text-center bg-charcoal border-t border-white/5 py-24 lg:py-40 px-6"
     >
-      <div className="flex flex-col justify-center content-center">
-        <h2 className="font-unbounded font-bold text-3xl text-creme">
-          Nous contacter
-        </h2>
-        <span className="text-xl text-creme/80">
-          Vous souhaitez en savoir plus sur nos méthodes de travail et nos
-          services ?
-        </span>
-      </div>
-      <div className="flex flex-col mx-auto lg:content-center lg:justify-between">
+      <h2 className="font-unbounded font-bold text-3xl lg:text-6xl text-creme max-w-[16ch] mx-auto mb-5 leading-tight">
+        Vous souhaitez en savoir plus ?
+      </h2>
+      <p className="text-creme/65 max-w-[46ch] mx-auto mb-11">
+        Nos méthodes de travail, nos services, ou juste discuter de votre
+        projet.
+      </p>
+      <div className="flex flex-wrap gap-5 justify-center">
         <Link href="/contact">
-          <button className="flex gap-4 px-12 py-4 rounded-full bg-or font-bold border-or border text-charcoal tracking-widest uppercase transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-or transition-colors duration-500">
+          <button className="flex gap-3 items-center px-9 py-[18px] rounded-full bg-or font-bold text-xs tracking-[0.1em] uppercase border-or border text-charcoal transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-or transition-colors duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="size-5"
             >
               <path
                 strokeLinecap="round"
@@ -35,17 +33,15 @@ export const Contact = () => {
             Envoyez un mail
           </button>
         </Link>
-      </div>
-      <div className="flex flex-col mx-auto lg:content-center lg:justify-between">
         <Link href="https://zcal.co/martin-ribot/30min" target="_blank">
-          <button className="flex gap-4 px-12 py-4 rounded-full bg-or font-bold border-or border text-charcoal tracking-widest uppercase transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-or transition-colors duration-500">
+          <button className="flex gap-3 items-center px-9 py-[18px] rounded-full font-bold text-xs tracking-[0.1em] uppercase border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="size-5"
             >
               <path
                 strokeLinecap="round"

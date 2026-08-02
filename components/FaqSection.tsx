@@ -38,41 +38,47 @@ export const FaqSection = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
-    <div className="w-full mx-auto mb-10">
-      <h2 className="font-unbounded font-bold text-or text-3xl my-10 mx-10 lg:mx-36">
-        FAQ
-      </h2>
-      {faqData.map((item, index) => (
-        <div key={index} className="mb-4">
-          <div className="line min-h-[1px] bg-white opacity-50"></div>
-          <button
-            className="w-full text-left flex justify-between items-center py-2 px-10 lg:px-36 text-lg font-dmSans text-creme focus:outline-none"
-            onClick={() => toggleAccordion(index)}
-          >
-            <span>{item.question}</span>
-            <span>{activeIndex === index ? "-" : "+"}</span>
-          </button>
-          <motion.div
-            key={index}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{
-              height: activeIndex === index ? "auto" : 0,
-              opacity: activeIndex === index ? 1 : 0,
-            }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{
-              height: { duration: 0.4 },
-              opacity: { duration: 0.2 },
-            }}
-            className="overflow-hidden"
-          >
-            <div className="font-dmSans text-creme/80 mx-10 pl-4 pr-4 pb-2 lg:mx-44">
-              {item.answer}
-            </div>
-          </motion.div>
+    <div className="w-full mx-auto py-24 lg:py-40 bg-[#100D08]">
+      <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
+        <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
+          FAQ
         </div>
-      ))}
-      <div className="line min-h-[1px] bg-white opacity-50"></div>
+        <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight">
+          Questions fréquentes
+        </h2>
+      </div>
+      <div className="max-w-2xl mx-auto px-6">
+        {faqData.map((item, index) => (
+          <div key={index} className="border-t border-white/10 last:border-b">
+            <button
+              className="w-full text-left flex justify-between items-center gap-6 py-7 font-unbounded font-medium text-creme focus:outline-none"
+              onClick={() => toggleAccordion(index)}
+            >
+              <span>{item.question}</span>
+              <span className="text-or text-xl shrink-0">
+                {activeIndex === index ? "−" : "+"}
+              </span>
+            </button>
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: activeIndex === index ? "auto" : 0,
+                opacity: activeIndex === index ? 1 : 0,
+              }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{
+                height: { duration: 0.4 },
+                opacity: { duration: 0.2 },
+              }}
+              className="overflow-hidden"
+            >
+              <p className="font-dmSans text-creme/60 text-sm leading-relaxed pb-7 max-w-[60ch]">
+                {item.answer}
+              </p>
+            </motion.div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

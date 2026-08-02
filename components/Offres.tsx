@@ -3,35 +3,41 @@ import { Card, CardTitle, CardDescription } from "./ui/card";
 
 export const Offres = () => {
   return (
-    <section id="Offres" className="my-10 lg:my-24">
-      <div className="mx-10 lg:mx-36 mb-10">
-        <h2 className="font-unbounded font-bold text-or text-3xl mb-4">
-          Nos offres
+    <section id="Offres" className="py-24 lg:py-40">
+      <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
+        <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
+          Offres
+        </div>
+        <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight">
+          Un accompagnement pour chaque besoin
         </h2>
-        <p className="font-dmSans text-creme/80 text-lg max-w-2xl">
-          De l&apos;accompagnement continu pour agences immobilières aux
-          prestations ponctuelles, une offre pour chaque besoin.
-        </p>
       </div>
 
-      <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mx-10 lg:mx-36">
-        <div className="rounded-2xl border border-or/40 bg-gradient-to-br from-or/10 to-white/[0.02] p-8 flex flex-col">
-          <span className="inline-block w-fit px-3 py-1 rounded-full bg-or text-charcoal font-dmSans font-bold text-xs uppercase tracking-widest mb-4">
+      <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mx-6 lg:max-w-5xl lg:mx-auto">
+        <div className="relative overflow-hidden rounded-lg border border-or/25 bg-[#100D08] p-10 lg:p-14 flex flex-col">
+          <div
+            className="absolute -top-[40%] -right-[20%] w-[70%] h-[140%] pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(201,162,75,0.35), transparent 70%)",
+            }}
+          />
+          <span className="relative inline-block w-fit px-4 py-1.5 rounded-full bg-or text-charcoal font-dmSans font-bold text-xs uppercase tracking-widest mb-6">
             Offre phare
           </span>
-          <h3 className="font-unbounded font-bold text-creme text-2xl mb-3">
+          <h3 className="relative font-unbounded font-bold text-creme text-3xl mb-4">
             L&apos;Atelier du Réel
           </h3>
-          <p className="font-dmSans text-creme/80 text-base mb-6">
+          <p className="relative font-dmSans text-creme/75 text-base mb-8 max-w-[42ch]">
             Contenu vidéo continu pour agences immobilières, sur 6 mois :
             scripts, tournage, drone, montage, gestion administrative des
             vols incluse, suivi collaboratif via Notion et WhatsApp.
           </p>
-          <div className="font-unbounded font-bold text-or text-2xl mt-auto mb-6">
+          <div className="relative font-unbounded font-bold text-or text-4xl mt-auto mb-7">
             2 100€ HT/mois
           </div>
-          <Link href="#Contact" className="w-fit">
-            <button className="px-8 py-3 rounded-full font-dmSans font-bold text-sm uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
+          <Link href="#Contact" className="relative w-fit">
+            <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
               Prendre rendez-vous
             </button>
           </Link>

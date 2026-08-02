@@ -1,4 +1,7 @@
-import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
+"use client";
+
+import { useState } from "react";
+import CarouselStacked from "@/components/ui/carousel-07";
 import { Gallery } from "./ui/gallery";
 import { GalleryCS } from "./ui/gallery-cs";
 import VimeoPlayer from "./VimeoPlayer";
@@ -7,25 +10,60 @@ import Image from "next/image";
 import photoStadeRenACar from "@/public/projects/RENT_A_CAR/photostade.png";
 
 export const Projects = () => {
-  const cards = dataCarousel.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const openProject = openIndex !== null ? dataCarousel[openIndex] : null;
+
   return (
-    <div id="NotreTravail" className="w-full h-full py-10 ">
-      <h2 className="font-unbounded font-bold top-0 text-or text-3xl ml-10 mb-5 lg:ml-36">
-        Nos Projets
-      </h2>
-      <div className="mx-10 mb-10 lg:mx-36 rounded-xl overflow-hidden">
-        <VimeoPlayer
-          videoId="1062779681" // TODO Valentin : remplacer par l'ID du showreel dédié une fois monté
-          autoplay={true}
-          muted={true}
-          controls={false}
-          loop={true}
-          className="rounded-xl"
-        />
+    <div id="NotreTravail" className="w-full h-full py-24 lg:py-40">
+      <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
+        <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
+          Réalisations
+        </div>
+        <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-5">
+          Nos derniers tournages
+        </h2>
+        <p className="font-dmSans text-creme/70">
+          Une sélection de projets récents — agences immobilières,
+          entreprises, événements.
+        </p>
       </div>
-      <Carousel items={cards} />
+
+      <CarouselStacked
+        slides={dataCarousel.map((c) => ({
+          image: c.src,
+          title: c.title,
+          description: c.category,
+          badge: c.category,
+        }))}
+        onSlideClick={(i) => setOpenIndex(i)}
+      />
+
+      {openProject && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-charcoal/90 backdrop-blur-sm p-6"
+          onClick={() => setOpenIndex(null)}
+        >
+          <div
+            className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl bg-charcoal border border-white/10 p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpenIndex(null)}
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-creme flex items-center justify-center hover:bg-or hover:text-charcoal transition-colors duration-200"
+              aria-label="Fermer"
+            >
+              ✕
+            </button>
+            <span className="inline-block px-3 py-1 rounded-full bg-or text-charcoal font-dmSans font-bold text-xs uppercase tracking-widest mb-3">
+              {openProject.category}
+            </span>
+            <h3 className="font-unbounded font-bold text-creme text-xl mb-4">
+              {openProject.title}
+            </h3>
+            {openProject.content}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

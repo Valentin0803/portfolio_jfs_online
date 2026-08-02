@@ -1,50 +1,23 @@
-"use client";
 import { ServiceType } from "@/public/data/dataServices";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger);
 
-const Service = ({ service }: { service: ServiceType }) => {
-  const textRef = useRef(null);
-
-  useGSAP(() => {
-    const textElements = textRef.current;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: textElements,
-        start: "center 100%",
-        end: "center 50%",
-        scrub: 1,
-      },
-    });
-    tl.to(textElements, {
-      backgroundSize: "100%",
-      ease: "none",
-    });
-  });
-
+const Service = ({
+  service,
+  index,
+}: {
+  service: ServiceType;
+  index: number;
+}) => {
   return (
-    <div className="service">
-      <div className="heading-mask">
-        <div className="heading-mask-top flex items-start justify-center h-[30vh] lg:h-[12vh]">
-          <h2
-            ref={textRef}
-            className="titreService flex items-center relative h-full w-full font-unbounded font-bold text-xl"
-          >
-            <span className="pl-10 lg:pl-36 lg:text-5xl">
-              {service.titleTop}
-            </span>
-            <span className="spanMask lg:pl-32">
-              <p className="flex bg-or font-dmSans text-charcoal text-base px-5 lg:px-10">
-                {service.descriptionService}
-              </p>
-            </span>
-          </h2>
-        </div>
+    <div className="grid grid-cols-1 lg:grid-cols-[100px_1fr_320px] gap-4 lg:gap-10 items-start py-9 lg:py-11 border-t border-white/10 last:border-b px-6 lg:px-0">
+      <div className="font-unbounded font-bold text-sm text-or pt-1">
+        {String(index + 1).padStart(2, "0")}
       </div>
-      <div className="line min-h-[1px] bg-white opacity-40"></div>
+      <h3 className="font-unbounded font-bold text-2xl lg:text-3xl text-creme leading-tight">
+        {service.titleTop}
+      </h3>
+      <p className="font-dmSans text-sm text-creme/60 leading-relaxed">
+        {service.descriptionService}
+      </p>
     </div>
   );
 };
