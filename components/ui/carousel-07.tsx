@@ -115,7 +115,13 @@ const CarouselStacked = ({ slides, onSlideClick }: CarouselStackedProps) => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full py-10 overflow-hidden select-none">
-      <div className="relative w-full max-w-7xl h-80 sm:h-112 lg:h-128 flex items-center justify-center">
+      {/* Hauteurs en valeurs arbitraires : `h-112`/`h-128` (composant d'origine,
+          écrit pour Tailwind v4) n'existent pas en v3 — l'échelle s'arrête à
+          `h-96` — donc elles ne généraient aucun CSS et le conteneur retombait
+          à 320px, rognant les cartes. Chaque valeur couvre la demi-hauteur de
+          la carte + son décalage vertical (yMultiplier) + le débord dû à la
+          rotation des cartes latérales. */}
+      <div className="relative w-full max-w-7xl h-[23rem] sm:h-[31rem] lg:h-[37rem] flex items-center justify-center">
         {/* Transparent Drag Surface */}
         <motion.div
           drag="x"
