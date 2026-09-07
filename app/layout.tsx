@@ -100,10 +100,11 @@ const jsonLd = {
     addressRegion: "Normandie",
     addressCountry: "FR",
   },
-  areaServed: {
-    "@type": "AdministrativeArea",
-    name: "Normandie",
-  },
+  areaServed: [
+    { "@type": "City", name: "Caen" },
+    { "@type": "AdministrativeArea", name: "Calvados" },
+    { "@type": "AdministrativeArea", name: "Normandie" },
+  ],
   sameAs: [
     "https://www.instagram.com/jfsvisual/",
     "https://www.linkedin.com/company/jfs-visual/",
