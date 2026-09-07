@@ -30,6 +30,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "JFS Visual",
+    url: "https://jfs-visual.fr",
+    title: "Production vidéo immobilière en Normandie | JFS Visual",
+    description:
+      "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Production vidéo immobilière en Normandie | JFS Visual",
+    description:
+      "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+  },
   icons: {
     icon: [
       {
