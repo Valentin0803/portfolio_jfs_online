@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import poster from "@/public/img/BG_tshirt.jpg";
 
 export const Hero = () => {
   return (
@@ -6,6 +8,19 @@ export const Hero = () => {
       id="APropos"
       className="relative h-screen min-h-[640px] flex flex-col items-center justify-center text-center overflow-hidden px-6"
     >
+      {/* Image de secours derrière l'iframe : tant que le lecteur Vimeo n'a
+          pas chargé (ou s'il ne charge jamais), le premier écran affiche
+          cette photo plutôt qu'un aplat noir. */}
+      <Image
+        src={poster}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        placeholder="blur"
+        className="object-cover pointer-events-none"
+      />
+
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

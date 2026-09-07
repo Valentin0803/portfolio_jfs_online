@@ -123,6 +123,12 @@ export default function RootLayout({
       className={`${unbounded.variable} ${dmSans.variable} dark`}
       suppressHydrationWarning
     >
+      <head>
+        {/* La vidéo du hero est une iframe Vimeo : on anticipe la résolution
+            DNS et la négociation TLS plutôt que de les payer au chargement. */}
+        <link rel="preconnect" href="https://player.vimeo.com" />
+        <link rel="dns-prefetch" href="https://player.vimeo.com" />
+      </head>
       <body>
         <script
           type="application/ld+json"
