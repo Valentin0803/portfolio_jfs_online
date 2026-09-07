@@ -1,7 +1,7 @@
 export default function politiqueDeConfidentialite() {
   return (
-    <div className="h-screen font-leagueSpartan mx-5 pt-32 pb-32 sm:mx-40 lg:mx-52">
-      <h1>Politique de confidentialité</h1>
+    <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
+      <h1 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">Politique de confidentialité</h1>
       <div>
         <br />
       </div>
@@ -17,12 +17,12 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Collecte des renseignements personnels</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Collecte des renseignements personnels</h2>
       <div>
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Prénom</li>
           <li>Adresse postale</li>
           <li>Code postal</li>
@@ -40,7 +40,7 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Formulaires et interactivité:</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Formulaires et interactivité:</h2>
       <div>
         Vos renseignements personnels sont collectés par le biais de formulaire,
         à savoir :
@@ -49,7 +49,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Formulaire d&apos;inscription au site Web</li>
         </ul>
       </div>
@@ -61,7 +61,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Suivi de la commande</li>
           <li>Informations / Offres promotionnelles</li>
           <li>Statistiques</li>
@@ -77,7 +77,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Correspondance</li>
         </ul>
       </div>
@@ -89,7 +89,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Informations ou pour des offres promotionnelles</li>
           <li>Statistiques</li>
           <li>Contact </li>
@@ -98,7 +98,7 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Droit d’opposition et de retrait</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Droit d’opposition et de retrait</h2>
       <div>
         Nous nous engageons à vous offrir un droit d’opposition et de retrait
         quant à vos renseignements personnels.
@@ -135,7 +135,7 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Droit d’accès</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Droit d’accès</h2>
       <div>
         Nous nous engageons à reconnaître un droit d’accès et de rectification
         aux personnes concernées désireuses de consulter, modifier, voire radier
@@ -160,7 +160,7 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Sécurité</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Sécurité</h2>
       <div>
         Les renseignements personnels que nous collectons sont conservés dans un
         environnement sécurisé. Les personnes travaillant pour nous sont tenues
@@ -177,7 +177,7 @@ export default function politiqueDeConfidentialite() {
         <br />
       </div>
       <div>
-        <ul>
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Protocole SSL</li>
           <li>Pare-feu</li>
         </ul>
@@ -193,7 +193,7 @@ export default function politiqueDeConfidentialite() {
       <div>
         <br />
       </div>
-      <h2>Législation</h2>
+      <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Législation</h2>
       <div>
         Nous nous engageons à respecter les dispositions législatives énoncées
         dans :

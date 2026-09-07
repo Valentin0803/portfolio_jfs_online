@@ -1,7 +1,7 @@
 export default function cgv() {
   return (
-    <div className="font-leagueSpartan mx-5 pt-32 pb-32 sm:mx-40 lg:mx-52">
-      <h2 className="font-bold text-xl">CONDITIONS GÉNÉRALES DE VENTE</h2>
+    <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
+      <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">CONDITIONS GÉNÉRALES DE VENTE</h2>
       <br />
       <p>
         Les présentes conditions générales de vente, ci-après CGV, ont été
@@ -14,8 +14,8 @@ export default function cgv() {
         services proposés par le vendeur, ci-après dénommée l’acheteur.
       </p>
       <br />
-      <h2 className="underline">Article 1</h2>
-      <h3 className="font-bold">PRÉAMBULE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 1</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRÉAMBULE</h3>
       <p>
         Le vendeur est une société de prestations audiovisuelles. Il
         commercialise des services ci-après dénommés les Produits, à destination
@@ -30,7 +30,7 @@ export default function cgv() {
         conclusion du contrat. L’acheteur reconnaît que les informations prévues
         à l’article L221-5 du Code de la Consommation lui ont été transmises de
         manière lisible et intelligible, notamment :
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>
             Les caractéristiques essentielles de la prestation de service ;
           </li>
@@ -53,8 +53,8 @@ export default function cgv() {
         </ul>
       </p>
       <br />
-      <h2 className="underline">Article 2</h2>
-      <h3 className="font-bold">PRÉAMBULE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 2</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRÉAMBULE</h3>
       <p>
         Les présentes CGV visent à définir les relations contractuelles entre le
         vendeur et l’acheteur, ainsi que toutes les conditions applicables à
@@ -83,8 +83,8 @@ export default function cgv() {
         www.jfs-visual.fr/cgv
       </p>
       <br />
-      <h2 className="underline">Article 3</h2>
-      <h3 className="font-bold">PRODUITS ET SERVICES</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 3</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRODUITS ET SERVICES</h3>
       <p>
         Les services proposés sont ceux figurant sur le site www.jfs-visual.fr.
         Chaque produit ou service est présenté sur le site internet sous forme
@@ -122,7 +122,7 @@ export default function cgv() {
         droits concédés au titre des contrats conclus entre le vendeur et
         l’acheteur le sont uniquement au signataire du contrat.
       </p>
-      <h3 className="font-bold">PRODUITS ET SERVICES</h3>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRODUITS ET SERVICES</h3>
       <p>
         Le vendeur peut céder à un tiers à quelque titre, pour quelque cause et
         sous quelque forme que ce soit, le contrat ou l’un quelconque des droits
@@ -132,8 +132,8 @@ export default function cgv() {
         l’exécution de tout ou partie de ses obligations contractuelles.
       </p>
       <br />
-      <h2 className="underline">Article 4</h2>
-      <h3 className="font-bold">TARIFS</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 4</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">TARIFS</h3>
       <p>
         Les prix communiqués par voie d’affichage, d’étiquetage, figurant sur
         les fiches produits d’un catalogue physique ou dématérialisé, ou par
@@ -162,7 +162,7 @@ export default function cgv() {
         le téléchargement de la vidéo sont à la charge exclusive de l’acheteur.
         <br /> <br />
       </p>
-      <h3 className="font-bold">
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">
         Les tarifs pratiqués pour la retouche vidéo ou photo sont les suivants :
       </h3>
       <p>
@@ -176,8 +176,8 @@ export default function cgv() {
         Pour les retouches majeures, un devis spécifique sera établi.
       </p>
       <br />
-      <h2 className="underline">Article 5</h2>
-      <h3 className="font-bold">DEVIS</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 5</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">DEVIS</h3>
       <p>
         L’acheteur peut demander au vendeur de lui faire parvenir un devis avant
         toute commande. Dans les cas où un devis est demandé par l’acheteur, ou
@@ -190,8 +190,8 @@ export default function cgv() {
         Les devis établis par le vendeur sont valides pendant trente (30) jours.
       </p>
       <br />
-      <h2 className="underline">Article 6</h2>
-      <h3 className="font-bold">COMMANDE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 6</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">COMMANDE</h3>
       <p>
         L’acheteur ne pourra pas revendiquer l’application de réductions non en
         vigueur au jour de sa commande.
@@ -229,16 +229,16 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 7</h2>
-      <h3 className="font-bold">LANGUE DU CONTRAT</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 7</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">LANGUE DU CONTRAT</h3>
       <p>
         Les présentes CGV, ainsi que les contrats conclus suite au passage d’une
         commande par l’acheteur, sont rédigés en langue française.
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 8</h2>
-      <h3 className="font-bold">MODALITÉS DE PAIEMENT</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 8</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">MODALITÉS DE PAIEMENT</h3>
       <p>
         Le paiement est exigible immédiatement au moment de la commande, y
         compris pour les Produits faisant l’objet d’une précommande.
@@ -263,8 +263,8 @@ export default function cgv() {
       </p>
       <br />
       <br />
-      <h2 className="underline">Article 9</h2>
-      <h3 className="font-bold">FACTURE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 9</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">FACTURE</h3>
       <p>
         L’acheteur peut obtenir une facture sur simple demande. Le vendeur
         s’engage à fournir une facture à l’acheteur en ayant fait la demande.
@@ -273,7 +273,7 @@ export default function cgv() {
         La facture indique le total du prix acquitté, en principal comme en
         accessoire, toutes taxes et frais compris. La facture indique également
         le détail du total du prix acquitté, notamment :
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>Le prix des Produits ;</li>
           <li>
             Et, plus généralement, tout autre montant dont s’est acquitté
@@ -283,8 +283,8 @@ export default function cgv() {
       </p>
       <br />
       <br />
-      <h2 className="underline">Article 10</h2>
-      <h3 className="font-bold">RÉSERVE DE PROPRIÉTÉ</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 10</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RÉSERVE DE PROPRIÉTÉ</h3>
       <p>
         Le vendeur conserve la pleine et entière propriété des Produits vendus
         jusqu’au complet encaissement du prix, en principal, frais et taxes
@@ -292,7 +292,7 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h3 className="font-bold">DROITS CÉDÉS</h3>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">DROITS CÉDÉS</h3>
       <p>
         Sauf dérogation expressément convenue entre les parties, le vendeur
         conserve sur ses prestations l’intégralité des droits de propriété
@@ -324,8 +324,8 @@ export default function cgv() {
       </p>
       <br />
       <br />
-      <h2 className="underline">Article 11</h2>
-      <h3 className="font-bold">DÉLAI DE RÉTRACTATION</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 11</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">DÉLAI DE RÉTRACTATION</h3>
       <p>
         Dans toutes les hypothèses où l’acheteur passe une commande à distance,
         notamment suite à une sollicitation téléphonique ou en passant commande
@@ -359,7 +359,7 @@ export default function cgv() {
         Consommation. Le taux des intérêts de retard est de :
         <br />
         <br />
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>
             L’intérêt légal, si le remboursement intervient au plus tard dix
             (10) jours après l’expiration du délai de quatorze (14) jours ;
@@ -402,7 +402,7 @@ export default function cgv() {
         mentionnés à l’article L221-28 du Code de la Consommation, notamment :
         <br />
         <br />
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>
             Les prestations de services pleinement exécutées avant la fin du
             délai de rétractation, pour lesquelles l’exécution a commencé avec
@@ -422,18 +422,18 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 12</h2>
-      <h3 className="font-bold">LIVRAISON</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 12</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">LIVRAISON</h3>
       <p>
         Le vendeur n’assure la livraison de ses Produits que dans les pays
         suivants :
         <br />
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>France métropolitaine ; </li>
         </ul>
         Le vendeur met à la disposition de l’acheteur les offres de livraison
         suivantes :
-        <ul className="list-disc list-inside">
+        <ul className="list-disc list-inside space-y-1 my-4 marker:text-or">
           <li>
             Le vendeur met à la disposition de l’acheteur les offres de
             livraison suivantes :
@@ -449,8 +449,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 13</h2>
-      <h3 className="font-bold">RESPONSABILITÉ</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 13</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RESPONSABILITÉ</h3>
       <p>
         Dans le cadre des ventes en ligne, la responsabilité du vendeur ne
         pourra être engagée pour un dommage résultant de l’utilisation du réseau
@@ -514,8 +514,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 14</h2>
-      <h3 className="font-bold">FORCE MAJEURE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 14</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">FORCE MAJEURE</h3>
       <p>
         La survenance d’un événement de force majeure, au sens de l’article 1218
         du Code Civil, justifie pour le vendeur de suspendre l’exécution du
@@ -524,8 +524,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 15</h2>
-      <h3 className="font-bold">RÉCLAMATIONS – MÉDIATION</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 15</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RÉCLAMATIONS – MÉDIATION</h3>
       <p>
         En application des articles L611-1 et suivants du Code de la
         Consommation, l’acheteur est informé qu’il peut recourir à un médiateur
@@ -534,8 +534,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 16</h2>
-      <h3 className="font-bold">RÈGLEMENT DES LITIGES</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 16</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RÈGLEMENT DES LITIGES</h3>
       <p>
         Les présentes CGV sont soumises à la loi française. À défaut de
         médiation, ou en cas d’échec de celle-ci, si l’acheteur réside, au
@@ -544,8 +544,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 17</h2>
-      <h3 className="font-bold">DROITS ET PROPRIÉTÉ INTELLECTUELLE</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 17</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">DROITS ET PROPRIÉTÉ INTELLECTUELLE</h3>
       <p>
         Tout élément faisant l’objet de droits de propriété intellectuelle,
         notamment les marques, noms de domaines, Produits, logiciels, images,
@@ -562,8 +562,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 18</h2>
-      <h3 className="font-bold">NULLITÉ D’UNE CLAUSE DES CGV</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 18</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">NULLITÉ D’UNE CLAUSE DES CGV</h3>
       <p>
         La nullité de l’une des clauses des présentes CGV n’entraîne pas la
         nullité des CGV dans leur globalité. La nullité d’une clause des CGV
@@ -577,8 +577,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 19</h2>
-      <h3 className="font-bold">TRAITEMENT DES DONNÉES PERSONNELLES</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 19</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">TRAITEMENT DES DONNÉES PERSONNELLES</h3>
       <p>
         Le vendeur s’engage à préserver la confidentialité des informations
         fournies par l’acheteur dans le cadre d’une commande par voie
@@ -596,8 +596,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 20</h2>
-      <h3 className="font-bold">TRANSMISSION DES DONNÉES PERSONNELLES</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 20</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">TRANSMISSION DES DONNÉES PERSONNELLES</h3>
       <p>
         Le vendeur informe l’acheteur qu’il peut être amené à transmettre
         certaines de ses données personnelles à des tiers dans le cadre de
@@ -614,8 +614,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 21</h2>
-      <h3 className="font-bold">NON-SOLLICITATION DE PERSONNEL</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 21</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">NON-SOLLICITATION DE PERSONNEL</h3>
       <p>
         L’acheteur s’interdit expressément de faire travailler, de quelque
         manière que ce soit, et avec quelque statut que ce soit – par exemple,
@@ -632,8 +632,8 @@ export default function cgv() {
         <br />
         <br />
       </p>
-      <h2 className="underline">Article 22</h2>
-      <h3 className="font-bold">COORDONNÉES DU VENDEUR</h3>
+      <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 22</h2>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">COORDONNÉES DU VENDEUR</h3>
       <p>
         Tout acheteur peut joindre le vendeur aux coordonnées suivantes :
         <br />
