@@ -75,6 +75,43 @@ export const metadata: Metadata = {
   },
 };
 
+// Données structurées pour le SEO local. Toutes les informations
+// (raison sociale, adresse, téléphone, email) proviennent de la page
+// Mentions légales ; les réseaux sociaux du composant Footer.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "JFS Visual",
+  url: "https://jfs-visual.fr",
+  image: "https://jfs-visual.fr/opengraph-image",
+  description:
+    "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+  telephone: "+33602344339",
+  email: "jfsvisual@gmail.com",
+  founder: {
+    "@type": "Person",
+    name: "Valentin Charlot",
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1 le marais des fontaines",
+    postalCode: "61200",
+    addressLocality: "Occagnes",
+    addressRegion: "Normandie",
+    addressCountry: "FR",
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Normandie",
+  },
+  sameAs: [
+    "https://www.instagram.com/jfsvisual/",
+    "https://www.linkedin.com/company/jfs-visual/",
+    "https://www.tiktok.com/@jfs_visual",
+    "https://www.youtube.com/@jfsvisual8964",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -87,6 +124,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? ''} />
         <SpeedInsights />
         <Analytics />
