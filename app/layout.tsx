@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -18,10 +19,17 @@ const dmSans = DM_Sans({
   variable: "--font-dmSans",
 });
 
-export const metadata = {
-  title: "JFS Visual",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://jfs-visual.fr"),
+  title: {
+    default: "Production vidéo immobilière en Normandie | JFS Visual",
+    template: "%s | JFS Visual",
+  },
   description:
-    "Production vidéo premium pour agences immobilières — tournage, montage, drone, gestion administrative incluse. Niveau de production au-dessus du standard français.",
+    "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       {

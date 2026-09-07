@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions légales",
+  description:
+    "Mentions légales du site jfs-visual.fr : éditeur, hébergeur et informations légales relatives à JFS Visual.",
+  alternates: {
+    canonical: "/mentionsLegales",
+  },
+};
+
 export default function mentionsLegales() {
   return (
     <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">

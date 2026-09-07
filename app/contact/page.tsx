@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contactez JFS Visual pour un devis de production vidéo, photo ou drone dédiée aux agences immobilières en Normandie.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
 export default function Contact() {
   return (
     <section className="">

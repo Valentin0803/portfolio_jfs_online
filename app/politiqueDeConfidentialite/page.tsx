@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+  description:
+    "Politique de confidentialité de JFS Visual : collecte, utilisation et protection des données personnelles des visiteurs du site.",
+  alternates: {
+    canonical: "/politiqueDeConfidentialite",
+  },
+};
+
 export default function politiqueDeConfidentialite() {
   return (
     <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">

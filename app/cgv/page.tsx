@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conditions générales de vente",
+  description:
+    "Conditions générales de vente encadrant les prestations audiovisuelles proposées par JFS Visual (Just For a Shot Visual).",
+  alternates: {
+    canonical: "/cgv",
+  },
+};
+
 export default function cgv() {
   return (
     <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
