@@ -45,6 +45,7 @@ export const Team = () => {
               src={member.image}
               alt={member.name}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1152px) 33vw, 384px"
               className="object-cover object-top grayscale-[40%] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/10 to-transparent" />

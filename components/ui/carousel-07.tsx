@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -208,10 +209,12 @@ const Card = ({ slide, index, total, progress, config, onClick }: CardProps) => 
         onClick && "cursor-pointer",
       )}
     >
-      <img
+      <Image
         src={slide.image}
         alt={slide.title}
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none transition-transform duration-700 group-hover:scale-110"
+        fill
+        sizes="(max-width: 640px) 176px, (max-width: 1024px) 224px, 256px"
+        className="object-cover pointer-events-none transition-transform duration-700 group-hover:scale-110"
       />
 
       <motion.div
