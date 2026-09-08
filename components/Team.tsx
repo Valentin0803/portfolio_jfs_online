@@ -26,7 +26,7 @@ const team = [
 
 export const Team = () => {
   return (
-    <div className="py-24 lg:py-40 bg-[#100D08]">
+    <section id="APropos" className="py-24 lg:py-40 bg-[#100D08]">
       <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
         <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
           L&apos;équipe
@@ -65,6 +65,6 @@ export const Team = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

@@ -7,7 +7,6 @@ import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
 export const Hero = () => {
   return (
     <section
-      id="APropos"
       className="relative h-screen min-h-[640px] flex flex-col items-center justify-center text-center overflow-hidden px-6"
     >
       {/* Image de secours derrière l'iframe : tant que le lecteur Vimeo n'a
