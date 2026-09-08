@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import ContactBooking from "@/components/ContactBooking";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contactez JFS Visual pour un devis de production vidéo, photo ou drone dédiée aux agences immobilières en Normandie et en Savoie.",
+    "Contactez JFS Visual pour un devis de production vidéo, photo ou drone dédiée aux agences immobilières en Normandie et en Savoie, ou réservez 30 minutes en visio, sans engagement.",
   alternates: {
     canonical: "/contact",
   },
@@ -24,8 +24,7 @@ const LABEL =
 
 export default function Contact() {
   return (
-    // La marge basse dégage le bouton d'envoi de la pilule rendez-vous fixe
-    // affichée en mobile (voir components/MobileCta).
+    // La marge basse dégage le bouton d'envoi du bas de fenêtre en mobile.
     <section className="px-6 pt-32 pb-32 lg:pt-40 lg:pb-32">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 lg:flex-row lg:items-start lg:gap-16">
         <div className="lg:w-5/12">
@@ -60,19 +59,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-creme/10 bg-[#100D08] p-6">
-            <p className="font-dmSans text-sm text-creme/80">
-              Vous préférez en parler de vive voix ?
-            </p>
-            <Link href={BOOKING_URL} className="mt-5 inline-block w-fit">
-              <button className="rounded-full border border-or/40 px-6 py-2.5 font-dmSans text-xs font-bold uppercase tracking-widest text-creme transition-colors duration-300 hover:border-or hover:text-or">
-                {BOOKING_LABEL}
-              </button>
-            </Link>
-            <p className="mt-3 font-dmSans text-xs text-creme/60">
-              30 min en visio, sans engagement
-            </p>
-          </div>
+          <ContactBooking />
         </div>
 
         <div className="lg:w-7/12">

@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
 
+// Page portant le calendrier : BOOKING_URL contient une query, il ne peut pas
+// être comparé directement au pathname.
+const PAGE_RENDEZ_VOUS = "/contact";
+
 // Seuil de déclenchement hors page d'accueil : quelques dizaines de pixels
 // suffisent, ces pages n'ont pas de hero plein écran.
 const SEUIL_PAR_DEFAUT = 120;
@@ -14,14 +18,14 @@ const SEUIL_PAR_DEFAUT = 120;
  * uniquement (`lg:hidden`, le desktop garde la CTA de la navigation).
  *
  * Elle n'apparaît qu'une fois le hero dépassé pour ne pas concurrencer la
- * vidéo d'accueil, et reste masquée sur /rendez-vous où le calendrier occupe
- * déjà la page.
+ * vidéo d'accueil, et reste masquée sur /contact où la prise de rendez-vous est
+ * déjà accessible dans la page.
  */
 export default function MobileCta() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
-  const surRendezVous = pathname === BOOKING_URL;
+  const surRendezVous = pathname === PAGE_RENDEZ_VOUS;
   const surAccueil = pathname === "/";
 
   useEffect(() => {
