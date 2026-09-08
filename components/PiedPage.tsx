@@ -47,7 +47,7 @@ export const PiedPage = () => {
               JFS VISUAL
             </p>
             <p className="font-dmSans text-xs text-creme/50 mt-1">
-              Production vidéo &amp; drone · Caen · Normandie et Savoie
+              Production vidéo &amp; drone · Caen · Aix-les-Bains
             </p>
           </div>
 

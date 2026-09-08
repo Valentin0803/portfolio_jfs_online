@@ -54,7 +54,10 @@ export default function Contact() {
             >
               {EMAIL}
             </a>
-            <span className="text-creme/60">Caen · Normandie et Savoie · Auvergne-Rhône-Alpes</span>
+            <div className="flex flex-col gap-1 text-creme/60">
+              <span>Caen · Normandie</span>
+              <span>Aix-les-Bains · Chambéry · Annecy · Savoie</span>
+            </div>
           </div>
 
           <div className="mt-10 rounded-2xl border border-creme/10 bg-[#100D08] p-6">

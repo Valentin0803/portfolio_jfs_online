@@ -102,11 +102,40 @@ const jsonLd = {
     addressRegion: "Normandie",
     addressCountry: "FR",
   },
+  // Deuxième implantation : Aix-les-Bains (Savoie). Pas d'adresse postale
+  // publiée pour l'instant, seule la ville est déclarée.
+  location: [
+    {
+      "@type": "Place",
+      name: "JFS Visual, Normandie",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Occagnes",
+        addressRegion: "Normandie",
+        addressCountry: "FR",
+      },
+    },
+    {
+      "@type": "Place",
+      name: "JFS Visual, Savoie",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Aix-les-Bains",
+        postalCode: "73100",
+        addressRegion: "Auvergne-Rhône-Alpes",
+        addressCountry: "FR",
+      },
+    },
+  ],
   areaServed: [
     { "@type": "City", name: "Caen" },
     { "@type": "AdministrativeArea", name: "Calvados" },
     { "@type": "AdministrativeArea", name: "Normandie" },
+    { "@type": "City", name: "Aix-les-Bains" },
+    { "@type": "City", name: "Chambéry" },
+    { "@type": "City", name: "Annecy" },
     { "@type": "AdministrativeArea", name: "Savoie" },
+    { "@type": "AdministrativeArea", name: "Haute-Savoie" },
     { "@type": "AdministrativeArea", name: "Auvergne-Rhône-Alpes" },
   ],
   sameAs: [
