@@ -4,8 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-
-const RDV_URL = "https://zcal.co/martin-ribot/30min";
+import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
 
 const LINKS = [
   { label: "À propos", hash: "#APropos" },
@@ -95,13 +94,13 @@ function Nav() {
                 className="mt-6"
               >
                 <Link
-                  href={RDV_URL}
+                  href={BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="inline-block rounded-full border border-or bg-or px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or"
                 >
-                  Prendre rendez-vous
+                  {BOOKING_LABEL}
                 </Link>
               </motion.div>
             </nav>
@@ -139,12 +138,12 @@ function Nav() {
         </nav>
 
         <Link
-          href={RDV_URL}
+          href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or lg:inline-block"
         >
-          Prendre rendez-vous
+          {BOOKING_LABEL}
         </Link>
 
         <button

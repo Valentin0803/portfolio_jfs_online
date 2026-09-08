@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Card, CardTitle, CardDescription } from "./ui/card";
+import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
 
 export const Offres = () => {
   return (
@@ -44,11 +45,19 @@ export const Offres = () => {
           <p className="relative font-dmSans text-creme/45 text-xs mb-7">
             Déjà utilisé par Guy Hoquet (Caen)
           </p>
-          <Link href="#Contact" className="relative w-fit">
+          <Link
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative w-fit"
+          >
             <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
-              Prendre rendez-vous
+              {BOOKING_LABEL}
             </button>
           </Link>
+          <p className="relative font-dmSans text-xs text-creme/60 mt-4">
+            30 min en visio, sans engagement
+          </p>
         </div>
 
         <div className="flex flex-col gap-6">
@@ -63,9 +72,14 @@ export const Offres = () => {
             <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
               À partir de ~800€
             </div>
-            <Link href="#Contact" className="w-fit">
+            <Link
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit"
+            >
               <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
-                Réserver une journée
+                {BOOKING_LABEL}
               </button>
             </Link>
           </Card>
@@ -80,9 +94,14 @@ export const Offres = () => {
             <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
               Devis
             </div>
-            <Link href="#Contact" className="w-fit">
+            <Link
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit"
+            >
               <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
-                Demander un devis
+                Parler de votre projet
               </button>
             </Link>
           </Card>
