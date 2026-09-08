@@ -12,7 +12,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
  * À réajuster si l'on change de vidéo ou de format de master (1.32 les
  * supprimerait totalement, au prix d'un recadrage plus agressif).
  */
-const HERO_VIDEO_ZOOM = 1.15;
+const HERO_VIDEO_ZOOM = 1.33;
 
 const VIMEO_ORIGIN = "https://player.vimeo.com";
 /**
