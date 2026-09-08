@@ -3,7 +3,7 @@ import { Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
-import Footer from "@/components/Footer";
+import { PiedPage } from "@/components/PiedPage";
 import MobileCta from "@/components/MobileCta";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 
 // Données structurées pour le SEO local. Toutes les informations
 // (raison sociale, adresse, téléphone, email) proviennent de la page
-// Mentions légales ; les réseaux sociaux du composant Footer.
+// Mentions légales ; les réseaux sociaux du composant PiedPage.
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -143,7 +143,7 @@ export default function RootLayout({
         <ScrollProgress />
         <Nav />
         {children}
-        <Footer />
+        <PiedPage />
         <MobileCta />
       </body>
     </html>
