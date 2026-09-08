@@ -40,7 +40,7 @@ export const Hero = () => {
           montage, drone, gestion administrative incluse. Niveau de
           production au-dessus du standard français.
         </p>
-        <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+        <Link href={BOOKING_URL}>
           <button className="px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal transform hover:scale-105 hover:bg-charcoal hover:text-or border border-or transition-colors duration-500">
             {BOOKING_LABEL}
           </button>

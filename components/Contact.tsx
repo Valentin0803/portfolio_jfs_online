@@ -15,7 +15,7 @@ export const Contact = () => {
         projet.
       </p>
       <div className="flex flex-col items-center">
-        <Link href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+        <Link href={BOOKING_URL}>
           <button className="flex gap-3 items-center px-9 py-[18px] rounded-full bg-or font-bold text-xs tracking-[0.1em] uppercase border-or border text-charcoal transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-or transition-colors duration-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"

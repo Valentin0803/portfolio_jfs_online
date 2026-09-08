@@ -95,8 +95,6 @@ function Nav() {
               >
                 <Link
                   href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
                   className="inline-block rounded-full border border-or bg-or px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or"
                 >
@@ -139,8 +137,6 @@ function Nav() {
 
         <Link
           href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or lg:inline-block"
         >
           {BOOKING_LABEL}

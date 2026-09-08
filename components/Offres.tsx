@@ -47,8 +47,6 @@ export const Offres = () => {
           </p>
           <Link
             href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="relative w-fit"
           >
             <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
@@ -74,8 +72,6 @@ export const Offres = () => {
             </div>
             <Link
               href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-fit"
             >
               <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
@@ -96,8 +92,6 @@ export const Offres = () => {
             </div>
             <Link
               href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-fit"
             >
               <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
