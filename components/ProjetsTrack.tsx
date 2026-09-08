@@ -183,7 +183,7 @@ export const ProjetsTrack = ({ projets, onOpen }: ProjetsTrackProps) => {
   const pinned = isLarge && !reduceMotion;
 
   useIsomorphicLayoutEffect(() => {
-    const query = window.matchMedia("(min-width: 1024px)");
+    const query = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
     const sync = () => setIsLarge(query.matches);
     sync();
     query.addEventListener("change", sync);
