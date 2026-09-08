@@ -108,6 +108,10 @@ const ReelCard = ({
           controls={reducedMotion}
         />
 
+        <span className="absolute left-4 top-4 rounded-full border border-creme/15 bg-charcoal/60 px-3 py-1 font-dmSans text-[10px] font-bold uppercase tracking-[0.2em] text-creme/90 backdrop-blur">
+          {reel.categorie}
+        </span>
+
         {!reducedMotion && (
           <button
             type="button"
@@ -136,6 +140,11 @@ const ReelCard = ({
       >
         Voir le post de l&apos;agence ↗
       </a>
+      {reel.likes ? (
+        <p className="mt-1 font-dmSans text-xs text-creme/50">
+          {reel.likes.toLocaleString("fr-FR")} likes sur le compte de l&apos;agence
+        </p>
+      ) : null}
     </article>
   );
 };
