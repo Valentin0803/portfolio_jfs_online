@@ -22,15 +22,9 @@ export const Hero = () => {
         className="object-cover pointer-events-none"
       />
 
+      {/* Vidéo de fond, voile dégradé et bouton de son : regroupés côté client
+          car le voile s'éclaircit quand le visiteur active le son. */}
       <HeroVideo />
-
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(10,9,7,0.5) 0%, rgba(10,9,7,0.55) 55%, rgba(10,9,7,0.97) 100%)",
-        }}
-      ></div>
 
       <div className="relative z-10">
         <div className="text-xs font-dmSans tracking-[0.25em] uppercase text-or mb-7 opacity-90">
