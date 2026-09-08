@@ -27,7 +27,7 @@ export default function cgv() {
       <br />
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 1</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRÉAMBULE</h3>
-      <p>
+      <div>
         Le vendeur est une société de prestations audiovisuelles. Il
         commercialise des services ci-après dénommés les Produits, à destination
         des acheteurs consommateurs. La liste des services proposés par le
@@ -62,7 +62,7 @@ export default function cgv() {
           </li>
           <li>Les coordonnées du vendeur.</li>
         </ul>
-      </p>
+      </div>
       <br />
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 2</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">PRÉAMBULE</h3>
@@ -276,7 +276,7 @@ export default function cgv() {
       <br />
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 9</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">FACTURE</h3>
-      <p>
+      <div>
         L’acheteur peut obtenir une facture sur simple demande. Le vendeur
         s’engage à fournir une facture à l’acheteur en ayant fait la demande.
         <br />
@@ -291,7 +291,7 @@ export default function cgv() {
             l’acheteur envers le vendeur.
           </li>
         </ul>
-      </p>
+      </div>
       <br />
       <br />
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 10</h2>
@@ -337,7 +337,7 @@ export default function cgv() {
       <br />
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 11</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">DÉLAI DE RÉTRACTATION</h3>
-      <p>
+      <div>
         Dans toutes les hypothèses où l’acheteur passe une commande à distance,
         notamment suite à une sollicitation téléphonique ou en passant commande
         par le biais d’un site internet, il dispose, en application de l’article
@@ -432,10 +432,10 @@ export default function cgv() {
         réserve le droit de conserver l’acompte
         <br />
         <br />
-      </p>
+      </div>
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 12</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">LIVRAISON</h3>
-      <p>
+      <div>
         Le vendeur n’assure la livraison de ses Produits que dans les pays
         suivants :
         <br />
@@ -459,7 +459,7 @@ export default function cgv() {
         à livrer.
         <br />
         <br />
-      </p>
+      </div>
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 13</h2>
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RESPONSABILITÉ</h3>
       <p>
