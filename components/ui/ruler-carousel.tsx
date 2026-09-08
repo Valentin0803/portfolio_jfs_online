@@ -81,7 +81,9 @@ const RulerLines = ({
     );
   }
 
-  return <div className="relative w-full h-8 px-4">{lines}</div>;
+  // La dernière graduation est posée à left:100% : sans clipping, ses 2 px
+  // débordent du viewport et provoquent un défilement horizontal sur toute la page.
+  return <div className="relative w-full h-8 px-4 overflow-hidden">{lines}</div>;
 };
 
 export function RulerCarousel({
