@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/Footer";
+import MobileCta from "@/components/MobileCta";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -143,6 +144,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <MobileCta />
       </body>
     </html>
   );
