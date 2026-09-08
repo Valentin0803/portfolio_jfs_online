@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <section className="">
-      <div className="flex flex-col px-5 pt-32 lg:mx-36">
+      <div className="flex flex-col px-5 pt-32 pb-32 lg:mx-36 lg:pb-24">
         <form
           action="https://api.web3forms.com/submit"
           method="POST"
