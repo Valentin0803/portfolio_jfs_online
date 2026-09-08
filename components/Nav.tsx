@@ -14,15 +14,25 @@ const LINKS = [
   { label: "Contact", hash: "#Contact" },
 ] as const;
 
+// Sur l'accueil, le CTA de la barre attend d'être bien engagé dans le scroll
+// pour ne pas doubler celui du hero. 200 px : la barre a déjà pris son fond
+// charcoal (40 px), donc le bouton apparaît sur un aplat et non sur la vidéo.
+const CTA_SCROLL_THRESHOLD = 200;
+
 function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Fond opaque + bordure dès qu'on quitte le haut de page.
+  // Fond opaque + bordure dès qu'on quitte le haut de page ; le CTA de la
+  // barre n'apparaît qu'un peu plus bas (le hero a déjà le sien).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      setPastHero(window.scrollY > CTA_SCROLL_THRESHOLD);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -56,6 +66,9 @@ function Nav() {
   );
 
   const hrefFor = (hash: string) => (isHome ? hash : `/${hash}`);
+
+  // Ailleurs que sur l'accueil, le CTA est visible en permanence.
+  const ctaVisible = !isHome || pastHero;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -135,9 +148,16 @@ function Nav() {
           ))}
         </nav>
 
+        {/* L'espace reste réservé (opacité seule) pour ne pas décaler les liens. */}
         <Link
           href={BOOKING_URL}
-          className="hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or lg:inline-block"
+          aria-hidden={!ctaVisible}
+          tabIndex={ctaVisible ? undefined : -1}
+          className={`hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal hover:text-or lg:inline-block ${
+            ctaVisible
+              ? "translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-1 opacity-0"
+          }`}
         >
           {BOOKING_LABEL}
         </Link>
