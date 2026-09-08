@@ -96,7 +96,7 @@ export default function RendezVous() {
         </div>
 
         <div className="lg:w-7/12">
-          <div className="rounded-[2rem] border border-creme/10 bg-[#100D08] p-6 sm:p-10">
+          <div className="rounded-[2rem] border border-creme/10 bg-[#100D08] p-3 sm:p-10">
             <span className={LABEL}>Choisissez votre créneau</span>
             {/* Le widget zcal impose son fond blanc : on l'enveloppe pour
                 arrondir ses angles sur le fond sombre de la carte. */}
