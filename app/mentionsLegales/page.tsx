@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function mentionsLegales() {
   return (
     <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">MENTIONS LÉGALES</h2>
+      <h1 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">MENTIONS LÉGALES</h1>
       <p>
         Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour
         la confiance en l’économie numérique, il est précisé aux utilisateurs du

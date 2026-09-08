@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function cgv() {
   return (
     <div className="font-dmSans text-creme/70 leading-relaxed mx-auto max-w-3xl px-6 pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">CONDITIONS GÉNÉRALES DE VENTE</h2>
+      <h1 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight mb-4">CONDITIONS GÉNÉRALES DE VENTE</h1>
       <br />
       <p>
         Les présentes conditions générales de vente, ci-après CGV, ont été

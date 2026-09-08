@@ -29,9 +29,9 @@ export default function Contact() {
             value="https://web3forms.com/success"
           />
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-base font-semibold leading-7 text-white">
+            <h1 className="text-base font-semibold leading-7 text-white">
               Formulaire de contact
-            </h2>
+            </h1>
             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-3">
                 <label
