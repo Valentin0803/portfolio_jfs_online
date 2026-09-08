@@ -78,6 +78,9 @@ export const Offres = () => {
                 {BOOKING_LABEL}
               </button>
             </Link>
+            <p className="font-dmSans text-xs text-creme/60 mt-3">
+              Sans engagement, une journée, 5 contenus livrés
+            </p>
           </Card>
           <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
             <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
@@ -98,6 +101,9 @@ export const Offres = () => {
                 Parler de votre projet
               </button>
             </Link>
+            <p className="font-dmSans text-xs text-creme/60 mt-3">
+              Réponse sous 48 h, devis gratuit
+            </p>
           </Card>
         </div>
       </div>

@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
+import { BOOKING_URL } from "@/lib/site";
 
 interface FAQItem {
   question: string;
@@ -29,6 +31,16 @@ const faqData: FAQItem[] = [
       "Est-il nécessaire d'obtenir des autorisations spécifiques pour filmer avec un drone ?",
     answer:
       "Oui, en fonction de la zone de vol et du type d'événement — espaces publics, zones urbaines, sites sensibles. C'est justement une partie du travail qu'on prend en charge pour vous : notifications préfecture et démarches administratives sont gérées de bout en bout, pour un tournage en toute conformité.",
+  },
+  {
+    question: "Est-ce que je m'engage en prenant rendez-vous ?",
+    answer:
+      "Non. Ce sont 30 minutes en visio pour comprendre votre agence et votre marché. À la fin, on vous dit honnêtement si une de nos offres a du sens pour vous — et si ce n'est pas le cas, on vous le dit aussi. Aucune relance agressive derrière.",
+  },
+  {
+    question: "Combien de temps ça me prend côté agence ?",
+    answer:
+      "Sur l'Atelier du Réel, comptez environ 1 h par mois de votre côté : la validation des scripts et des montages, via Notion et WhatsApp. Tout le reste est géré par JFS Visual, y compris les autorisations de vol drone. Pour une Journée Contenu, il faut prévoir une demi-journée de présence sur le tournage.",
   },
 ];
 
@@ -79,6 +91,14 @@ export const FaqSection = () => {
             </motion.div>
           </div>
         ))}
+        <div className="mt-10 text-center">
+          <Link
+            href={BOOKING_URL}
+            className="font-dmSans text-sm text-or hover:underline"
+          >
+            Une autre question ? Posez-la en 30 min avec Martin →
+          </Link>
+        </div>
       </div>
     </div>
   );

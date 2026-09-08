@@ -15,11 +15,11 @@ export default function Home() {
       <Hero />
       <BandeauLogo />
       <Offres />
+      <FaqSection />
       <Projects />
       <NosServicesSection />
       <Process />
       <Team />
-      <FaqSection />
       <Contact />
       <PiedPage />
     </div>
