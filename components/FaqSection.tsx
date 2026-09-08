@@ -19,7 +19,7 @@ const faqData: FAQItem[] = [
   {
     question: "Je m'engage sur combien de temps avec l'Atelier du Réel ?",
     answer:
-      "L'Atelier du Réel est pensé sur 6 mois — le temps nécessaire pour construire une vraie régularité de contenu et voir les premiers résultats. On en discute ensemble dès le premier échange pour que tout soit clair avant de démarrer.",
+      "L'Atelier du Réel est pensé sur 6 mois, le temps nécessaire pour construire une vraie régularité de contenu et voir les premiers résultats. On en discute ensemble dès le premier échange pour que tout soit clair avant de démarrer.",
   },
   {
     question: "Proposez-vous des services de drone pour la capture aérienne ?",
@@ -30,12 +30,12 @@ const faqData: FAQItem[] = [
     question:
       "Est-il nécessaire d'obtenir des autorisations spécifiques pour filmer avec un drone ?",
     answer:
-      "Oui, en fonction de la zone de vol et du type d'événement — espaces publics, zones urbaines, sites sensibles. C'est justement une partie du travail qu'on prend en charge pour vous : notifications préfecture et démarches administratives sont gérées de bout en bout, pour un tournage en toute conformité.",
+      "Oui, en fonction de la zone de vol et du type d'événement : espaces publics, zones urbaines, sites sensibles. C'est justement une partie du travail qu'on prend en charge pour vous : notifications préfecture et démarches administratives sont gérées de bout en bout, pour un tournage en toute conformité.",
   },
   {
     question: "Est-ce que je m'engage en prenant rendez-vous ?",
     answer:
-      "Non. Ce sont 30 minutes en visio pour comprendre votre agence et votre marché. À la fin, on vous dit honnêtement si une de nos offres a du sens pour vous — et si ce n'est pas le cas, on vous le dit aussi. Aucune relance agressive derrière.",
+      "Non. Ce sont 30 minutes en visio pour comprendre votre agence et votre marché. À la fin, on vous dit honnêtement si une de nos offres a du sens pour vous, et si ce n'est pas le cas, on vous le dit aussi. Aucune relance agressive derrière.",
   },
   {
     question: "Combien de temps ça me prend côté agence ?",

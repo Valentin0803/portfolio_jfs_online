@@ -5,7 +5,7 @@ import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contactez JFS Visual pour un devis de production vidéo, photo ou drone dédiée aux agences immobilières en Normandie.",
+    "Contactez JFS Visual pour un devis de production vidéo, photo ou drone dédiée aux agences immobilières en Normandie et en Savoie.",
   alternates: {
     canonical: "/contact",
   },
@@ -54,7 +54,7 @@ export default function Contact() {
             >
               {EMAIL}
             </a>
-            <span className="text-creme/60">Caen · Normandie</span>
+            <span className="text-creme/60">Caen · Normandie et Savoie · Auvergne-Rhône-Alpes</span>
           </div>
 
           <div className="mt-10 rounded-2xl border border-creme/10 bg-[#100D08] p-6">
@@ -208,7 +208,7 @@ export default function Contact() {
             </button>
 
             <p className="mt-4 font-dmSans text-xs text-creme/40">
-              Vos données ne servent qu&apos;à vous répondre —{" "}
+              Vos données ne servent qu&apos;à vous répondre :{" "}
               <Link
                 href="/politiqueDeConfidentialite"
                 className="underline underline-offset-4 transition-colors duration-300 hover:text-or"

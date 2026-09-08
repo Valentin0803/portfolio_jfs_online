@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "JFS Visual — Production vidéo immobilière en Normandie";
+export const alt = "JFS Visual, production vidéo immobilière en Normandie et Savoie";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -13,8 +13,8 @@ const CREME = "#F3EDE1";
  *
  * Note police : on utilise la police embarquée par défaut de `next/og`.
  * Unbounded n'est pas chargée ici car Google Fonts ne sert plus que du WOFF2
- * (vérifié sur les API `css` et `css2`), format que satori — le moteur de
- * rendu de `next/og` — ne sait pas lire (« Unsupported OpenType signature
+ * (vérifié sur les API `css` et `css2`), format que satori, le moteur de
+ * rendu de `next/og`, ne sait pas lire (« Unsupported OpenType signature
  * wOF2 »). Il faudrait embarquer un .ttf dans le dépôt pour aller plus loin.
  */
 export default async function OpengraphImage() {
@@ -103,7 +103,7 @@ export default async function OpengraphImage() {
             opacity: 0.85,
           }}
         >
-          Production vidéo immobilière · Normandie
+          Production vidéo immobilière · Normandie · Savoie
         </div>
       </div>
     ),

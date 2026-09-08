@@ -31,7 +31,7 @@ export const Offres = () => {
           </h3>
           <p className="relative font-dmSans text-creme/85 text-base mb-3 max-w-[42ch]">
             Un flux de contenu continu pendant 6 mois pour attirer plus de
-            mandats et démarquer votre agence — sans que vous ayez rien à
+            mandats et démarquer votre agence, sans que vous ayez rien à
             gérer.
           </p>
           <p className="relative font-dmSans text-creme/50 text-xs mb-8 max-w-[42ch]">

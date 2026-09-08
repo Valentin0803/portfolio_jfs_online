@@ -6,7 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
  * Zoom appliqué au cadre de l'iframe Vimeo.
  *
  * Le showreel est masterisé en cinémascope (~2.39:1) : les bandes noires sont
- * incrustées dans l'image elle-même — sur une source 1920x1080, le contenu
+ * incrustées dans l'image elle-même : sur une source 1920x1080, le contenu
  * utile ne fait que 1920x816, avec 132 px de noir en haut et en bas. Ce léger
  * agrandissement rogne ces bandes pour que la vidéo remplisse le hero.
  * À réajuster si l'on change de vidéo ou de format de master (1.32 les
@@ -35,7 +35,7 @@ const REVEAL_FALLBACK_MS = 2500;
 
 /**
  * Voile sombre posé au-dessus de la vidéo : garantit la lisibilité du titre.
- * Quand le visiteur active le son, il vient regarder Valentin parler — on
+ * Quand le visiteur active le son, il vient regarder Valentin parler, on
  * allège alors le voile pour laisser respirer l'image.
  */
 const GRADIENT_MUTED =
@@ -64,7 +64,7 @@ export const HeroVideo = () => {
   /**
    * Le lecteur ignore toute commande reçue avant d'être prêt : on s'abonne
    * donc à la fois au `load` de l'iframe et au message `ready`, quitte à
-   * envoyer l'abonnement deux fois — c'est sans effet de bord.
+   * envoyer l'abonnement deux fois, c'est sans effet de bord.
    */
   const subscribe = useCallback(() => {
     for (const value of WATCHED_EVENTS) {
@@ -180,7 +180,7 @@ export const HeroVideo = () => {
           }`}
           frameBorder="0"
           allow="autoplay; fullscreen"
-          title="JFS Visual — showreel"
+          title="JFS Visual, showreel"
         ></iframe>
       </div>
 

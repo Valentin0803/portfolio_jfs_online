@@ -314,8 +314,8 @@ export default function cgv() {
         <br />
         <br />
         L’acheteur fait son affaire des autorisations nécessaires en vue de
-        l’utilisation d’œuvres protégées –autres que celles réalisées par le
-        vendeur et sur lesquelles celui-ci lui transfère les droits –et de
+        l’utilisation d’œuvres protégées (autres que celles réalisées par le
+        vendeur et sur lesquelles celui-ci lui transfère les droits) et de
         l’acquittement des droits, par exemple, et non limitativement, SDRM,
         SACEM, etc. y afférents. En sa qualité de titulaire et d’utilisateur des
         droits qui lui sont cédés, l’acheteur garantit et relèvera le vendeur de
@@ -536,7 +536,7 @@ export default function cgv() {
         <br />
       </p>
       <h2 className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mt-14 mb-2">Article 15</h2>
-      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RÉCLAMATIONS – MÉDIATION</h3>
+      <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">RÉCLAMATIONS ET MÉDIATION</h3>
       <p>
         En application des articles L611-1 et suivants du Code de la
         Consommation, l’acheteur est informé qu’il peut recourir à un médiateur
@@ -629,9 +629,9 @@ export default function cgv() {
       <h3 className="font-unbounded font-medium text-lg lg:text-xl text-creme mb-4">NON-SOLLICITATION DE PERSONNEL</h3>
       <p>
         L’acheteur s’interdit expressément de faire travailler, de quelque
-        manière que ce soit, et avec quelque statut que ce soit – par exemple,
+        manière que ce soit, et avec quelque statut que ce soit (par exemple,
         et non limitativement, en vertu d’un contrat de travail ou d’un contrat
-        de prestation de services – tout collaborateur présent ou futur du
+        de prestation de services) tout collaborateur présent ou futur du
         vendeur, quelle que soit la fonction et le statut du collaborateur, et
         ce même si la sollicitation est à l’initiative de ce dernier. La
         présente interdiction vaut pour toute la durée des relations

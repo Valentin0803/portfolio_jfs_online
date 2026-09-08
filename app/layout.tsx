@@ -24,11 +24,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jfs-visual.fr"),
   title: {
-    default: "Production vidéo immobilière en Normandie | JFS Visual",
+    default: "Production vidéo immobilière, Normandie et Savoie | JFS Visual",
     template: "%s | JFS Visual",
   },
   description:
-    "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+    "Production vidéo, photo et drone pour agences immobilières en Normandie et en Savoie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
   alternates: {
     canonical: "/",
   },
@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     siteName: "JFS Visual",
     url: "https://jfs-visual.fr",
-    title: "Production vidéo immobilière en Normandie | JFS Visual",
+    title: "Production vidéo immobilière, Normandie et Savoie | JFS Visual",
     description:
-      "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+      "Production vidéo, photo et drone pour agences immobilières en Normandie et en Savoie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Production vidéo immobilière en Normandie | JFS Visual",
+    title: "Production vidéo immobilière, Normandie et Savoie | JFS Visual",
     description:
-      "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+      "Production vidéo, photo et drone pour agences immobilières en Normandie et en Savoie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
   },
   icons: {
     icon: [
@@ -87,7 +87,7 @@ const jsonLd = {
   url: "https://jfs-visual.fr",
   image: "https://jfs-visual.fr/opengraph-image",
   description:
-    "Production vidéo, photo et drone pour agences immobilières en Normandie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
+    "Production vidéo, photo et drone pour agences immobilières en Normandie et en Savoie. Tournage, montage et gestion administrative incluse pour valoriser vos biens.",
   telephone: "+33602344339",
   email: "jfsvisual@gmail.com",
   founder: {
@@ -106,6 +106,8 @@ const jsonLd = {
     { "@type": "City", name: "Caen" },
     { "@type": "AdministrativeArea", name: "Calvados" },
     { "@type": "AdministrativeArea", name: "Normandie" },
+    { "@type": "AdministrativeArea", name: "Savoie" },
+    { "@type": "AdministrativeArea", name: "Auvergne-Rhône-Alpes" },
   ],
   sameAs: [
     "https://www.instagram.com/jfsvisual/",

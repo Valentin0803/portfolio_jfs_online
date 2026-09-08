@@ -2,12 +2,12 @@ const differentiators = [
   {
     title: "Suivi collaboratif",
     description:
-      "Un espace Notion partagé avec vous pour planifier le contenu et les scripts — vous savez toujours où en est votre production, sans avoir à demander.",
+      "Un espace Notion partagé avec vous pour planifier le contenu et les scripts : vous savez toujours où en est votre production, sans avoir à demander.",
   },
   {
     title: "Réactivité terrain",
     description:
-      "Vos idées et celles de vos équipes remontent directement via WhatsApp — un vol drone sur un bien, une envie de contenu — sans attendre le prochain rendez-vous.",
+      "Vos idées et celles de vos équipes remontent directement via WhatsApp (un vol drone sur un bien, une envie de contenu) sans attendre le prochain rendez-vous.",
   },
   {
     title: "Drone en toute légalité",

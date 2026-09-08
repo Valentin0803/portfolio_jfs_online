@@ -118,7 +118,7 @@ const Carte = ({
         onClick={() => onOpen(index)}
         onMouseEnter={(e) => move(e, true)}
         onMouseMove={(e) => move(e, false)}
-        aria-label={`Voir le projet ${projet.title} — ${projet.category}`}
+        aria-label={`Voir le projet ${projet.title}, ${projet.category}`}
         className="group relative block w-full overflow-hidden rounded-[2rem] border border-creme/10 bg-[#100D08] text-left transition-colors duration-300 ease-out hover:border-or/40 focus:outline-none focus-visible:border-or/40 focus-visible:ring-2 focus-visible:ring-or focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
       >
         <div className="relative aspect-video overflow-hidden rounded-[2rem]">
@@ -277,7 +277,7 @@ export const ProjetsTrack = ({ projets, onOpen }: ProjetsTrackProps) => {
         Nos derniers tournages
       </h2>
       <p className="font-dmSans text-creme/70">
-        Une sélection de projets récents — agences immobilières, entreprises,
+        Une sélection de projets récents : agences immobilières, entreprises,
         événements.
       </p>
     </div>

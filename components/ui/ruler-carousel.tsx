@@ -236,7 +236,7 @@ export function RulerCarousel({
         <RulerLines top={false} />
       </div>
 
-      {/* Descriptions — absentes du composant d'origine, conservées ici pour
+      {/* Descriptions : absentes du composant d'origine, conservées ici pour
           ne pas perdre le contenu. Toutes sont empilées dans la même cellule
           de grille : la hauteur se cale sur la plus longue (donc aucun
           décalage des boutons au changement de service, quelle que soit la

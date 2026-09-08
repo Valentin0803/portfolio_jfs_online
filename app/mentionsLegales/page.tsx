@@ -34,8 +34,8 @@ export default function mentionsLegales() {
       <br />
       <h2 className="font-unbounded font-medium text-lg lg:text-xl text-creme mt-10 mb-4">Hébergement</h2>
       <p>
-        Le Site est hébergé par la société 1&1 / IONOS, situé 7 Place de la Gare
-        – 57200 Sarreguemines, (contact téléphonique ou email : (+33) 9 70 80 89
+        Le Site est hébergé par la société 1&1 / IONOS, situé 7 Place de la Gare,
+        57200 Sarreguemines, (contact téléphonique ou email : (+33) 9 70 80 89
         11).
       </p>
       <br />

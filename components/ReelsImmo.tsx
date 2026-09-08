@@ -118,8 +118,8 @@ const ReelCard = ({
             onClick={() => onToggleSound(reel.slug)}
             aria-label={
               hasSound
-                ? `Couper le son — ${reel.titre}`
-                : `Activer le son — ${reel.titre}`
+                ? `Couper le son : ${reel.titre}`
+                : `Activer le son : ${reel.titre}`
             }
             className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-or/40 bg-charcoal/70 text-creme backdrop-blur transition-colors duration-300 hover:border-or hover:text-or"
           >
@@ -180,7 +180,7 @@ export const ReelsImmo = () => {
         </h2>
         <p className="font-dmSans text-creme/70 mt-6 text-base max-w-xl mx-auto">
           Des reels verticaux tournés pour les réseaux de l&apos;agence :
-          drone, plans intérieurs, agents à l&apos;image — pensés pour
+          drone, plans intérieurs, agents à l&apos;image, pensés pour
           déclencher la visite.
         </p>
       </div>

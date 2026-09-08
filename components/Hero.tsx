@@ -28,14 +28,14 @@ export const Hero = () => {
 
       <div className="relative z-10">
         <div className="text-xs font-dmSans tracking-[0.25em] uppercase text-or mb-7 opacity-90">
-          Production vidéo &amp; drone — Caen · Normandie
+          Production vidéo &amp; drone · Normandie et Savoie
         </div>
         <h1 className="font-unbounded font-extrabold text-[2.6rem] leading-[0.98] tracking-[-0.02em] text-creme max-w-[16ch] mx-auto sm:text-6xl lg:text-[6.5rem]">
           Du contenu vidéo qui <span className="text-or">vend vos biens</span>{" "}
           avant la visite.
         </h1>
         <p className="font-dmSans text-creme/75 max-w-[46ch] mx-auto mt-8 mb-10 text-base lg:text-xl">
-          Production vidéo premium pour agences immobilières — tournage,
+          Production vidéo premium pour agences immobilières : tournage,
           montage, drone, gestion administrative incluse. Niveau de
           production au-dessus du standard français.
         </p>
