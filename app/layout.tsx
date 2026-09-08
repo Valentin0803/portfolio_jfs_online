@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Unbounded, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -138,6 +139,7 @@ export default function RootLayout({
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? ''} />
         <SpeedInsights />
         <Analytics />
+        <ScrollProgress />
         <Nav />
         {children}
         <Footer />
