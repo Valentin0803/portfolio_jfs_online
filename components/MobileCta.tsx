@@ -62,7 +62,7 @@ export default function MobileCta() {
 
   return (
     <div
-      className="fixed inset-x-4 z-40 lg:hidden"
+      className="pointer-events-none fixed inset-x-4 z-40 lg:hidden"
       // Safe area iOS : la pilule reste au-dessus de la barre d'accueil.
       style={{ bottom: "calc(1rem + env(safe-area-inset-bottom))" }}
     >
@@ -72,7 +72,7 @@ export default function MobileCta() {
         tabIndex={visible ? 0 : -1}
         className={`flex h-[52px] items-center justify-center gap-2.5 rounded-full bg-or px-6 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none ${
           visible
-            ? "translate-y-0 opacity-100"
+            ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none translate-y-[200%] opacity-0"
         }`}
       >
