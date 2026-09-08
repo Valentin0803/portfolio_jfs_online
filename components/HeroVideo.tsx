@@ -15,7 +15,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const HERO_VIDEO_ZOOM = 1.15;
 
 const VIMEO_ORIGIN = "https://player.vimeo.com";
-const VIMEO_SRC = `${VIMEO_ORIGIN}/video/1062779681?autoplay=1&muted=1&controls=0&loop=1&background=1`;
+/**
+ * `autopause=0` empêche Vimeo de mettre le showreel en pause quand un autre
+ * lecteur Vimeo démarre ailleurs ; `playsinline=1` évite le passage en plein
+ * écran forcé sur iOS.
+ */
+const VIMEO_SRC = `${VIMEO_ORIGIN}/video/1062779681?autoplay=1&muted=1&controls=0&loop=1&background=1&autopause=0&playsinline=1`;
+
+/** Événements du lecteur auxquels on s'abonne pour savoir que l'image tourne. */
+const WATCHED_EVENTS = ["play", "playing", "timeupdate", "pause"] as const;
+
+/**
+ * Délai au-delà duquel on affiche la vidéo même sans confirmation du lecteur.
+ * Vimeo peut très bien lire le showreel sans qu'aucun événement ne nous
+ * parvienne (abonnement perdu, lecture démarrée avant nous) : mieux vaut une
+ * vidéo affichée sans accusé de réception qu'un hero définitivement figé.
+ */
+const REVEAL_FALLBACK_MS = 2500;
 
 /**
  * Voile sombre posé au-dessus de la vidéo : garantit la lisibilité du titre.
@@ -36,18 +52,46 @@ export const HeroVideo = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const fallbackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasRelaunched = useRef(false);
 
-  // Une fois l'iframe chargée, on s'abonne aux événements du lecteur.
-  const handleLoad = useCallback(() => {
+  const send = useCallback((message: Record<string, unknown>) => {
     const player = iframeRef.current?.contentWindow;
     if (!player) return;
-    for (const value of ["play", "playing"]) {
-      player.postMessage(
-        JSON.stringify({ method: "addEventListener", value }),
-        VIMEO_ORIGIN
-      );
-    }
+    player.postMessage(JSON.stringify(message), VIMEO_ORIGIN);
   }, []);
+
+  /**
+   * Le lecteur ignore toute commande reçue avant d'être prêt : on s'abonne
+   * donc à la fois au `load` de l'iframe et au message `ready`, quitte à
+   * envoyer l'abonnement deux fois — c'est sans effet de bord.
+   */
+  const subscribe = useCallback(() => {
+    for (const value of WATCHED_EVENTS) {
+      send({ method: "addEventListener", value });
+    }
+  }, [send]);
+
+  const reveal = useCallback(() => {
+    if (fallbackTimer.current) {
+      clearTimeout(fallbackTimer.current);
+      fallbackTimer.current = null;
+    }
+    setIsPlaying(true);
+  }, []);
+
+  const armFallback = useCallback(() => {
+    if (fallbackTimer.current) clearTimeout(fallbackTimer.current);
+    fallbackTimer.current = setTimeout(() => {
+      fallbackTimer.current = null;
+      setIsPlaying(true);
+    }, REVEAL_FALLBACK_MS);
+  }, []);
+
+  const handleLoad = useCallback(() => {
+    subscribe();
+    armFallback();
+  }, [armFallback, subscribe]);
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
@@ -64,36 +108,52 @@ export const HeroVideo = () => {
       }
 
       const name = (payload as { event?: unknown } | null)?.event;
-      if (name === "play" || name === "playing") {
-        setIsPlaying(true);
+      if (name === "ready") {
+        subscribe();
+        return;
+      }
+      // `timeupdate` prouve que l'image défile même si le `play` nous a échappé.
+      if (name === "play" || name === "playing" || name === "timeupdate") {
+        reveal();
+        return;
+      }
+      // Pause subie (autopause, onglet en arrière-plan) : on relance une fois.
+      if (name === "pause" && !hasRelaunched.current) {
+        hasRelaunched.current = true;
+        send({ method: "play" });
       }
     };
 
     window.addEventListener("message", handleMessage);
-    return () => window.removeEventListener("message", handleMessage);
-  }, []);
+    // Après un remontage (fast refresh), l'iframe est déjà chargée : le `load`
+    // ne repassera pas, on retente donc l'abonnement et on réarme le filet.
+    subscribe();
+    armFallback();
+
+    return () => {
+      window.removeEventListener("message", handleMessage);
+      if (fallbackTimer.current) {
+        clearTimeout(fallbackTimer.current);
+        fallbackTimer.current = null;
+      }
+    };
+  }, [armFallback, reveal, send, subscribe]);
 
   /**
    * L'autoplay ne fonctionne que muet : le son ne peut donc être rétabli que
    * sur un geste explicite du visiteur.
    */
   const toggleSound = useCallback(() => {
-    const player = iframeRef.current?.contentWindow;
-    if (!player) return;
-
     const nextMuted = !isMuted;
-    player.postMessage(
-      JSON.stringify({ method: "setMuted", value: nextMuted }),
-      VIMEO_ORIGIN
-    );
+    send({ method: "setMuted", value: nextMuted });
     if (!nextMuted) {
-      player.postMessage(
-        JSON.stringify({ method: "setVolume", value: 1 }),
-        VIMEO_ORIGIN
-      );
+      send({ method: "setVolume", value: 1 });
     }
+    // Certains lecteurs marquent une pause en sortant du mode muet : on relance
+    // systématiquement pour que l'image ne se fige jamais sur un clic « Son ».
+    send({ method: "play" });
     setIsMuted(nextMuted);
-  }, [isMuted]);
+  }, [isMuted, send]);
 
   return (
     <>
