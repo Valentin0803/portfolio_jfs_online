@@ -8,11 +8,13 @@ import { PiedPage } from "@/components/PiedPage";
 import { Projects } from "@/components/Projets";
 import { BandeauLogo } from "@/components/BandeauLogo";
 import { Offres } from "@/components/Offres";
+import { ReelsImmo } from "@/components/ReelsImmo";
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <ReelsImmo />
       <BandeauLogo />
       <Offres />
       <FaqSection />
