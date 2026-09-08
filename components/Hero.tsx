@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import poster from "@/public/img/BG_tshirt.jpg";
+import poster from "@/public/img/hero-poster.jpg";
+import HeroVideo from "./HeroVideo";
 
 export const Hero = () => {
   return (
@@ -21,38 +22,19 @@ export const Hero = () => {
         className="object-cover pointer-events-none"
       />
 
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          width: "100vw",
-          height: "56.25vw",
-          minHeight: "100vh",
-          minWidth: "177.78vh",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-          position: "absolute",
-        }}
-      >
-        <iframe
-          src="https://player.vimeo.com/video/1062779681?autoplay=1&muted=1&controls=0&loop=1&background=1"
-          className="absolute inset-0 w-full h-full"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          title="JFS Visual — showreel"
-        ></iframe>
-      </div>
+      <HeroVideo />
+
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,9,7,0.25) 0%, rgba(10,9,7,0.55) 55%, rgba(10,9,7,0.97) 100%)",
+            "linear-gradient(180deg, rgba(10,9,7,0.5) 0%, rgba(10,9,7,0.55) 55%, rgba(10,9,7,0.97) 100%)",
         }}
       ></div>
 
       <div className="relative z-10">
         <div className="text-xs font-dmSans tracking-[0.25em] uppercase text-or mb-7 opacity-90">
-          Production vidéo &amp; drone — Normandie
+          Production vidéo &amp; drone — Caen · Normandie
         </div>
         <h1 className="font-unbounded font-extrabold text-[2.6rem] leading-[0.98] tracking-[-0.02em] text-creme max-w-[16ch] mx-auto sm:text-6xl lg:text-[6.5rem]">
           Du contenu vidéo qui <span className="text-or">vend vos biens</span>{" "}
