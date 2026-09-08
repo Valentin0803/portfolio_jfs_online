@@ -6,8 +6,14 @@ function Footer() {
     <footer className="z-50 fixed bottom-10 left-10 h-fit justify-between cursor-pointer hidden lg:grid">
       <div className="">
         <Magnetic>
-          <Link href="https://www.instagram.com/jfsvisual/" target="_blank">
+          <Link
+            href="https://www.instagram.com/jfsvisual/"
+            target="_blank"
+            aria-label="JFS Visual sur Instagram"
+          >
             <svg
+              aria-hidden="true"
+              focusable="false"
               className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="23"
               height="23"
@@ -28,8 +34,11 @@ function Footer() {
           <Link
             href="https://www.linkedin.com/company/jfs-visual/posts/?feedView=all&viewAsMember=true"
             target="_blank"
+            aria-label="JFS Visual sur LinkedIn"
           >
             <svg
+              aria-hidden="true"
+              focusable="false"
               className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="23"
               height="23"
@@ -47,8 +56,11 @@ function Footer() {
           <Link
             target="_blank"
             href="https://www.tiktok.com/@jfs_visual?is_from_webapp=1&sender_device=pc"
+            aria-label="JFS Visual sur TikTok"
           >
             <svg
+              aria-hidden="true"
+              focusable="false"
               className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="22"
               height="27"
@@ -63,8 +75,14 @@ function Footer() {
       </div>
       <div>
         <Magnetic>
-          <Link target="_blank" href="https://www.youtube.com/@jfsvisual8964">
+          <Link
+            target="_blank"
+            href="https://www.youtube.com/@jfsvisual8964"
+            aria-label="JFS Visual sur YouTube"
+          >
             <svg
+              aria-hidden="true"
+              focusable="false"
               className="m-5 fill-white hover:fill-or hover:transition hover:duration-200"
               width="16"
               height="19"
