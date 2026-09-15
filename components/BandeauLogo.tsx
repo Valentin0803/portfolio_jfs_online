@@ -13,8 +13,8 @@ export const BandeauLogo = () => {
     "/img/logo/webp/aritsan-artipole.webp",
   ];
   return (
-    <div className="mask-fade">
-      <h2 className="text-center text-2xl font-bold font-dmSans mb-4 text-creme">
+    <div className="mask-fade py-16 lg:py-24">
+      <h2 className="text-center font-unbounded font-bold text-2xl lg:text-3xl mb-10 text-creme">
         Ils nous ont fait confiance
       </h2>
       <CarrouselLogo logos={logos} />

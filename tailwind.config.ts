@@ -22,11 +22,11 @@ const config: Config = {
       keyframes: {
         scroll: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(calc(-100% / 3))" },
         },
       },
       animation: {
-        scroll: "scroll 50s linear infinite",
+        scroll: "scroll 40s linear infinite",
       },
     },
   },

@@ -13,9 +13,9 @@ export default function Home() {
     <div>
       <Hero />
       <ReelsImmo />
-      <BandeauLogo />
       <NosServicesSection />
       <Projects />
+      <BandeauLogo />
       <Process />
       <Team />
       <FaqSection />
