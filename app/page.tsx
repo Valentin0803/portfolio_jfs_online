@@ -6,7 +6,6 @@ import { Process } from "@/components/Process";
 import { Contact } from "@/components/Contact";
 import { Projects } from "@/components/Projets";
 import { BandeauLogo } from "@/components/BandeauLogo";
-import { Offres } from "@/components/Offres";
 import { ReelsImmo } from "@/components/ReelsImmo";
 
 export default function Home() {
@@ -15,9 +14,8 @@ export default function Home() {
       <Hero />
       <ReelsImmo />
       <BandeauLogo />
-      <Offres />
-      <Projects />
       <NosServicesSection />
+      <Projects />
       <Process />
       <Team />
       <FaqSection />

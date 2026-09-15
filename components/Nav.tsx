@@ -9,7 +9,7 @@ import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 const LINKS = [
   { label: "Immobilier", hash: "#Immobilier" },
   { label: "Entreprises", hash: "#NotreTravail" },
-  { label: "Votre projet", hash: "#Accompagnement" },
+  { label: "Services", hash: "#NosServices" },
   { label: "L’équipe", hash: "#APropos" },
   { label: "Contact", hash: "#Contact" },
 ] as const;
