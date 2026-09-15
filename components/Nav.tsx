@@ -25,7 +25,25 @@ function Nav() {
   const isContact = pathname === CONTACT_URL;
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
+  const [nearContact, setNearContact] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Section Contact en bas de l'accueil : elle a son propre bouton, le CTA de
+  // la barre s'efface quand elle entre à l'écran, comme pour le hero.
+  useEffect(() => {
+    if (!isHome) {
+      setNearContact(false);
+      return;
+    }
+    const section = document.getElementById("Contact");
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setNearContact(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [isHome]);
 
   // Fond opaque + bordure dès qu'on quitte le haut de page ; le CTA de la
   // barre n'apparaît qu'un peu plus bas (le hero a déjà le sien).
@@ -70,7 +88,7 @@ function Nav() {
 
   // Ailleurs que sur l'accueil, le CTA est visible en permanence. Sur la page
   // Contact il disparaît : il pointerait vers la page déjà affichée.
-  const ctaVisible = !isContact && (!isHome || pastHero);
+  const ctaVisible = !isContact && (!isHome || (pastHero && !nearContact));
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
