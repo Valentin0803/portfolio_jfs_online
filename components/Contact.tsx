@@ -20,9 +20,6 @@ export const Contact = () => {
             {CONTACT_LABEL}
           </span>
         </Link>
-        <p className="text-xs text-creme/60 mt-4">
-          Un premier échange, sans engagement
-        </p>
       </div>
     </section>
   );

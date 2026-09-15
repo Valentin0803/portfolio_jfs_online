@@ -41,9 +41,6 @@ export const Hero = () => {
         <Link href={CONTACT_URL} className="inline-block px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal hover:bg-charcoal hover:text-or border border-or transition-colors duration-300">
             {CONTACT_LABEL}
         </Link>
-        <p className="font-dmSans text-xs text-creme/60 mt-4">
-          Un premier échange, sans engagement
-        </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3 font-dmSans text-sm">
           <Link href="#Immobilier" className="rounded-full border border-or/60 bg-charcoal/60 px-6 py-3 text-creme transition-colors hover:border-or hover:text-or">
             Immobilier <span aria-hidden="true">↗</span>
