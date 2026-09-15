@@ -90,26 +90,28 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="nom" className={LABEL}>
-                  Nom
+                  Nom <span className="text-or">*</span>
                 </label>
                 <input
                   id="nom"
                   name="nom"
                   type="text"
                   autoComplete="family-name"
+                  required
                   className={CHAMP}
                 />
               </div>
 
               <div>
                 <label htmlFor="prenom" className={LABEL}>
-                  Prénom
+                  Prénom <span className="text-or">*</span>
                 </label>
                 <input
                   id="prenom"
                   name="prenom"
                   type="text"
                   autoComplete="given-name"
+                  required
                   className={CHAMP}
                 />
               </div>

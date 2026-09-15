@@ -20,12 +20,17 @@ const config: Config = {
         dmSans: ["var(--font-dmSans)"],
       },
       keyframes: {
+        halo: {
+          "0%": { transform: "scale(1)", opacity: "0.7" },
+          "100%": { transform: "scale(1.9)", opacity: "0" },
+        },
         scroll: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
       },
       animation: {
+        halo: "halo 1.8s ease-out infinite",
         scroll: "scroll 50s linear infinite",
       },
     },
