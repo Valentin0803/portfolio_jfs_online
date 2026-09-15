@@ -13,8 +13,6 @@ const besoins = [
     alt: "L’équipe Guy Hoquet Caen Carpiquet réunie dans son agence",
     reference: "Guy Hoquet Caen Carpiquet",
     position: "object-[center_42%]",
-    lien: "#Immobilier",
-    label: "Voir les contenus d’agence",
   },
   {
     titre: "Vos biens",
@@ -24,8 +22,6 @@ const besoins = [
     alt: "Vue aérienne d’une maison avec piscine à Coulombs",
     reference: "Coulombs · Normandie",
     position: "object-[center_48%]",
-    lien: "#Immobilier",
-    label: "Voir les biens en images",
   },
   {
     titre: "Votre entreprise",
@@ -35,8 +31,6 @@ const besoins = [
     alt: "Un collaborateur Cotral Lab au travail dans son atelier",
     reference: "Cotral Lab",
     position: "object-[62%_center]",
-    lien: "#NotreTravail",
-    label: "Voir les projets d’entreprise",
   },
 ];
 
@@ -54,20 +48,18 @@ export const Offres = () => (
       </div>
       <div className="grid gap-5 md:grid-cols-3 lg:gap-6">
         {besoins.map((besoin) => (
-          <Link key={besoin.titre} href={besoin.lien} className="group flex flex-col overflow-hidden rounded-2xl border border-creme/15 bg-charcoal transition-colors hover:border-or/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or">
+          <div key={besoin.titre} className="flex flex-col overflow-hidden rounded-2xl border border-creme/15 bg-charcoal">
             <div className="relative aspect-[4/3] overflow-hidden md:aspect-[4/5] lg:aspect-[5/4]">
-              <Image src={besoin.image} alt={besoin.alt} fill placeholder="blur" sizes="(max-width: 767px) 100vw, (max-width: 1536px) 33vw, 464px" className={`object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105 ${besoin.position}`} />
+              <Image src={besoin.image} alt={besoin.alt} fill placeholder="blur" sizes="(max-width: 767px) 100vw, (max-width: 1536px) 33vw, 464px" className={`object-cover ${besoin.position}`} />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent" />
               <span className="absolute bottom-5 left-5 font-dmSans text-xs font-medium text-white lg:left-7">{besoin.reference}</span>
-              <span aria-hidden="true" className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/35 bg-charcoal/50 text-xl text-white backdrop-blur-sm transition-colors group-hover:bg-or group-hover:text-charcoal">↗</span>
             </div>
             <div className="flex flex-1 flex-col p-6 lg:p-7">
               <p className="mb-3 font-dmSans text-[11px] font-medium uppercase tracking-[0.14em] text-or">{besoin.objectif}</p>
               <h3 className="mb-4 font-unbounded text-2xl font-bold leading-tight text-creme lg:text-[1.7rem]">{besoin.titre}</h3>
-              <p className="mb-7 font-dmSans text-base leading-relaxed text-creme/75">{besoin.description}</p>
-              <span className="mt-auto border-t border-creme/15 pt-5 font-dmSans text-sm font-medium text-creme transition-colors group-hover:text-or">{besoin.label} <span aria-hidden="true">→</span></span>
+              <p className="font-dmSans text-base leading-relaxed text-creme/75">{besoin.description}</p>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
       <div className="mt-10 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
