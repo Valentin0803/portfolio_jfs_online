@@ -271,14 +271,14 @@ export const ProjetsTrack = ({ projets, onOpen }: ProjetsTrackProps) => {
   const entete = (
     <div className="max-w-xl">
       <div className="mb-4 font-dmSans text-xs uppercase tracking-[0.25em] text-or">
-        Réalisations
+        Entreprises &amp; événements
       </div>
       <h2 className="mb-4 font-unbounded text-3xl font-bold leading-tight text-creme lg:text-5xl">
-        Nos derniers tournages
+        Des films à l’image de votre entreprise
       </h2>
       <p className="font-dmSans text-creme/70">
-        Une sélection de projets récents : agences immobilières, entreprises,
-        événements.
+        Films de présentation, interviews, visites d’entreprise et événements :
+        découvrez une sélection de nos réalisations.
       </p>
     </div>
   );

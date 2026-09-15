@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 import { reels, type Reel } from "@/lib/reels";
 
 /**
@@ -176,12 +175,11 @@ export const ReelsImmo = () => {
           Immobilier
         </div>
         <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight">
-          Les biens de Guy Hoquet Caen Carpiquet, filmés par JFS Visual
+          Vos biens attirent l’œil. Votre agence gagne en visibilité.
         </h2>
         <p className="font-dmSans text-creme/70 mt-6 text-base max-w-xl mx-auto">
-          Des reels verticaux tournés pour les réseaux de l&apos;agence :
-          drone, plans intérieurs, agents à l&apos;image, pensés pour
-          déclencher la visite.
+          Présenter vos biens, faire connaître votre équipe et alimenter vos
+          réseaux : découvrez les contenus créés pour Guy Hoquet Caen Carpiquet.
         </p>
       </div>
 
@@ -204,13 +202,13 @@ export const ReelsImmo = () => {
       </div>
 
       <div className="mt-14 flex flex-col items-center px-6 text-center lg:mt-20">
-        <Link href={BOOKING_URL} className="w-fit">
-          <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
-            {BOOKING_LABEL}
-          </button>
-        </Link>
+        <a href={WHATSAPP_URL} className="w-fit" target="_blank" rel="noopener noreferrer">
+          <span className="inline-block px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
+            {WHATSAPP_LABEL}
+          </span>
+        </a>
         <p className="font-dmSans text-xs text-creme/60 mt-4">
-          30 min en visio, sans engagement
+          Un premier échange, sans engagement
         </p>
       </div>
     </section>

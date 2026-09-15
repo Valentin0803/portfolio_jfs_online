@@ -2,12 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import poster from "@/public/img/hero-poster.jpg";
 import HeroVideo from "./HeroVideo";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 
 export const Hero = () => {
   return (
     <section
-      className="relative h-screen min-h-[640px] flex flex-col items-center justify-center text-center overflow-hidden px-6"
+      className="relative min-h-[800px] lg:min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-6 pt-32 pb-36"
     >
       {/* Image de secours derrière l'iframe : tant que le lecteur Vimeo n'a
           pas chargé (ou s'il ne charge jamais), le premier écran affiche
@@ -30,29 +30,28 @@ export const Hero = () => {
         <div className="text-xs font-dmSans tracking-[0.25em] uppercase text-or mb-7 opacity-90">
           Production vidéo &amp; drone · Normandie et Savoie
         </div>
-        <h1 className="font-unbounded font-extrabold text-[2.6rem] leading-[0.98] tracking-[-0.02em] text-creme max-w-[16ch] mx-auto sm:text-6xl lg:text-[6.5rem]">
-          Du contenu vidéo qui <span className="text-or">vend vos biens</span>{" "}
-          avant la visite.
+        <h1 className="font-unbounded font-extrabold text-4xl leading-[1.08] tracking-[-0.02em] text-creme max-w-[20ch] mx-auto sm:text-5xl lg:text-7xl">
+          Votre savoir-faire mérite <span className="text-or">d’être vu.</span>
         </h1>
         <p className="font-dmSans text-creme/75 max-w-[46ch] mx-auto mt-8 mb-10 text-base lg:text-xl">
-          Production vidéo premium pour agences immobilières : tournage,
-          montage, drone, gestion administrative incluse. Niveau de
-          production au-dessus du standard français.
+          Nous créons les vidéos qui mettent votre activité en lumière.
+          Une spécialité : la visibilité des agences immobilières.
+          Et la même exigence pour vos films d’entreprise et interviews.
         </p>
-        <Link href={BOOKING_URL}>
-          <button className="px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal transform hover:scale-105 hover:bg-charcoal hover:text-or border border-or transition-colors duration-500">
-            {BOOKING_LABEL}
-          </button>
-        </Link>
+        <a href={WHATSAPP_URL} className="inline-block px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal hover:bg-charcoal hover:text-or border border-or transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+            {WHATSAPP_LABEL}
+        </a>
         <p className="font-dmSans text-xs text-creme/60 mt-4">
-          30 min en visio, sans engagement
+          Un premier échange, sans engagement
         </p>
-        <Link
-          href="#Offres"
-          className="inline-block mt-5 font-dmSans text-sm text-creme/80 hover:text-or hover:underline decoration-or underline-offset-4 transition-colors duration-300"
-        >
-          Découvrir nos offres
-        </Link>
+        <div className="mt-8 flex flex-wrap justify-center gap-3 font-dmSans text-sm">
+          <Link href="#Immobilier" className="rounded-full border border-or/60 bg-charcoal/60 px-6 py-3 text-creme transition-colors hover:border-or hover:text-or">
+            Immobilier <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="#NotreTravail" className="rounded-full border border-creme/30 bg-charcoal/60 px-6 py-3 text-creme transition-colors hover:border-or hover:text-or">
+            Entreprises &amp; événements <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
       </div>
 
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-creme/50 z-10">

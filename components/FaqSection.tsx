@@ -1,8 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
-import { BOOKING_URL } from "@/lib/site";
+import { WHATSAPP_URL } from "@/lib/site";
 
 interface FAQItem {
   question: string;
@@ -11,15 +10,14 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question:
-      "Quelle est la différence entre l'Atelier du Réel et la Journée Contenu ?",
+    question: "Comment définissez-vous le budget d’un projet ?",
     answer:
-      "L'Atelier du Réel est un accompagnement continu sur 6 mois, pensé pour les agences immobilières qui veulent du contenu régulier sur leurs biens et leur agence. La Journée Contenu est une prestation ponctuelle, ouverte à tous les secteurs, pour tester notre travail ou couvrir un besoin ciblé sans engagement dans la durée.",
+      "Nous partons de votre objectif, des contenus à produire, des lieux de tournage et des supports de diffusion. Ces éléments nous permettent de préparer un devis adapté à votre besoin. Le périmètre et le budget sont définis ensemble avant de démarrer.",
   },
   {
-    question: "Je m'engage sur combien de temps avec l'Atelier du Réel ?",
+    question: "Peut-on travailler ensemble ponctuellement ou régulièrement ?",
     answer:
-      "L'Atelier du Réel est pensé sur 6 mois, le temps nécessaire pour construire une vraie régularité de contenu et voir les premiers résultats. On en discute ensemble dès le premier échange pour que tout soit clair avant de démarrer.",
+      "Les deux sont possibles. Nous pouvons réaliser un film, couvrir un événement ou vous accompagner dans la création régulière de contenus. Le rythme et les formats se définissent selon votre activité et vos besoins.",
   },
   {
     question: "Proposez-vous des services de drone pour la capture aérienne ?",
@@ -33,14 +31,14 @@ const faqData: FAQItem[] = [
       "Oui, en fonction de la zone de vol et du type d'événement : espaces publics, zones urbaines, sites sensibles. C'est justement une partie du travail qu'on prend en charge pour vous : notifications préfecture et démarches administratives sont gérées de bout en bout, pour un tournage en toute conformité.",
   },
   {
-    question: "Est-ce que je m'engage en prenant rendez-vous ?",
+    question: "Est-ce que je m’engage en vous contactant ?",
     answer:
-      "Non. Ce sont 30 minutes en visio pour comprendre votre agence et votre marché. À la fin, on vous dit honnêtement si une de nos offres a du sens pour vous, et si ce n'est pas le cas, on vous le dit aussi. Aucune relance agressive derrière.",
+      "Non. Écrivez-nous sur WhatsApp ou via le formulaire pour nous parler de votre activité et de votre projet. Ce premier échange est sans engagement.",
   },
   {
-    question: "Combien de temps ça me prend côté agence ?",
+    question: "Comment se déroule un projet avec vous ?",
     answer:
-      "Sur l'Atelier du Réel, comptez environ 1 h par mois de votre côté : la validation des scripts et des montages, via Notion et WhatsApp. Tout le reste est géré par JFS Visual, y compris les autorisations de vol drone. Pour une Journée Contenu, il faut prévoir une demi-journée de présence sur le tournage.",
+      "Nous commençons par préciser votre besoin, puis préparons le contenu et organisons le tournage. Après le montage, vous nous faites vos retours avant la livraison des fichiers. Le calendrier, les formats et votre participation sont précisés ensemble en amont.",
   },
 ];
 
@@ -92,12 +90,12 @@ export const FaqSection = () => {
           </div>
         ))}
         <div className="mt-10 text-center">
-          <Link
-            href={BOOKING_URL}
+          <a
+            href={WHATSAPP_URL}
             className="font-dmSans text-sm text-or hover:underline"
-          >
-            Une autre question ? Posez-la en 30 min avec Martin →
-          </Link>
+           target="_blank" rel="noopener noreferrer">
+            Une autre question ? Écrivez à Martin sur WhatsApp →
+          </a>
         </div>
       </div>
     </div>

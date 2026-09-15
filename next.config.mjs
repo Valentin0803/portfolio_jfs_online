@@ -2,11 +2,10 @@
 const nextConfig = {
   async redirects() {
     return [
-      // L'ancienne page de réservation est fusionnée dans /contact, où le
-      // paramètre rdv=1 ouvre le calendrier zcal en modale.
+      // Les anciens liens de réservation mènent aux moyens de contact.
       {
         source: "/rendez-vous",
-        destination: "/contact?rdv=1",
+        destination: "/contact",
         permanent: true,
       },
     ];

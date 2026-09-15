@@ -2,7 +2,7 @@
 // Chaque entrée alimente une carte de <ReelsImmo /> : la vidéo est servie
 // depuis public/reels/ (mp4 720x1280 ré-encodé pour rester léger en mobile)
 // et renvoie vers le post publié par l'agence sur son propre compte.
-export type ReelCategorie = "Maison" | "Trend";
+export type ReelCategorie = "Maison" | "Trend" | "Conseils";
 
 export interface Reel {
   /** Identifiant stable, utilisé comme clé de rendu. */
@@ -11,7 +11,7 @@ export interface Reel {
   src: string;
   /** Chemin public de l'image affichée avant lecture. */
   poster: string;
-  /** "Maison" = présentation d'un bien ; "Trend" = contenu réseaux de l'agence. */
+  /** Présentation de bien, trend ou contenu conseil de l'agence. */
   categorie: ReelCategorie;
   /** Le bien filmé (ou le sujet du trend), tel qu'annoncé par l'agence. */
   titre: string;
@@ -41,16 +41,16 @@ export const reels: Reel[] = [
     date: "2026-09-07",
   },
   {
-    slug: "guy-hoquet-authie",
-    src: "/reels/guy-hoquet-authie.mp4",
-    poster: "/reels/guy-hoquet-authie.jpg",
-    categorie: "Maison",
-    titre: "Maison familiale 136 m², double garage, terrasse et pergola",
-    lieu: "Authie (Calvados)",
+    slug: "guy-hoquet-conseils-emprunt",
+    src: "/reels/guy-hoquet-conseils-emprunt.mp4",
+    poster: "/reels/guy-hoquet-conseils-emprunt.jpg",
+    categorie: "Conseils",
+    titre: "Emprunt immobilier : 3 idées reçues décryptées avec un courtier",
+    lieu: "Jérôme, courtier chez Olisto",
     agence: AGENCE,
-    instagramUrl: "https://www.instagram.com/reel/Db3ZNMRNKJ8/",
-    likes: 43,
-    date: "2026-08-10",
+    instagramUrl: "https://www.instagram.com/reel/DUi3ZjCAoAD/",
+    likes: 83,
+    date: "2026-02-09",
   },
   {
     slug: "guy-hoquet-val-d-arry",

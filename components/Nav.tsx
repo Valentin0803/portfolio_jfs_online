@@ -4,13 +4,13 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 
 const LINKS = [
-  { label: "À propos", hash: "#APropos" },
-  { label: "Offres", hash: "#Offres" },
-  { label: "Réalisations", hash: "#NotreTravail" },
-  { label: "Services", hash: "#NosServices" },
+  { label: "Immobilier", hash: "#Immobilier" },
+  { label: "Entreprises", hash: "#NotreTravail" },
+  { label: "Votre projet", hash: "#Accompagnement" },
+  { label: "L’équipe", hash: "#APropos" },
   { label: "Contact", hash: "#Contact" },
 ] as const;
 
@@ -22,6 +22,9 @@ const CTA_SCROLL_THRESHOLD = 200;
 function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const whatsappColors = pathname === "/contact"
+    ? "border-[#25D366] bg-[#25D366] hover:text-[#25D366]"
+    : "border-or bg-or hover:text-or";
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
@@ -106,13 +109,15 @@ function Nav() {
                 transition={{ duration: 0.3, delay: 0.36, ease: "easeOut" }}
                 className="mt-6"
               >
-                <Link
-                  href={BOOKING_URL}
+                <a
+                  href={WHATSAPP_URL}
                   onClick={() => setOpen(false)}
-                  className="inline-block rounded-full border border-or bg-or px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-block rounded-full border px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal ${whatsappColors}`}
                 >
-                  {BOOKING_LABEL}
-                </Link>
+                  {WHATSAPP_LABEL}
+                </a>
               </motion.div>
             </nav>
           </motion.div>
@@ -143,24 +148,24 @@ function Nav() {
               className="group relative font-dmSans text-sm text-creme/85 transition-colors duration-300 hover:text-creme"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-or transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#25D366] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
 
         {/* L'espace reste réservé (opacité seule) pour ne pas décaler les liens. */}
-        <Link
-          href={BOOKING_URL}
+        <a
+          href={WHATSAPP_URL}
           aria-hidden={!ctaVisible}
           tabIndex={ctaVisible ? undefined : -1}
-          className={`hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal hover:text-or lg:inline-block ${
+          className={`hidden rounded-full border px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal lg:inline-block ${whatsappColors} ${
             ctaVisible
               ? "translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-1 opacity-0"
           }`}
-        >
-          {BOOKING_LABEL}
-        </Link>
+         target="_blank" rel="noopener noreferrer">
+          {WHATSAPP_LABEL}
+        </a>
 
         <button
           type="button"

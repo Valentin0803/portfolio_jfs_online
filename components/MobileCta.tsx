@@ -1,35 +1,33 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 
-// Page portant le calendrier : BOOKING_URL contient une query, il ne peut pas
-// être comparé directement au pathname.
-const PAGE_RENDEZ_VOUS = "/contact";
+// Le contact WhatsApp est déjà visible sur la page Contact.
+const PAGE_CONTACT = "/contact";
 
 // Seuil de déclenchement hors page d'accueil : quelques dizaines de pixels
 // suffisent, ces pages n'ont pas de hero plein écran.
 const SEUIL_PAR_DEFAUT = 120;
 
 /**
- * Pilule de prise de rendez-vous ancrée en bas de l'écran, mobile et tablette
+ * Pilule de contact WhatsApp ancrée en bas de l'écran, mobile et tablette
  * uniquement (`lg:hidden`, le desktop garde la CTA de la navigation).
  *
  * Elle n'apparaît qu'une fois le hero dépassé pour ne pas concurrencer la
- * vidéo d'accueil, et reste masquée sur /contact où la prise de rendez-vous est
+ * vidéo d'accueil, et reste masquée sur /contact où le contact WhatsApp est
  * déjà accessible dans la page.
  */
 export default function MobileCta() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
-  const surRendezVous = pathname === PAGE_RENDEZ_VOUS;
+  const surContact = pathname === PAGE_CONTACT;
   const surAccueil = pathname === "/";
 
   useEffect(() => {
-    if (surRendezVous) {
+    if (surContact) {
       setVisible(false);
       return;
     }
@@ -60,9 +58,9 @@ export default function MobileCta() {
       window.removeEventListener("scroll", planifier);
       window.removeEventListener("resize", planifier);
     };
-  }, [surAccueil, surRendezVous]);
+  }, [surAccueil, surContact]);
 
-  if (surRendezVous) return null;
+  if (surContact) return null;
 
   return (
     <div
@@ -70,8 +68,8 @@ export default function MobileCta() {
       // Safe area iOS : la pilule reste au-dessus de la barre d'accueil.
       style={{ bottom: "calc(1rem + env(safe-area-inset-bottom))" }}
     >
-      <Link
-        href={BOOKING_URL}
+      <a
+        href={WHATSAPP_URL}
         aria-hidden={!visible}
         tabIndex={visible ? 0 : -1}
         className={`flex h-[52px] items-center justify-center gap-2.5 rounded-full bg-or px-6 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-[transform,opacity] duration-300 ease-out motion-reduce:transition-none ${
@@ -79,7 +77,7 @@ export default function MobileCta() {
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none translate-y-[200%] opacity-0"
         }`}
-      >
+       target="_blank" rel="noopener noreferrer">
         <svg
           width="16"
           height="16"
@@ -92,11 +90,10 @@ export default function MobileCta() {
           aria-hidden="true"
           className="shrink-0"
         >
-          <rect x="3" y="5" width="18" height="16" rx="2" />
-          <path d="M3 10h18M8 3v4M16 3v4" />
+          <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1 1 18-4.5Z" />
         </svg>
-        {BOOKING_LABEL}
-      </Link>
+        {WHATSAPP_LABEL}
+      </a>
     </div>
   );
 }

@@ -10,7 +10,7 @@ function dataServices(): ServiceType[] {
       titleTop: "Présentation d'entreprise",
       titleMask: "",
       descriptionService:
-        "Vidéos d'entreprise, contenus promotionnels et photos de qualité pensés pour votre communication — de l'idée à la production finale.",
+        "Vidéos d'entreprise, contenus promotionnels et photos de qualité pensés pour votre communication, de l'idée à la production finale.",
     },
     {
       titleTop: "Visite virtuelle immersive",

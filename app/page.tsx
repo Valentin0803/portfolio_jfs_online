@@ -16,11 +16,11 @@ export default function Home() {
       <ReelsImmo />
       <BandeauLogo />
       <Offres />
-      <FaqSection />
       <Projects />
       <NosServicesSection />
       <Process />
       <Team />
+      <FaqSection />
       <Contact />
     </div>
   );

@@ -1,114 +1,81 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Card, CardTitle, CardDescription } from "./ui/card";
-import { BOOKING_LABEL, BOOKING_URL } from "@/lib/site";
+import agence from "@/public/reels/guy-hoquet-equipe.jpg";
+import bien from "@/public/reels/guy-hoquet-coulombs.jpg";
+import entreprise from "@/public/projects/COTRAL_LAB/PHOTO/CotralLab (11).jpg";
 
-export const Offres = () => {
-  return (
-    <section id="Offres" className="py-24 lg:py-40">
-      <div className="max-w-xl mx-auto mb-16 lg:mb-20 text-center px-6">
-        <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
-          Offres
+const besoins = [
+  {
+    titre: "Votre agence",
+    objectif: "Faites-vous connaître",
+    description: "Des vidéos de votre équipe et de votre expertise pour faire vivre vos réseaux sociaux.",
+    image: agence,
+    alt: "L’équipe Guy Hoquet Caen Carpiquet réunie dans son agence",
+    reference: "Guy Hoquet Caen Carpiquet",
+    position: "object-[center_42%]",
+    lien: "#Immobilier",
+    label: "Voir les contenus d’agence",
+  },
+  {
+    titre: "Vos biens",
+    objectif: "Donnez envie de visiter",
+    description: "Vidéo, photo et drone pour révéler un lieu et permettre aux acquéreurs de se projeter.",
+    image: bien,
+    alt: "Vue aérienne d’une maison avec piscine à Coulombs",
+    reference: "Coulombs · Normandie",
+    position: "object-[center_48%]",
+    lien: "#Immobilier",
+    label: "Voir les biens en images",
+  },
+  {
+    titre: "Votre entreprise",
+    objectif: "Montrez votre savoir-faire",
+    description: "Films, interviews et visites immersives pour présenter vos métiers, vos équipes et vos événements.",
+    image: entreprise,
+    alt: "Un collaborateur Cotral Lab au travail dans son atelier",
+    reference: "Cotral Lab",
+    position: "object-[62%_center]",
+    lien: "#NotreTravail",
+    label: "Voir les projets d’entreprise",
+  },
+];
+
+export const Offres = () => (
+  <section id="Accompagnement" className="relative border-y border-creme/10 bg-[#100D08] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+    {/* Préserve les anciens liens vers cette section. */}
+    <span id="Offres" className="absolute top-0" aria-hidden="true" />
+    <div className="mx-auto max-w-[1440px]">
+      <div className="mb-9 flex flex-col gap-5 lg:mb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <div>
+          <p className="mb-4 font-dmSans text-xs uppercase tracking-[0.22em] text-or">Ce que nous créons pour vous</p>
+          <h2 className="max-w-[20ch] font-unbounded text-3xl font-bold leading-[1.15] text-creme sm:text-4xl lg:text-5xl">Votre activité.<br /><span className="text-or">Nos images.</span></h2>
         </div>
-        <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight">
-          Un accompagnement pour chaque besoin
-        </h2>
+        <p className="max-w-sm font-dmSans text-base leading-relaxed text-creme/75">De l’immobilier à l’entreprise, découvrez ce que nous pouvons réaliser pour vous.</p>
       </div>
-
-      <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 mx-6 lg:max-w-5xl lg:mx-auto">
-        <div className="relative overflow-hidden rounded-lg border border-or/25 bg-[#100D08] p-10 lg:p-14 flex flex-col">
-          <div
-            className="absolute -top-[40%] -right-[20%] w-[70%] h-[140%] pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(closest-side, rgba(201,162,75,0.35), transparent 70%)",
-            }}
-          />
-          <span className="relative inline-block w-fit px-4 py-1.5 rounded-full bg-or text-charcoal font-dmSans font-bold text-xs uppercase tracking-widest mb-6">
-            Offre phare
-          </span>
-          <h3 className="relative font-unbounded font-bold text-creme text-3xl mb-4">
-            L&apos;Atelier du Réel
-          </h3>
-          <p className="relative font-dmSans text-creme/85 text-base mb-3 max-w-[42ch]">
-            Un flux de contenu continu pendant 6 mois pour attirer plus de
-            mandats et démarquer votre agence, sans que vous ayez rien à
-            gérer.
-          </p>
-          <p className="relative font-dmSans text-creme/50 text-xs mb-8 max-w-[42ch]">
-            Inclus : scripts, tournage, drone, montage, gestion
-            administrative des vols, suivi collaboratif via Notion et
-            WhatsApp.
-          </p>
-          <div className="relative font-unbounded font-bold text-or text-4xl mb-2 mt-auto">
-            2 100€ HT/mois
-          </div>
-          <p className="relative font-dmSans text-creme/45 text-xs mb-7">
-            Déjà utilisé par Guy Hoquet (Caen)
-          </p>
-          <Link
-            href={BOOKING_URL}
-            className="relative w-fit"
-          >
-            <button className="px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
-              {BOOKING_LABEL}
-            </button>
+      <div className="grid gap-5 md:grid-cols-3 lg:gap-6">
+        {besoins.map((besoin) => (
+          <Link key={besoin.titre} href={besoin.lien} className="group flex flex-col overflow-hidden rounded-2xl border border-creme/15 bg-charcoal transition-colors hover:border-or/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or">
+            <div className="relative aspect-[4/3] overflow-hidden md:aspect-[4/5] lg:aspect-[5/4]">
+              <Image src={besoin.image} alt={besoin.alt} fill placeholder="blur" sizes="(max-width: 767px) 100vw, (max-width: 1536px) 33vw, 464px" className={`object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-105 ${besoin.position}`} />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent" />
+              <span className="absolute bottom-5 left-5 font-dmSans text-xs font-medium text-white lg:left-7">{besoin.reference}</span>
+              <span aria-hidden="true" className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/35 bg-charcoal/50 text-xl text-white backdrop-blur-sm transition-colors group-hover:bg-or group-hover:text-charcoal">↗</span>
+            </div>
+            <div className="flex flex-1 flex-col p-6 lg:p-7">
+              <p className="mb-3 font-dmSans text-[11px] font-medium uppercase tracking-[0.14em] text-or">{besoin.objectif}</p>
+              <h3 className="mb-4 font-unbounded text-2xl font-bold leading-tight text-creme lg:text-[1.7rem]">{besoin.titre}</h3>
+              <p className="mb-7 font-dmSans text-base leading-relaxed text-creme/75">{besoin.description}</p>
+              <span className="mt-auto border-t border-creme/15 pt-5 font-dmSans text-sm font-medium text-creme transition-colors group-hover:text-or">{besoin.label} <span aria-hidden="true">→</span></span>
+            </div>
           </Link>
-          <p className="relative font-dmSans text-xs text-creme/60 mt-4">
-            30 min en visio, sans engagement
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-6">
-          <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
-            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
-              Journée Contenu
-            </CardTitle>
-            <CardDescription className="text-creme/70">
-              1h de préparation/trajet, 2h de tournage, 5h de post-production
-              : 5 contenus courts livrés. Ouvert à tous les secteurs.
-            </CardDescription>
-            <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
-              À partir de ~800€
-            </div>
-            <Link
-              href={BOOKING_URL}
-              className="w-fit"
-            >
-              <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
-                {BOOKING_LABEL}
-              </button>
-            </Link>
-            <p className="font-dmSans text-xs text-creme/60 mt-3">
-              Sans engagement, une journée, 5 contenus livrés
-            </p>
-          </Card>
-          <Card className="dark:bg-[rgba(20,18,14,0.7)] border-white/10">
-            <CardTitle className="font-dmSans font-bold text-creme text-base bg-white/5 rounded-xl w-fit px-4 py-1">
-              Sur mesure
-            </CardTitle>
-            <CardDescription className="text-creme/70">
-              Vidéo d&apos;entreprise, événementiel, drone à la demande.
-              Chaque projet fait l&apos;objet d&apos;un devis dédié.
-            </CardDescription>
-            <div className="font-unbounded font-bold text-or text-lg mt-4 mb-4">
-              Devis
-            </div>
-            <Link
-              href={BOOKING_URL}
-              className="w-fit"
-            >
-              <button className="px-6 py-2.5 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest border border-or/40 text-creme hover:border-or hover:text-or transition-colors duration-300">
-                Parler de votre projet
-              </button>
-            </Link>
-            <p className="font-dmSans text-xs text-creme/60 mt-3">
-              Réponse sous 48 h, devis gratuit
-            </p>
-          </Card>
-        </div>
+        ))}
       </div>
-    </section>
-  );
-};
+      <div className="mt-10 flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+        <p className="font-dmSans text-sm text-creme/70">Un projet ponctuel ou des contenus réguliers ? Parlons-en.</p>
+        <Link href="/contact" className="shrink-0 rounded-full border border-or bg-or px-7 py-4 font-dmSans text-xs font-bold uppercase tracking-widest text-charcoal transition-colors hover:bg-transparent hover:text-or">Parlons de votre projet</Link>
+      </div>
+    </div>
+  </section>
+);
 
 export default Offres;
