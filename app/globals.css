@@ -72,78 +72,65 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-/* Bouton à halo lumineux (components/ui/glow-button.tsx). */
-@property --glow-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
-}
-
+/* Bouton lumineux, repris du composant glow-button de 21st.dev (waleedkibhen),
+   décliné en vert WhatsApp : dégradé qui glisse au survol, pression au clic. */
 .glow-btn {
-  position: relative;
-  isolation: isolate;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  padding: 0.95rem 1.75rem;
-  background: #25d366;
-  color: #0a0907;
-  font-weight: 700;
-  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
-  box-shadow: 0 10px 30px -12px rgba(37, 211, 102, 0.8);
-}
-
-.glow-btn::before,
-.glow-btn::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--glow-angle),
-    #25d366,
-    #c9a24b,
-    #f3ede1,
-    #25d366
+  --btn-bg-1: #4ee58a;
+  --btn-bg-2: #128c7e;
+  --btn-bg-color: #fff;
+  --radii: 9999px;
+  cursor: pointer;
+  background-size: 280%;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
   );
-  z-index: -1;
-  animation: glow-spin 4s linear infinite;
-}
-
-.glow-btn::after {
-  inset: -10px;
-  filter: blur(18px);
-  opacity: 0.55;
-  transition: opacity 300ms ease-out;
+  border-radius: var(--radii);
+  min-width: 120px;
+  min-height: 44px;
+  color: var(--btn-bg-color);
+  border: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9em 1.4em;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.8s;
+  display: flex;
+  transform: scale(1);
+  box-shadow:
+    0 0 20px rgba(37, 211, 102, 0.5),
+    0 5px 5px -1px rgba(18, 140, 126, 0.25),
+    inset 4px 4px 8px rgba(185, 245, 208, 0.5),
+    inset -4px -4px 8px rgba(11, 107, 88, 0.35);
 }
 
 .glow-btn:hover {
-  transform: translateY(-2px);
-}
-
-.glow-btn:hover::after {
-  opacity: 0.9;
+  background-position: 100% 0;
 }
 
 .glow-btn[data-state="clicked"] {
-  transform: scale(0.96);
+  transform: scale(0.95);
+  box-shadow:
+    0 0 30px rgba(37, 211, 102, 0.8),
+    0 5px 5px -1px rgba(18, 140, 126, 0.4),
+    inset 4px 4px 12px rgba(185, 245, 208, 0.7),
+    inset -4px -4px 12px rgba(11, 107, 88, 0.5);
 }
 
 .glow-btn:focus-visible {
-  outline: 2px solid #f3ede1;
-  outline-offset: 4px;
+  outline-offset: 2px;
+  outline: 2px solid rgba(37, 211, 102, 0.6);
 }
 
-@keyframes glow-spin {
-  to {
-    --glow-angle: 360deg;
-  }
+.glow-btn:focus:not(:focus-visible) {
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .glow-btn::before,
-  .glow-btn::after {
-    animation: none;
+  .glow-btn {
+    transition: all linear;
   }
 }

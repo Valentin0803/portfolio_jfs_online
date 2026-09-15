@@ -10,8 +10,8 @@ interface GlowButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 /**
- * Lien en forme de bouton entouré d'un halo lumineux qui tourne lentement,
- * s'intensifie au survol et se contracte brièvement au clic.
+ * Lien en forme de bouton lumineux, adapté du composant glow-button de
+ * 21st.dev (waleedkibhen) : dégradé qui glisse au survol, pression au clic.
  * Les styles vivent dans app/globals.css (classe .glow-btn).
  */
 export const GlowButton = forwardRef<HTMLAnchorElement, GlowButtonProps>(
@@ -30,7 +30,7 @@ export const GlowButton = forwardRef<HTMLAnchorElement, GlowButtonProps>(
           onClick?.(event);
         }}
       >
-        <span className="relative z-10 flex items-center justify-center gap-2.5">
+        <span className="flex items-center justify-center gap-2.5">
           {label}
           {icon}
         </span>
