@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Gallery } from "./ui/gallery";
 import { GalleryCS } from "./ui/gallery-cs";
+import { ExpandingCards } from "./ui/expanding-cards";
 import VimeoPlayer from "./VimeoPlayer";
 import YouTubePlayer from "./YoutubePlayer";
 import Image from "next/image";
-import { ProjetsTrack } from "./ProjetsTrack";
 import photoStadeRenACar from "@/public/projects/RENT_A_CAR/photostade.png";
 
 export const Projects = () => {
@@ -15,9 +15,26 @@ export const Projects = () => {
 
   return (
     <>
-      {/* La galerie (épinglée en desktop, rail défilant ailleurs) porte
-          l'ancre #NotreTravail : on arrive donc au début de la traversée. */}
-      <ProjetsTrack projets={dataProjets} onOpen={setOpenIndex} />
+      <section id="NotreTravail" className="w-full bg-charcoal py-24 lg:py-40">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="max-w-xl">
+            <div className="mb-4 font-dmSans text-xs uppercase tracking-[0.25em] text-or">
+              Entreprises &amp; événements
+            </div>
+            <h2 className="mb-4 font-unbounded text-3xl font-bold leading-tight text-creme lg:text-5xl">
+              Des films à l’image de votre entreprise
+            </h2>
+            <p className="font-dmSans text-creme/70">
+              Films de présentation, interviews, visites d’entreprise et
+              événements : découvrez une sélection de nos réalisations.
+            </p>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 flex max-w-6xl justify-center px-6">
+          <ExpandingCards items={dataProjets} onOpen={setOpenIndex} />
+        </div>
+      </section>
 
       {openProject && (
         <div
@@ -55,6 +72,9 @@ const dataProjets = [
     category: "Présentation d'entreprise",
     title: "CCAS de Cenon",
     src: "/projects/MINIATURES/CCAS.jpg",
+    cover: "/projects/COVERS/vimeo-1013125524.jpg",
+    coverAlt:
+      "Vue aérienne du quartier desservi par le CCAS de la ville de Cenon",
     content: (
       <VimeoPlayer
         videoId="1013125524"
@@ -70,6 +90,8 @@ const dataProjets = [
     category: "Présentation d'entreprise",
     title: "Künkel",
     src: "/projects/MINIATURES/kunkel.jpg",
+    cover: "/projects/COVERS/vimeo-1013125599.jpg",
+    coverAlt: "Vue aérienne du site de la scierie Künkel et de ses stocks de bois",
     content: (
       <VimeoPlayer
         videoId="1013125599"
@@ -85,6 +107,9 @@ const dataProjets = [
     category: "Motion design",
     title: "Rent a Car",
     src: "/projects/MINIATURES/rentacar.jpg",
+    cover: "/projects/COVERS/rent-a-car-lnb.jpg",
+    coverAlt:
+      "Porte-drapeau LNB au centre du terrain lors d'un match sponsorisé par Rent a Car",
     content: (
       <div>
         <VimeoPlayer
@@ -109,12 +134,18 @@ const dataProjets = [
     category: "Marque employeurs",
     title: "Cotral Lab",
     src: "/projects/MINIATURES/cotrallab.jpg",
+    cover: "/projects/COTRAL_LAB/PHOTO/CotralLab (2).jpg",
+    coverAlt:
+      "Deux collaborateurs Cotral Lab devant un modèle 3D affiché à l'écran",
     content: <Gallery />,
   },
   {
     category: "Présentation d'entreprise",
     title: "Alpes Connectiques Services",
     src: "/projects/MINIATURES/acs.jpg",
+    cover: "/projects/COVERS/youtube-f4WcU0btaQM.jpg",
+    coverAlt:
+      "Planisphère animé illustrant l'implantation d'Alpes Connectiques Services",
     content: (
       <YouTubePlayer
         videoId="f4WcU0btaQM" // Remplace par l'ID de ta vidéo
@@ -130,6 +161,9 @@ const dataProjets = [
     category: "Aftermovie",
     title: "Quartier Ouest",
     src: "/projects/MINIATURES/quartierouest.jpg",
+    cover: "/projects/COVERS/vimeo-1013125627.jpg",
+    coverAlt:
+      "Ballon de basket dans le panier lors du tournoi Quartier Ouest 2023",
     content: (
       <div className="lg:mx-60">
         <VimeoPlayer
@@ -148,6 +182,8 @@ const dataProjets = [
     category: "Aftermovie",
     title: "Combat stress",
     src: "/projects/MINIATURES/combatStress.jpg",
+    cover: "/projects/COVERS/combat-stress-2024.jpg",
+    coverAlt: "Coureur souriant sur le parcours du D-Day 44 Challenge 2024",
     content: (
       <div>
         <div className="lg:mx-60">
