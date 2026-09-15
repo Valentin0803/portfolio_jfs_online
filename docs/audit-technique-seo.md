@@ -1,4 +1,4 @@
-# Audit technique & SEO — JFS Visual
+# Audit technique & SEO, JFS Visual
 
 **Date :** 2026-08-02
 **Branche auditée :** `refonte-visuelle` (commit `c7b6e74`)
@@ -12,7 +12,7 @@ La base est saine (bundle léger, hiérarchie HTML correcte, rendu serveur fonct
 
 ---
 
-## 1. Sécurité — à traiter en premier
+## 1. Sécurité, à traiter en premier
 
 ### 🔴 Vulnérabilité critique dans Next.js (impacte la production)
 
@@ -20,15 +20,15 @@ La base est saine (bundle léger, hiérarchie HTML correcte, rendu serveur fonct
 
 La critique est dans **Next.js lui-même** : *"Next.js Allows a Denial of Service (DoS) with Server Actions"*. Le site étant déployé sur Vercel, elle concerne le site en ligne, pas seulement l'environnement de dev. Corrigée par une montée de version de Next.
 
-**Nuance importante :** la grande majorité des 18 « hautes » sont dans l'outillage de développement (chaîne ESLint, `glob`, `cross-spawn`, `brace-expansion`…). Ces paquets ne sont **pas expédiés au navigateur** — leur risque réel est très faible pour un site vitrine. Ne pas se laisser impressionner par le chiffre brut : **c'est la ligne `next` qui compte.**
+**Nuance importante :** la grande majorité des 18 « hautes » sont dans l'outillage de développement (chaîne ESLint, `glob`, `cross-spawn`, `brace-expansion`…). Ces paquets ne sont **pas expédiés au navigateur**, leur risque réel est très faible pour un site vitrine. Ne pas se laisser impressionner par le chiffre brut : **c'est la ligne `next` qui compte.**
 
 ### 🟡 `.env` versionné dans git
 
-Le fichier est suivi par git et contient l'ID Google Analytics. Ce n'est **pas une fuite** — un ID GA est public par nature (visible dans le code source de n'importe quel site). Mais le jour où une vraie clé API y est ajoutée (Vimeo, formulaire, CRM…), elle partirait sur GitHub sans avertissement. À convertir en `.env.local` (déjà couvert par le `.gitignore`) avant d'ajouter le moindre secret.
+Le fichier est suivi par git et contient l'ID Google Analytics. Ce n'est **pas une fuite**, un ID GA est public par nature (visible dans le code source de n'importe quel site). Mais le jour où une vraie clé API y est ajoutée (Vimeo, formulaire, CRM…), elle partirait sur GitHub sans avertissement. À convertir en `.env.local` (déjà couvert par le `.gitignore`) avant d'ajouter le moindre secret.
 
 ---
 
-## 2. Dépendances — beaucoup de poids mort
+## 2. Dépendances, beaucoup de poids mort
 
 ### Retard de versions
 
@@ -43,18 +43,18 @@ Le cas `eslint-config-next` est le plus parlant : il est resté en 14.x quand le
 
 ### ~10 dépendances totalement inutilisées
 
-Vérifié par recherche d'import sur l'ensemble du code applicatif — **zéro utilisation** :
+Vérifié par recherche d'import sur l'ensemble du code applicatif, **zéro utilisation** :
 
 - `three`, `@react-three/fiber`, `@types/three` (moteur 3D, très lourd)
 - `@tsparticles/engine`, `@tsparticles/react`, `@tsparticles/slim`
 - `video.js`
 - `uuid`
 - `nextjs-google-analytics` (remplacé par `@next/third-parties`, jamais désinstallé)
-- `gsap`, `@gsap/react` — devenus inutiles quand la section Services est passée en liste statique lors de la refonte
+- `gsap`, `@gsap/react`, devenus inutiles quand la section Services est passée en liste statique lors de la refonte
 
 Et deux autres utilisées **uniquement par des composants orphelins** (voir §3) : `lenis`, `@tabler/icons-react`.
 
-**À quel point c'est grave :** ces paquets ne sont pas importés, donc **ils ne partent pas dans le bundle envoyé au navigateur** — la performance du site n'en souffre pas. Le coût est ailleurs : temps d'installation, poids de `node_modules`, bruit dans `npm audit`, et friction à chaque montée de version. C'est de l'hygiène, pas une urgence.
+**À quel point c'est grave :** ces paquets ne sont pas importés, donc **ils ne partent pas dans le bundle envoyé au navigateur**, la performance du site n'en souffre pas. Le coût est ailleurs : temps d'installation, poids de `node_modules`, bruit dans `npm audit`, et friction à chaque montée de version. C'est de l'hygiène, pas une urgence.
 
 ---
 
@@ -77,7 +77,7 @@ Les 3 premiers sont le résidu normal de la refonte ; les 5 suivants traînaient
 
 ### Lint : il fonctionne, et il est quasi propre
 
-L'erreur `Failed to load config "next/core-web-vitals"` visible à chaque build **n'est pas un bug du projet** — c'est un artefact de mon environnement de travail (le worktree git est imbriqué dans le repo, et ESLint remontait l'arborescence jusqu'à une copie du projet sans `node_modules`). Ajout de `"root": true` dans `.eslintrc.json` pour couper cette remontée.
+L'erreur `Failed to load config "next/core-web-vitals"` visible à chaque build **n'est pas un bug du projet**, c'est un artefact de mon environnement de travail (le worktree git est imbriqué dans le repo, et ESLint remontait l'arborescence jusqu'à une copie du projet sans `node_modules`). Ajout de `"root": true` dans `.eslintrc.json` pour couper cette remontée.
 
 Une fois corrigé, le lint tourne et ne remonte **qu'un seul avertissement sur tout le projet** :
 
@@ -87,21 +87,21 @@ Using `<img>` could result in slower LCP and higher bandwidth.
 Consider using `<Image />` from `next/image`.
 ```
 
-C'est du code que j'ai introduit avec le nouveau carrousel — à corriger.
+C'est du code que j'ai introduit avec le nouveau carrousel, à corriger.
 
 ### Petites scories de configuration
 
 - `tsconfig.json` : `"video.d.ts"` répété **4 fois** dans `include` (sans effet, mais révélateur d'un copier-coller)
 - `next.config.mjs` : `images.domains` est déprécié depuis Next 14 → remplacer par `images.remotePatterns`
-- `next.config.mjs` : le hack webpack `file-loader` pour servir des `.mp4/.webm` ne sert plus à rien — toutes les vidéos passent par Vimeo/YouTube
+- `next.config.mjs` : le hack webpack `file-loader` pour servir des `.mp4/.webm` ne sert plus à rien, toutes les vidéos passent par Vimeo/YouTube
 
 ---
 
-## 4. SEO — le plus gros chantier
+## 4. SEO, le plus gros chantier
 
 ### Ce qui est déjà bon ✅
 
-- **Rendu côté serveur fonctionnel** — le contenu est dans le HTML initial, indexable sans exécution de JavaScript (c'était le gros défaut corrigé pendant la refonte)
+- **Rendu côté serveur fonctionnel**, le contenu est dans le HTML initial, indexable sans exécution de JavaScript (c'était le gros défaut corrigé pendant la refonte)
 - **Un seul `<h1>`**, hiérarchie `h1 → h2 → h3` cohérente sur toute la page
 - `lang="fr"` correctement déclaré
 - Meta description à jour et alignée sur le positionnement immobilier
@@ -110,13 +110,13 @@ C'est du code que j'ai introduit avec le nouveau carrousel — à corriger.
 ### Ce qui manque ❌
 
 **Aucune balise Open Graph ni Twitter Card.**
-Vérifié dans le HTML réellement servi : rien. Concrètement, quand quelqu'un partage jfsvisual.fr sur LinkedIn, WhatsApp ou Slack, **le lien apparaît sans image, sans titre formaté**. Pour une entreprise dont le métier est l'image, c'est le point le plus dommageable de tout cet audit — et l'un des plus rapides à corriger.
+Vérifié dans le HTML réellement servi : rien. Concrètement, quand quelqu'un partage jfsvisual.fr sur LinkedIn, WhatsApp ou Slack, **le lien apparaît sans image, sans titre formaté**. Pour une entreprise dont le métier est l'image, c'est le point le plus dommageable de tout cet audit, et l'un des plus rapides à corriger.
 
 **Les 4 pages partagent le même titre et la même description.**
-`/`, `/contact`, `/cgv`, `/mentionsLegales` et `/politiqueDeConfidentialite` héritent toutes du `metadata` du layout racine. Google voit cinq pages intitulées « JFS Visual » avec le même descriptif — c'est du contenu dupliqué, qui dilue le référencement.
+`/`, `/contact`, `/cgv`, `/mentionsLegales` et `/politiqueDeConfidentialite` héritent toutes du `metadata` du layout racine. Google voit cinq pages intitulées « JFS Visual » avec le même descriptif, c'est du contenu dupliqué, qui dilue le référencement.
 
 **Le titre est trop générique.**
-`<title>JFS Visual</title>` ne contient ni métier, ni localisation. Quelqu'un qui cherche « vidéaste immobilier Caen » n'a aucune chance de tomber dessus. Piste : `JFS Visual — Production vidéo pour agences immobilières | Normandie`.
+`<title>JFS Visual</title>` ne contient ni métier, ni localisation. Quelqu'un qui cherche « vidéaste immobilier Caen » n'a aucune chance de tomber dessus. Piste : `JFS Visual, Production vidéo pour agences immobilières | Normandie`.
 
 **Pas de `sitemap.xml`, pas de `robots.txt`.**
 Next.js App Router les génère nativement (`app/sitemap.ts`, `app/robots.ts`). Absents tous les deux.
@@ -149,7 +149,7 @@ Next.js ne sait pas quelle largeur l'image occupera et sert donc la variante la 
 Le lint `jsx-a11y` ne remonte rien, mais un point m'a échappé au lint et mérite attention :
 
 **`alt=""` sur les galeries photo** (`components/ui/gallery.tsx`, `gallery-cs.tsx`).
-Un alt vide indique à un lecteur d'écran « image purement décorative, ignore-la ». Or ce sont les photos de vos réalisations Cotral Lab et Combat Stress — du **contenu**, pas de la décoration. Elles devraient être décrites (bénéfice accessibilité **et** SEO images).
+Un alt vide indique à un lecteur d'écran « image purement décorative, ignore-la ». Or ce sont les photos de vos réalisations Cotral Lab et Combat Stress, du **contenu**, pas de la décoration. Elles devraient être décrites (bénéfice accessibilité **et** SEO images).
 
 ---
 
@@ -157,27 +157,27 @@ Un alt vide indique à un lecteur d'écran « image purement décorative, ignore
 
 Une erreur apparaît dans la console en développement : un décalage sur `<body style={{}}>` entre le rendu serveur et le rendu client.
 
-**Ce que j'ai vérifié :** aucun code applicatif ne manipule `document.body.style`. Le seul fichier qui le faisait (`apple-cards-carousel.tsx`) est désormais orphelin, donc non inclus dans le bundle — et l'erreur persiste malgré tout.
+**Ce que j'ai vérifié :** aucun code applicatif ne manipule `document.body.style`. Le seul fichier qui le faisait (`apple-cards-carousel.tsx`) est désormais orphelin, donc non inclus dans le bundle, et l'erreur persiste malgré tout.
 
-**Conclusion :** la cause est extérieure au projet (extension de navigateur, ou artefact de l'environnement de prévisualisation). React n'émet cet avertissement qu'en développement — il n'apparaît pas en production. **À reconfirmer dans un navigateur propre, sans extension, avant de s'en inquiéter.**
+**Conclusion :** la cause est extérieure au projet (extension de navigateur, ou artefact de l'environnement de prévisualisation). React n'émet cet avertissement qu'en développement, il n'apparaît pas en production. **À reconfirmer dans un navigateur propre, sans extension, avant de s'en inquiéter.**
 
 ---
 
 ## Plan d'action priorisé
 
-### P1 — Avant toute mise en production
+### P1, Avant toute mise en production
 1. **Monter Next.js de version** → corrige la vulnérabilité critique (DoS)
 2. **Ajouter les balises Open Graph + Twitter Card** avec une image dédiée 1200×630 → impact business immédiat sur chaque partage
 3. **Donner un `metadata` propre à chaque page** (`/contact`, `/cgv`, `/mentionsLegales`, `/politiqueDeConfidentialite`) et enrichir le titre de la page d'accueil
 
-### P2 — Dans la foulée
+### P2, Dans la foulée
 4. `app/sitemap.ts` + `app/robots.ts`
 5. Données structurées JSON-LD `LocalBusiness` (nom, adresse, zone desservie, réseaux) → SEO local
 6. Image `poster` sur le hero + `preconnect` vers Vimeo → plus de premier écran noir
 7. `sizes` sur les portraits de l'Équipe ; `<img>` → `next/image` dans le carrousel
 8. Alt descriptifs sur les galeries photo
 
-### P3 — Hygiène, sans urgence
+### P3, Hygiène, sans urgence
 9. Désinstaller les ~10 dépendances inutilisées + supprimer les 8 composants orphelins
 10. Aligner `eslint-config-next` sur la version de Next
 11. `images.remotePatterns` au lieu de `images.domains` ; supprimer le hack webpack `file-loader`
@@ -188,6 +188,6 @@ Une erreur apparaît dans la console en développement : un décalage sur `<body
 
 ## Ce que je n'ai pas pu mesurer
 
-- **Core Web Vitals réels** (LCP, INP, CLS) — nécessitent le site en ligne, pas un serveur local. Les données Vercel Speed Insights, déjà installé, doivent contenir l'historique.
-- **Positionnement actuel sur Google** — demande un accès à la Search Console.
-- **Comportement réel du hero sur connexion lente / mobile** — à tester sur un vrai appareil.
+- **Core Web Vitals réels** (LCP, INP, CLS), nécessitent le site en ligne, pas un serveur local. Les données Vercel Speed Insights, déjà installé, doivent contenir l'historique.
+- **Positionnement actuel sur Google**, demande un accès à la Search Console.
+- **Comportement réel du hero sur connexion lente / mobile**, à tester sur un vrai appareil.

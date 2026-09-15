@@ -1,4 +1,4 @@
-# Refonte visuelle — JFS Visual (portfolio_jfs_online) — Design Spec
+# Refonte visuelle, JFS Visual (portfolio_jfs_online), Design Spec
 
 **Date :** 2026-08-01
 **Repo :** github.com/Valentin0803/portfolio_jfs_online
@@ -12,7 +12,7 @@ Cette refonte fait partie de la **Phase 4** de la roadmap de mise à jour du sit
 
 ## 1. Identité visuelle
 
-Choisie après comparaison de 4 directions (Cinéma Premium, Éditorial Lumineux, Brutalist Créatif, Aérien/Tech) puis d'un comparatif direct A/B sur un hero complet avec contenu réel — voir décisions ci-dessous.
+Choisie après comparaison de 4 directions (Cinéma Premium, Éditorial Lumineux, Brutalist Créatif, Aérien/Tech) puis d'un comparatif direct A/B sur un hero complet avec contenu réel, voir décisions ci-dessous.
 
 ### Palette
 
@@ -22,21 +22,21 @@ Choisie après comparaison de 4 directions (Cinéma Premium, Éditorial Lumineux
 | Accent | Or | `#C9A24B` |
 | Texte clair / surfaces claires | Crème | `#F3EDE1` |
 
-Remplace `jaune` (`#FFEE53`) et `gris` (`#0D0D0D`) dans `tailwind.config.ts`. Le fond reste sombre (cohérent avec l'existant `darkMode: "class"`), mais le ton passe d'un noir pur + jaune vif à un charcoal chaud + or — plus feutré, plus "cinéma" que "néon".
+Remplace `jaune` (`#FFEE53`) et `gris` (`#0D0D0D`) dans `tailwind.config.ts`. Le fond reste sombre (cohérent avec l'existant `darkMode: "class"`), mais le ton passe d'un noir pur + jaune vif à un charcoal chaud + or, plus feutré, plus "cinéma" que "néon".
 
-**Rejeté :** direction "Éditorial Lumineux" (fond clair + corail) — testée en comparatif direct avec le même contenu, jugée moins porteuse pour le positionnement premium immo. Direction "Aérien/Tech" (bleu nuit + cyan) écartée d'emblée. Direction "Brutalist" (noir/blanc + néon) écartée par crainte d'un rendu "cheap" — à reconsidérer plus tard pour des usages ponctuels (ex : un post réseaux sociaux) mais pas comme identité du site.
+**Rejeté :** direction "Éditorial Lumineux" (fond clair + corail), testée en comparatif direct avec le même contenu, jugée moins porteuse pour le positionnement premium immo. Direction "Aérien/Tech" (bleu nuit + cyan) écartée d'emblée. Direction "Brutalist" (noir/blanc + néon) écartée par crainte d'un rendu "cheap", à reconsidérer plus tard pour des usages ponctuels (ex : un post réseaux sociaux) mais pas comme identité du site.
 
 ### Typographie
 
 - **Titres + wordmark** : `Unbounded`, graisse 700–800. Remplace `Akira`.
 - **Corps de texte / UI (nav, boutons, labels)** : `DM Sans`, graisses 400–700. Remplace `League Spartan`.
-- Les deux sont disponibles sur Google Fonts, à charger via `next/font/google` (comme l'actuel `League_Spartan`) plutôt qu'en local — simplifie l'implémentation par rapport au `localFont` actuel pour Akira.
+- Les deux sont disponibles sur Google Fonts, à charger via `next/font/google` (comme l'actuel `League_Spartan`) plutôt qu'en local, simplifie l'implémentation par rapport au `localFont` actuel pour Akira.
 
 **Rejeté :** traitement serif italique (trop éditorial), grotesk sobre façon "brand agency" (moins distinctif), lockup à graisses contrastées "JFS / VISUAL" (intéressant mais moins net qu'Unbounded en pleine graisse sur les tests).
 
 ### Ton graphique
 
-Sobre et contrasté — l'image/vidéo porte l'émotion, la typo structure l'information. Peu d'éléments décoratifs superflus. Les interactions existantes (hover reveal, GSAP, Framer Motion, parallax) sont conservées dans leur principe mais réhabillées avec la nouvelle palette — pas de refonte des mécaniques d'interaction dans ce spec, seulement leur habillage visuel.
+Sobre et contrasté, l'image/vidéo porte l'émotion, la typo structure l'information. Peu d'éléments décoratifs superflus. Les interactions existantes (hover reveal, GSAP, Framer Motion, parallax) sont conservées dans leur principe mais réhabillées avec la nouvelle palette, pas de refonte des mécaniques d'interaction dans ce spec, seulement leur habillage visuel.
 
 ---
 
@@ -46,10 +46,10 @@ Layout **"offre phare + secondaires"**, choisi après comparaison avec une grill
 
 - **Atelier du Réel** : carte hero mise en avant visuellement (badge "Offre phare", plus grande, fond légèrement teinté or), 2 100€ HT/mois. Description doit refléter le contenu du master prompt : suivi Notion + WhatsApp, gestion administrative des vols drone, validation via Frame.io/Reely.
 - **Journée Contenu** et **Sur Mesure** : cartes secondaires, plus compactes, à côté ou en dessous de la carte hero.
-  - Journée Contenu : "~1h prépa/trajet + 2h tournage + 5h post-prod → 5 contenus courts livrés". Prix affiché en `"à partir de ~800€"` tant que Martin n'a pas figé le tarif définitif — ne pas afficher un chiffre ferme.
+  - Journée Contenu : "~1h prépa/trajet + 2h tournage + 5h post-prod → 5 contenus courts livrés". Prix affiché en `"à partir de ~800€"` tant que Martin n'a pas figé le tarif définitif, ne pas afficher un chiffre ferme.
   - Sur Mesure : corporate, événementiel, drone à la demande → "Devis".
 
-**Rejeté :** grille à 3 cartes égales (ne signale pas que l'Atelier du Réel est l'offre phare et le moteur de revenu récurrent) ; segmentation par onglets audience (pertinente marketing-wise mais ajoute un clic, jugée pas prioritaire pour cette itération — à garder en option si les données d'usage montrent que les deux audiences se marchent dessus).
+**Rejeté :** grille à 3 cartes égales (ne signale pas que l'Atelier du Réel est l'offre phare et le moteur de revenu récurrent) ; segmentation par onglets audience (pertinente marketing-wise mais ajoute un clic, jugée pas prioritaire pour cette itération, à garder en option si les données d'usage montrent que les deux audiences se marchent dessus).
 
 ---
 
@@ -57,18 +57,18 @@ Layout **"offre phare + secondaires"**, choisi après comparaison avec une grill
 
 Layout **"showreel immersif + liste"**, choisi après comparaison avec une grille de miniatures classique et une présentation en case studies chiffrées.
 
-- **Showreel** en tête de section : vidéo en boucle, muette par défaut, façon reel d'agence de production. Nécessite un montage dédié (pas un best-of généré automatiquement) — à prévoir côté production, pas côté dev.
+- **Showreel** en tête de section : vidéo en boucle, muette par défaut, façon reel d'agence de production. Nécessite un montage dédié (pas un best-of généré automatiquement), à prévoir côté production, pas côté dev.
 - **Liste de projets** en dessous du showreel, format proche de l'actuel (miniatures cliquables vers Vimeo/YouTube via `VimeoPlayer`/`YoutubePlayer`).
 
-**Évolution future (non incluse dans cette itération) :** transformer la liste en case studies avec résultats chiffrés ("vendu 12 jours après publication", "+40% de vues") — nécessite de collecter ces données auprès des clients (Guy Hoquet en premier). À reprendre une fois cette donnée disponible.
+**Évolution future (non incluse dans cette itération) :** transformer la liste en case studies avec résultats chiffrés ("vendu 12 jours après publication", "+40% de vues"), nécessite de collecter ces données auprès des clients (Guy Hoquet en premier). À reprendre une fois cette donnée disponible.
 
 **Rejeté :** grille de miniatures pure (jugée trop générique, ne capitalise pas sur la qualité de prod visée) ; case studies chiffrées d'entrée de jeu (bonne idée mais bloquée par l'absence de données clients aujourd'hui).
 
 ---
 
-## 4. Autres sections (pas passées par la revue visuelle — proposition par défaut)
+## 4. Autres sections (pas passées par la revue visuelle, proposition par défaut)
 
-Ces sections gardent leur contenu et leur rôle actuels ; seul l'habillage visuel change pour suivre la nouvelle identité. Si tu veux les revoir avant l'implémentation, on peut les repasser par le compagnon visuel — sinon elles sont traitées comme des adaptations directes en Phase d'implémentation.
+Ces sections gardent leur contenu et leur rôle actuels ; seul l'habillage visuel change pour suivre la nouvelle identité. Si tu veux les revoir avant l'implémentation, on peut les repasser par le compagnon visuel, sinon elles sont traitées comme des adaptations directes en Phase d'implémentation.
 
 - **Nav** (`components/Nav.tsx`) : wordmark Unbounded + liens "Réalisations / Offres / Équipe / Contact", fond charcoal, sticky.
 - **Équipe** (`components/Team.tsx`) : Valentin / Martin / Lucas conservés, réhabillés dans la nouvelle palette/typo.
@@ -93,5 +93,5 @@ Cette refonte se fait dans le même mouvement que les Phases 1 et 2 de la roadma
 
 - Le tarif définitif de l'offre Journée Contenu (dépend de Martin).
 - La collecte des données de résultats clients pour les futures case studies.
-- Les Phases 0/2/3 de la roadmap technique (corrections rapides, montée de version Next/React, contenu) — traitées comme un chantier parallèle, référencées ici mais pas détaillées.
-- Accessibilité et performance (Core Web Vitals) — à auditer séparément, mentionné comme non-audité dans la roadmap initiale.
+- Les Phases 0/2/3 de la roadmap technique (corrections rapides, montée de version Next/React, contenu), traitées comme un chantier parallèle, référencées ici mais pas détaillées.
+- Accessibilité et performance (Core Web Vitals), à auditer séparément, mentionné comme non-audité dans la roadmap initiale.

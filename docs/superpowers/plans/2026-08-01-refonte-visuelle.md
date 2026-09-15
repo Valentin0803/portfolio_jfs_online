@@ -1,21 +1,21 @@
-# Refonte visuelle JFS Visual — Implementation Plan
+# Refonte visuelle JFS Visual, Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Appliquer la refonte visuelle validée (spec `docs/superpowers/specs/2026-08-01-refonte-visuelle-design.md`) au site `portfolio_jfs_online` : nouvelle identité (charcoal/or/crème, Unbounded/DM Sans), nouvelle section Offres (Atelier du Réel en avant), Showreel sur la page Réalisations, et conversion de la page d'accueil en Server Component (SEO).
 
-**Architecture:** Chaque tâche touche un ou plusieurs fichiers Next.js App Router existants. Pas de nouvelle dépendance requise (Unbounded/DM Sans via `next/font/google`, déjà utilisé pour League Spartan). Le repo n'a pas de suite de tests automatisés — chaque tâche se vérifie manuellement via `npm run dev` (visuel) ou `npm run build` (compilation), pas de cycle TDD classique.
+**Architecture:** Chaque tâche touche un ou plusieurs fichiers Next.js App Router existants. Pas de nouvelle dépendance requise (Unbounded/DM Sans via `next/font/google`, déjà utilisé pour League Spartan). Le repo n'a pas de suite de tests automatisés, chaque tâche se vérifie manuellement via `npm run dev` (visuel) ou `npm run build` (compilation), pas de cycle TDD classique.
 
 **Tech Stack:** Next.js 15 (App Router), React 18, TypeScript, Tailwind v3, `next/font/google`.
 
 ## Global Constraints
 
-- Palette : charcoal `#0A0907`, or `#C9A24B`, crème `#F3EDE1` (spec §1) — exposés comme `charcoal`/`or`/`creme` dans `tailwind.config.ts`.
+- Palette : charcoal `#0A0907`, or `#C9A24B`, crème `#F3EDE1` (spec §1), exposés comme `charcoal`/`or`/`creme` dans `tailwind.config.ts`.
 - Typographie : `Unbounded` 700/800 pour titres/wordmark, `DM Sans` 400–700 pour corps/UI (spec §1).
-- Le prix de l'offre "Journée Contenu" reste affiché `"À partir de ~800€"` — jamais un chiffre ferme tant que le tarif n'est pas validé (spec §2).
+- Le prix de l'offre "Journée Contenu" reste affiché `"À partir de ~800€"`, jamais un chiffre ferme tant que le tarif n'est pas validé (spec §2).
 - **Ce repo est le repo de production : ne pas `git push`, ne pas déployer.** Tout le travail de ce plan reste local (commits locaux uniquement) jusqu'à nouvel ordre explicite de l'utilisateur.
-- Le site sera visuellement incohérent (mélange ancien/nouveau design) entre certaines tâches — c'est attendu, ne pas s'inquiéter d'un rendu à moitié réhabillé avant la fin du plan.
-- Aucune tâche de ce plan ne modifie `app/contact/page.tsx`, `app/cgv/*`, `app/mentionsLegales/*`, `app/politiqueDeConfidentialite/*` — hors scope de la spec (contenu légal, pas de reskin prévu dans cette itération).
+- Le site sera visuellement incohérent (mélange ancien/nouveau design) entre certaines tâches, c'est attendu, ne pas s'inquiéter d'un rendu à moitié réhabillé avant la fin du plan.
+- Aucune tâche de ce plan ne modifie `app/contact/page.tsx`, `app/cgv/*`, `app/mentionsLegales/*`, `app/politiqueDeConfidentialite/*`, hors scope de la spec (contenu légal, pas de reskin prévu dans cette itération).
 
 ---
 
@@ -28,7 +28,7 @@
 - Modify: `components/ui/card.tsx`
 
 **Interfaces:**
-- Produces: classes Tailwind `bg-charcoal`/`text-charcoal`/`border-charcoal`, `bg-or`/`text-or`/`border-or`, `bg-creme`/`text-creme`/`border-creme`, `font-unbounded`, `font-dmSans` — utilisées par toutes les tâches suivantes.
+- Produces: classes Tailwind `bg-charcoal`/`text-charcoal`/`border-charcoal`, `bg-or`/`text-or`/`border-or`, `bg-creme`/`text-creme`/`border-creme`, `font-unbounded`, `font-dmSans`, utilisées par toutes les tâches suivantes.
 
 - [ ] **Step 1: Remplacer les couleurs dans `tailwind.config.ts`**
 
@@ -71,7 +71,7 @@ const config: Config = {
 export default config;
 ```
 
-Les clés `jaune`, `gris`, `akira`, `leagueSpartan` disparaissent volontairement : tant que les tâches suivantes n'ont pas remplacé leurs usages, les classes correspondantes ne généreront simplement plus de style (pas d'erreur de build, juste un rendu non stylé sur les fichiers pas encore traités — normal jusqu'à la Task 8).
+Les clés `jaune`, `gris`, `akira`, `leagueSpartan` disparaissent volontairement : tant que les tâches suivantes n'ont pas remplacé leurs usages, les classes correspondantes ne généreront simplement plus de style (pas d'erreur de build, juste un rendu non stylé sur les fichiers pas encore traités, normal jusqu'à la Task 8).
 
 - [ ] **Step 2: Remplacer les polices et nettoyer `next/head` dans `app/layout.tsx`**
 
@@ -156,7 +156,7 @@ export default function RootLayout({
 ```
 
 Deux corrections bundlées ici (Phase 0 de la roadmap technique, même fichier donc pas de sens de les traiter à part) :
-- `next/head` (`<Head>`) supprimé — redondant avec `export const metadata`, qui gère déjà `<title>`, la description et les favicons.
+- `next/head` (`<Head>`) supprimé, redondant avec `export const metadata`, qui gère déjà `<title>`, la description et les favicons.
 - `GoogleAnalytics gaId` utilise maintenant `process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` au lieu de la valeur codée en dur `"G-BYDD8ELGMN"`. Vérifie que `.env` contient bien cette variable avec la bonne valeur avant de tester (elle y était déjà d'après l'audit initial).
 
 - [ ] **Step 3: Mettre à jour `app/globals.css`**
@@ -236,18 +236,18 @@ body {
 }
 ```
 
-Changements : `--background`/`--foreground` alignés sur charcoal/crème, `.spanMask` recoloré (était `#ffee53`/`#0d0d0d`), ajout de `scroll-behavior: smooth` (utilisé par les nouveaux liens d'ancrage sans JS de la Task 4), `body` utilise `--font-dmSans` par défaut. La classe `.leagueSpartan` (utilitaire CSS, différente de la classe Tailwind `font-leagueSpartan`) est supprimée car plus référencée nulle part après ce plan — vérifiée par `grep -rn "leagueSpartan\"" components app` en Task 8.
+Changements : `--background`/`--foreground` alignés sur charcoal/crème, `.spanMask` recoloré (était `#ffee53`/`#0d0d0d`), ajout de `scroll-behavior: smooth` (utilisé par les nouveaux liens d'ancrage sans JS de la Task 4), `body` utilise `--font-dmSans` par défaut. La classe `.leagueSpartan` (utilitaire CSS, différente de la classe Tailwind `font-leagueSpartan`) est supprimée car plus référencée nulle part après ce plan, vérifiée par `grep -rn "leagueSpartan\"" components app` en Task 8.
 
 - [ ] **Step 4: Teinter `components/ui/card.tsx` (fond neutre → charcoal)**
 
 ```tsx
-// components/ui/card.tsx:13 — dans Card, remplacer :
+// components/ui/card.tsx:13, dans Card, remplacer :
 "max-w-sm w-full mx-auto p-8 rounded-xl border border-[rgba(255,255,255,0.10)] dark:bg-[rgba(40,40,40,0.70)] bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group",
 // par :
 "max-w-sm w-full mx-auto p-8 rounded-xl border border-[rgba(255,255,255,0.10)] dark:bg-[rgba(20,18,14,0.7)] bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group",
 ```
 
-Seule cette ligne change (`CardTitle`, `CardDescription`, `CardSkeletonContainer`, `Container` restent identiques — couleurs déjà neutres, pas liées à l'ancien token `jaune`/`gris`).
+Seule cette ligne change (`CardTitle`, `CardDescription`, `CardSkeletonContainer`, `Container` restent identiques, couleurs déjà neutres, pas liées à l'ancien token `jaune`/`gris`).
 
 - [ ] **Step 5: Vérification manuelle**
 
@@ -255,7 +255,7 @@ Seule cette ligne change (`CardTitle`, `CardDescription`, `CardSkeletonContainer
 npm run dev
 ```
 
-Ouvre `http://localhost:3000` — le fond doit être charcoal (pas de changement visuel flagrant attendu ailleurs, les composants ne sont pas encore reskinés). Vérifie dans la console navigateur qu'il n'y a pas d'erreur liée aux fonts ou à `process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`.
+Ouvre `http://localhost:3000`, le fond doit être charcoal (pas de changement visuel flagrant attendu ailleurs, les composants ne sont pas encore reskinés). Vérifie dans la console navigateur qu'il n'y a pas d'erreur liée aux fonts ou à `process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`.
 
 - [ ] **Step 6: Commit**
 
@@ -268,7 +268,7 @@ git commit -m "feat: nouveaux design tokens (charcoal/or/creme, Unbounded/DM San
 
 ## Task 2: Section Offres (nouveau composant, remplace le Tarifs.tsx orphelin)
 
-**Découverte de l'audit :** `components/Tarifs.tsx` existe mais n'est importé nulle part dans `app/page.tsx` — c'est du code mort, le site actuel n'affiche aucune tarification. On le supprime et on le remplace par un vrai composant Offres branché sur la page.
+**Découverte de l'audit :** `components/Tarifs.tsx` existe mais n'est importé nulle part dans `app/page.tsx`, c'est du code mort, le site actuel n'affiche aucune tarification. On le supprime et on le remplace par un vrai composant Offres branché sur la page.
 
 **Files:**
 - Create: `components/Offres.tsx`
@@ -361,7 +361,7 @@ export const Offres = () => {
 export default Offres;
 ```
 
-Le bouton "Prendre rendez-vous" est un lien d'ancrage simple (`#Contact`, pas de `onClick`/JS) — le composant reste un Server Component, cohérent avec l'objectif SEO de la Task 9.
+Le bouton "Prendre rendez-vous" est un lien d'ancrage simple (`#Contact`, pas de `onClick`/JS), le composant reste un Server Component, cohérent avec l'objectif SEO de la Task 9.
 
 - [ ] **Step 3: Brancher `Offres` dans `app/page.tsx`**
 
@@ -397,7 +397,7 @@ export default function Home() {
 }
 ```
 
-(`"use client"` reste en tête pour l'instant — retiré en Task 9.)
+(`"use client"` reste en tête pour l'instant, retiré en Task 9.)
 
 - [ ] **Step 4: Vérification manuelle**
 
@@ -416,12 +416,12 @@ git commit -m "feat: nouvelle section Offres (Atelier du Réel + Journée Conten
 
 ---
 
-## Task 3: Nav.tsx — reskin + lien vers Offres
+## Task 3: Nav.tsx, reskin + lien vers Offres
 
 **Files:**
 - Modify: `components/Nav.tsx`
 
-**Note :** le logo actuel est un pictogramme SVG (pas un wordmark texte) — les mockups du brainstorming visuel montraient un wordmark "JFS VISUAL" en Unbounded, mais ce fichier n'avait pas été vu à ce moment-là. Ce plan recolore le pictogramme existant sans le remplacer par du texte ; ajouter un wordmark texte à côté est une option à valider séparément avec Valentin si souhaité — non fait ici pour ne pas décider à sa place.
+**Note :** le logo actuel est un pictogramme SVG (pas un wordmark texte), les mockups du brainstorming visuel montraient un wordmark "JFS VISUAL" en Unbounded, mais ce fichier n'avait pas été vu à ce moment-là. Ce plan recolore le pictogramme existant sans le remplacer par du texte ; ajouter un wordmark texte à côté est une option à valider séparément avec Valentin si souhaité, non fait ici pour ne pas décider à sa place.
 
 - [ ] **Step 1: Remplacer `components/Nav.tsx`**
 
@@ -515,7 +515,7 @@ export default Nav;
 
 - [ ] **Step 2: Vérification manuelle**
 
-`npm run dev` — le lien "OFFRES" doit apparaître dans la nav et scroller vers la section créée en Task 2. Les liens doivent passer en or (pas jaune) au survol.
+`npm run dev`, le lien "OFFRES" doit apparaître dans la nav et scroller vers la section créée en Task 2. Les liens doivent passer en or (pas jaune) au survol.
 
 - [ ] **Step 3: Commit**
 
@@ -526,12 +526,12 @@ git commit -m "feat: reskin Nav (charcoal/or) + lien vers la section Offres"
 
 ---
 
-## Task 4: Hero.tsx — reskin + nouveau message
+## Task 4: Hero.tsx, reskin + nouveau message
 
 **Files:**
 - Modify: `components/Hero.tsx`
 
-Le message valide pendant le brainstorming visuel (comparatif A/B) remplace le texte générique actuel. Le bouton "Prenez rendez-vous" (lien externe zcal) est remplacé par un lien d'ancrage vers `#Offres` — le zcal reste accessible depuis la section Contact, on évite juste de diluer le CTA du hero. Reste un Server Component (aucun `onClick`/hook ajouté).
+Le message valide pendant le brainstorming visuel (comparatif A/B) remplace le texte générique actuel. Le bouton "Prenez rendez-vous" (lien externe zcal) est remplacé par un lien d'ancrage vers `#Offres`, le zcal reste accessible depuis la section Contact, on évite juste de diluer le CTA du hero. Reste un Server Component (aucun `onClick`/hook ajouté).
 
 - [ ] **Step 1: Remplacer `components/Hero.tsx`**
 
@@ -542,7 +542,7 @@ import VimeoPlayer from "./VimeoPlayer";
 
 export const Hero = () => {
   const words =
-    "Production vidéo premium pour agences immobilières — tournage, montage, drone, gestion administrative incluse. Niveau de production au-dessus du standard français.";
+    "Production vidéo premium pour agences immobilières, tournage, montage, drone, gestion administrative incluse. Niveau de production au-dessus du standard français.";
   return (
     <section
       id="APropos"
@@ -589,7 +589,7 @@ export default Hero;
 
 - [ ] **Step 2: Vérification manuelle**
 
-`npm run dev` — vérifie le nouveau titre, la couleur or sur "vend vos biens", et que le bouton scrolle vers `#Offres`.
+`npm run dev`, vérifie le nouveau titre, la couleur or sur "vend vos biens", et que le bouton scrolle vers `#Offres`.
 
 - [ ] **Step 3: Commit**
 
@@ -600,17 +600,17 @@ git commit -m "feat: reskin Hero + nouveau message (positionnement immo premium)
 
 ---
 
-## Task 5: Projets.tsx — Showreel + reskin
+## Task 5: Projets.tsx, Showreel + reskin
 
 **Files:**
 - Modify: `components/Projets.tsx`
 
-Ajoute un bloc showreel en tête de section (vidéo en boucle, muette), au-dessus du carrousel de projets existant — direction validée pendant le brainstorming visuel. Le showreel réutilise temporairement l'ID vidéo du Hero ; il faudra le remplacer par un montage dédié (pas un sujet de code, à traiter côté production).
+Ajoute un bloc showreel en tête de section (vidéo en boucle, muette), au-dessus du carrousel de projets existant, direction validée pendant le brainstorming visuel. Le showreel réutilise temporairement l'ID vidéo du Hero ; il faudra le remplacer par un montage dédié (pas un sujet de code, à traiter côté production).
 
 - [ ] **Step 1: Modifier `components/Projets.tsx`**
 
 ```tsx
-// components/Projets.tsx:1-21 — remplacer par :
+// components/Projets.tsx:1-21, remplacer par :
 import { Card, Carousel } from "@/components/ui/apple-cards-carousel";
 import { Gallery } from "./ui/gallery";
 import { GalleryCS } from "./ui/gallery-cs";
@@ -644,11 +644,11 @@ export const Projects = () => {
 };
 ```
 
-Le reste du fichier (`const dataCarousel = [...]`, lignes 23–140 dans la version actuelle) ne change pas — copie-le tel quel après ce bloc.
+Le reste du fichier (`const dataCarousel = [...]`, lignes 23–140 dans la version actuelle) ne change pas, copie-le tel quel après ce bloc.
 
 - [ ] **Step 2: Vérification manuelle**
 
-`npm run dev` — la section "Nos Projets" doit maintenant afficher un showreel en boucle au-dessus du carrousel existant.
+`npm run dev`, la section "Nos Projets" doit maintenant afficher un showreel en boucle au-dessus du carrousel existant.
 
 - [ ] **Step 3: Commit**
 
@@ -659,7 +659,7 @@ git commit -m "feat: ajout du showreel en tête de la section Réalisations + re
 
 ---
 
-## Task 6: Team, Footer, PiedPage, BandeauLogo — reskin
+## Task 6: Team, Footer, PiedPage, BandeauLogo, reskin
 
 **Files:**
 - Modify: `components/Team.tsx`
@@ -667,7 +667,7 @@ git commit -m "feat: ajout du showreel en tête de la section Réalisations + re
 - Modify: `components/PiedPage.tsx`
 - Modify: `components/BandeauLogo.tsx`
 
-(`components/CarrouselLogo.tsx` ne contient aucune référence à l'ancien design system — aucun changement nécessaire.)
+(`components/CarrouselLogo.tsx` ne contient aucune référence à l'ancien design system, aucun changement nécessaire.)
 
 - [ ] **Step 1: Remplacer `components/Team.tsx`**
 
@@ -877,7 +877,7 @@ export const BandeauLogo = () => {
 
 - [ ] **Step 5: Vérification manuelle**
 
-`npm run dev` — vérifie Équipe (texte or), Footer (icônes réseaux sociaux passent en or au survol), pied de page (liens légaux), bandeau logos (titre en crème).
+`npm run dev`, vérifie Équipe (texte or), Footer (icônes réseaux sociaux passent en or au survol), pied de page (liens légaux), bandeau logos (titre en crème).
 
 - [ ] **Step 6: Commit**
 
@@ -888,13 +888,13 @@ git commit -m "feat: reskin Équipe, Footer, pied de page, bandeau logos"
 
 ---
 
-## Task 7: Contact + FaqSection — reskin (+ ajout `"use client"` sur FaqSection)
+## Task 7: Contact + FaqSection, reskin (+ ajout `"use client"` sur FaqSection)
 
 **Files:**
 - Modify: `components/Contact.tsx`
 - Modify: `components/FaqSection.tsx`
 
-`FaqSection.tsx` utilise `useState`/`onClick` mais n'a pas de directive `"use client"` — ça fonctionne aujourd'hui uniquement parce que `app/page.tsx` est lui-même `"use client"` (tout son sous-arbre est donc déjà côté client). Il faut l'ajouter maintenant, avant la Task 9, sinon le build cassera dès que `"use client"` sera retiré de `app/page.tsx`.
+`FaqSection.tsx` utilise `useState`/`onClick` mais n'a pas de directive `"use client"`, ça fonctionne aujourd'hui uniquement parce que `app/page.tsx` est lui-même `"use client"` (tout son sous-arbre est donc déjà côté client). Il faut l'ajouter maintenant, avant la Task 9, sinon le build cassera dès que `"use client"` sera retiré de `app/page.tsx`.
 
 - [ ] **Step 1: Remplacer `components/Contact.tsx`**
 
@@ -1048,7 +1048,7 @@ export default FaqSection;
 
 - [ ] **Step 3: Vérification manuelle**
 
-`npm run dev` — Contact (fond charcoal, boutons or), FAQ (titre or, accordéon toujours fonctionnel).
+`npm run dev`, Contact (fond charcoal, boutons or), FAQ (titre or, accordéon toujours fonctionnel).
 
 - [ ] **Step 4: Commit**
 
@@ -1059,7 +1059,7 @@ git commit -m "feat: reskin Contact + FAQ, ajout use client manquant sur FaqSect
 
 ---
 
-## Task 8: Process, Services (mask hover), NosServicesSection — reskin
+## Task 8: Process, Services (mask hover), NosServicesSection, reskin
 
 **Files:**
 - Modify: `components/Process.tsx`
@@ -1090,7 +1090,7 @@ git commit -m "feat: reskin Contact + FAQ, ajout use client manquant sur FaqSect
 <div className="hidden mx-auto w-2/3 border-[rgba(255,255,255,0.10)] dark:bg-charcoal bg-gray-100 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] rounded-xl px-10 py-10 lg:block ">
 ```
 
-Chaque occurrence de `font-leagueSpartan font-bold text-3xl mt-4` (titres "Démarrage", "Pré-production", "Production", "Post-production et livraison") devient `font-unbounded font-bold text-3xl mt-4 text-creme` — 4 occurrences, aux lignes actuelles 38, 57, 79, 99. Le reste du fichier (badges `Étape N`, listes `Step`, `ImageDescription`) ne change pas — ces couleurs sont déjà neutres.
+Chaque occurrence de `font-leagueSpartan font-bold text-3xl mt-4` (titres "Démarrage", "Pré-production", "Production", "Post-production et livraison") devient `font-unbounded font-bold text-3xl mt-4 text-creme`, 4 occurrences, aux lignes actuelles 38, 57, 79, 99. Le reste du fichier (badges `Étape N`, listes `Step`, `ImageDescription`) ne change pas, ces couleurs sont déjà neutres.
 
 - [ ] **Step 2: Modifier `components/ui/Services.tsx`**
 
@@ -1121,11 +1121,11 @@ className="titreService flex items-center relative h-full w-full font-unbounded 
 grep -rn "font-akira\|font-leagueSpartan\|font-body\|bg-jaune\|text-jaune\|border-jaune\|fill-jaune\|dark:bg-gris\|bg-gris" components app
 ```
 
-Expected: aucun résultat (sauf éventuellement dans des fichiers hors scope explicitement listés dans les Global Constraints — vérifie que tout résultat restant est bien dans `app/contact`, `app/cgv`, `app/mentionsLegales` ou `app/politiqueDeConfidentialite`).
+Expected: aucun résultat (sauf éventuellement dans des fichiers hors scope explicitement listés dans les Global Constraints, vérifie que tout résultat restant est bien dans `app/contact`, `app/cgv`, `app/mentionsLegales` ou `app/politiqueDeConfidentialite`).
 
 - [ ] **Step 5: Vérification manuelle**
 
-`npm run dev` — section Process (fond charcoal), effet de reveal au survol des titres "Nos Services" (texte or sur fond charcoal au lieu de jaune sur noir).
+`npm run dev`, section Process (fond charcoal), effet de reveal au survol des titres "Nos Services" (texte or sur fond charcoal au lieu de jaune sur noir).
 
 - [ ] **Step 6: Commit**
 
@@ -1136,12 +1136,12 @@ git commit -m "feat: reskin Process, effet de reveal Services, titre NosServices
 
 ---
 
-## Task 9: SEO — conversion de `app/page.tsx` en Server Component
+## Task 9: SEO, conversion de `app/page.tsx` en Server Component
 
 **Files:**
 - Modify: `app/page.tsx`
 
-Dernière tâche du plan : maintenant que tous les composants enfants sont finalisés, on retire `"use client"` de la page d'accueil pour qu'elle soit rendue côté serveur (objectif SEO de la Phase 1 de la roadmap technique). D'après l'audit des directives `"use client"` du repo (Task de vérification ci-dessous), tous les composants qui utilisent des hooks ou des event handlers directs (`Nav`, `NosServicesSection`, `Process`, `FaqSection` depuis la Task 7, et les composants `ui/*` déjà clients) ont déjà leur propre directive — `Home` peut donc redevenir un Server Component sans rien casser.
+Dernière tâche du plan : maintenant que tous les composants enfants sont finalisés, on retire `"use client"` de la page d'accueil pour qu'elle soit rendue côté serveur (objectif SEO de la Phase 1 de la roadmap technique). D'après l'audit des directives `"use client"` du repo (Task de vérification ci-dessous), tous les composants qui utilisent des hooks ou des event handlers directs (`Nav`, `NosServicesSection`, `Process`, `FaqSection` depuis la Task 7, et les composants `ui/*` déjà clients) ont déjà leur propre directive, `Home` peut donc redevenir un Server Component sans rien casser.
 
 - [ ] **Step 1: Retirer `"use client"` de `app/page.tsx`**
 
@@ -1176,7 +1176,7 @@ export default function Home() {
 }
 ```
 
-(Seule la ligne `"use client";` disparaît — tout le reste est identique à la Task 2.)
+(Seule la ligne `"use client";` disparaît, tout le reste est identique à la Task 2.)
 
 - [ ] **Step 2: Vérifier que le build passe**
 
@@ -1184,7 +1184,7 @@ export default function Home() {
 npm run build
 ```
 
-Expected: build réussi, aucune erreur du type "You're importing a component that needs useState/useEffect/onClick. It only works in a Client Component". Si une erreur pointe vers un fichier précis, ajoute `"use client"` en tête de ce fichier — ça veut dire qu'un composant a été manqué dans l'audit initial.
+Expected: build réussi, aucune erreur du type "You're importing a component that needs useState/useEffect/onClick. It only works in a Client Component". Si une erreur pointe vers un fichier précis, ajoute `"use client"` en tête de ce fichier, ça veut dire qu'un composant a été manqué dans l'audit initial.
 
 - [ ] **Step 3: Vérifier que le HTML est bien rendu côté serveur**
 
@@ -1194,7 +1194,7 @@ npm run dev
 curl -s http://localhost:3000 | grep -o "Du contenu vidéo qui"
 ```
 
-Expected: le texte du H1 apparaît dans le HTML brut retourné par `curl` (preuve que le contenu n'attend plus l'hydratation JS pour exister — c'est exactement ce que corrige cette tâche).
+Expected: le texte du H1 apparaît dans le HTML brut retourné par `curl` (preuve que le contenu n'attend plus l'hydratation JS pour exister, c'est exactement ce que corrige cette tâche).
 
 - [ ] **Step 4: Commit**
 
@@ -1212,6 +1212,6 @@ git commit -m "fix: convertir la page d'accueil en Server Component pour le SEO 
 - [x] Structure des offres "phare + secondaires" (spec §2) : Task 2, avec prix Journée Contenu non figé.
 - [x] Showreel + liste (spec §3) : Task 5.
 - [x] Nav/Équipe/FAQ/Contact/BandeauLogo réhabillés (spec §4) : Tasks 3, 6, 7.
-- [x] Volet technique — tokens, fonts, `next/head`, GA env var, retrait `"use client"` (spec §5) : Tasks 1 et 9.
+- [x] Volet technique, tokens, fonts, `next/head`, GA env var, retrait `"use client"` (spec §5) : Tasks 1 et 9.
 - [x] Hors scope respecté : pages légales et `/contact` non touchées, prix Journée Contenu non figé, pas de nouvelle dépendance de test ajoutée.
-- [x] Pas de push/déploiement dans ce plan (contrainte globale rappelée dans chaque étape de commit — jamais de `git push`).
+- [x] Pas de push/déploiement dans ce plan (contrainte globale rappelée dans chaque étape de commit, jamais de `git push`).
