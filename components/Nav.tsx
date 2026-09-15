@@ -148,7 +148,7 @@ function Nav() {
               className="group relative font-dmSans text-sm text-creme/85 transition-colors duration-300 hover:text-creme"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#25D366] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-or transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
