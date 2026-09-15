@@ -23,6 +23,10 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jfs-visual.fr"),
+  // Copie de démonstration : balise noindex en plus du robots.txt.
+  ...(process.env.NEXT_PUBLIC_NOINDEX === "1"
+    ? { robots: { index: false, follow: false } }
+    : {}),
   title: {
     default: "Production vidéo immobilière, Normandie et Savoie | JFS Visual",
     template: "%s | JFS Visual",
