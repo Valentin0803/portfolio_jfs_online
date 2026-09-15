@@ -39,7 +39,7 @@ export const PiedPage = () => {
   const annee = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-creme/10 pb-20 lg:pb-0">
+    <footer className="border-t border-creme/10 pb-12">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           <div>

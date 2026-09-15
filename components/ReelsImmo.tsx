@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 import { reels, type Reel } from "@/lib/reels";
 
 /**
@@ -199,17 +198,6 @@ export const ReelsImmo = () => {
             />
           ))}
         </div>
-      </div>
-
-      <div className="mt-14 flex flex-col items-center px-6 text-center lg:mt-20">
-        <a href={WHATSAPP_URL} className="w-fit" target="_blank" rel="noopener noreferrer">
-          <span className="inline-block px-9 py-4 rounded-full font-dmSans font-bold text-xs uppercase tracking-widest bg-or text-charcoal border border-or hover:bg-charcoal hover:text-or transition-colors duration-300">
-            {WHATSAPP_LABEL}
-          </span>
-        </a>
-        <p className="font-dmSans text-xs text-creme/60 mt-4">
-          Un premier échange, sans engagement
-        </p>
       </div>
     </section>
   );

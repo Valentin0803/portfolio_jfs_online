@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
+import { CONTACT_LABEL, CONTACT_URL } from "@/lib/site";
 
 const LINKS = [
   { label: "Immobilier", hash: "#Immobilier" },
@@ -22,9 +22,7 @@ const CTA_SCROLL_THRESHOLD = 200;
 function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const whatsappColors = pathname === "/contact"
-    ? "border-[#25D366] bg-[#25D366] hover:text-[#25D366]"
-    : "border-or bg-or hover:text-or";
+  const isContact = pathname === CONTACT_URL;
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [open, setOpen] = useState(false);
@@ -70,8 +68,9 @@ function Nav() {
 
   const hrefFor = (hash: string) => (isHome ? hash : `/${hash}`);
 
-  // Ailleurs que sur l'accueil, le CTA est visible en permanence.
-  const ctaVisible = !isHome || pastHero;
+  // Ailleurs que sur l'accueil, le CTA est visible en permanence. Sur la page
+  // Contact il disparaît : il pointerait vers la page déjà affichée.
+  const ctaVisible = !isContact && (!isHome || pastHero);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -103,22 +102,22 @@ function Nav() {
                   </a>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.36, ease: "easeOut" }}
-                className="mt-6"
-              >
-                <a
-                  href={WHATSAPP_URL}
-                  onClick={() => setOpen(false)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-block rounded-full border px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal ${whatsappColors}`}
+              {!isContact && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.36, ease: "easeOut" }}
+                  className="mt-6"
                 >
-                  {WHATSAPP_LABEL}
-                </a>
-              </motion.div>
+                  <Link
+                    href={CONTACT_URL}
+                    onClick={() => setOpen(false)}
+                    className="inline-block rounded-full border border-or bg-or px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or"
+                  >
+                    {CONTACT_LABEL}
+                  </Link>
+                </motion.div>
+              )}
             </nav>
           </motion.div>
         )}
@@ -154,18 +153,18 @@ function Nav() {
         </nav>
 
         {/* L'espace reste réservé (opacité seule) pour ne pas décaler les liens. */}
-        <a
-          href={WHATSAPP_URL}
+        <Link
+          href={CONTACT_URL}
           aria-hidden={!ctaVisible}
           tabIndex={ctaVisible ? undefined : -1}
-          className={`hidden rounded-full border px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal lg:inline-block ${whatsappColors} ${
+          className={`hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal hover:text-or lg:inline-block ${
             ctaVisible
               ? "translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-1 opacity-0"
           }`}
-         target="_blank" rel="noopener noreferrer">
-          {WHATSAPP_LABEL}
-        </a>
+        >
+          {CONTACT_LABEL}
+        </Link>
 
         <button
           type="button"

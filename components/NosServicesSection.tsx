@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
 import dataServices from "../public/data/dataServices";
 
 /**
@@ -211,20 +210,6 @@ const NosServicesSection = () => {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12 flex flex-col items-start gap-3 lg:mt-16">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-or bg-or px-9 py-4 font-dmSans text-xs font-bold uppercase tracking-widest text-charcoal transition-[color,background-color,transform] duration-200 ease-out hover:bg-transparent hover:text-or focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or motion-safe:active:scale-[0.97]"
-          >
-            {WHATSAPP_LABEL}
-          </a>
-          <p className="font-dmSans text-xs text-creme/60">
-            Un premier échange, sans engagement
-          </p>
         </div>
       </div>
     </section>

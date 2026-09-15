@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { WHATSAPP_URL } from "@/lib/site";
 
 interface FAQItem {
   question: string;
@@ -33,7 +32,7 @@ const faqData: FAQItem[] = [
   {
     question: "Est-ce que je m’engage en vous contactant ?",
     answer:
-      "Non. Écrivez-nous sur WhatsApp ou via le formulaire pour nous parler de votre activité et de votre projet. Ce premier échange est sans engagement.",
+      "Non. Écrivez-nous via le formulaire de contact pour nous parler de votre activité et de votre projet. Ce premier échange est sans engagement.",
   },
   {
     question: "Comment se déroule un projet avec vous ?",
@@ -89,14 +88,6 @@ export const FaqSection = () => {
             </motion.div>
           </div>
         ))}
-        <div className="mt-10 text-center">
-          <a
-            href={WHATSAPP_URL}
-            className="font-dmSans text-sm text-or hover:underline"
-           target="_blank" rel="noopener noreferrer">
-            Une autre question ? Écrivez à Martin sur WhatsApp →
-          </a>
-        </div>
       </div>
     </div>
   );

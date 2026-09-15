@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import poster from "@/public/img/hero-poster.jpg";
 import HeroVideo from "./HeroVideo";
-import { WHATSAPP_LABEL, WHATSAPP_URL } from "@/lib/site";
+import { CONTACT_LABEL, CONTACT_URL } from "@/lib/site";
 
 export const Hero = () => {
   return (
@@ -38,9 +38,9 @@ export const Hero = () => {
           Une spécialité : la visibilité des agences immobilières.
           Et la même exigence pour vos films d’entreprise et interviews.
         </p>
-        <a href={WHATSAPP_URL} className="inline-block px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal hover:bg-charcoal hover:text-or border border-or transition-colors duration-300" target="_blank" rel="noopener noreferrer">
-            {WHATSAPP_LABEL}
-        </a>
+        <Link href={CONTACT_URL} className="inline-block px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal hover:bg-charcoal hover:text-or border border-or transition-colors duration-300">
+            {CONTACT_LABEL}
+        </Link>
         <p className="font-dmSans text-xs text-creme/60 mt-4">
           Un premier échange, sans engagement
         </p>
