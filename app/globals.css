@@ -71,3 +71,79 @@ body {
 .titreService:hover > .spanMask {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
+/* Bouton à halo lumineux (components/ui/glow-button.tsx). */
+@property --glow-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.glow-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.95rem 1.75rem;
+  background: #25d366;
+  color: #0a0907;
+  font-weight: 700;
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out;
+  box-shadow: 0 10px 30px -12px rgba(37, 211, 102, 0.8);
+}
+
+.glow-btn::before,
+.glow-btn::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--glow-angle),
+    #25d366,
+    #c9a24b,
+    #f3ede1,
+    #25d366
+  );
+  z-index: -1;
+  animation: glow-spin 4s linear infinite;
+}
+
+.glow-btn::after {
+  inset: -10px;
+  filter: blur(18px);
+  opacity: 0.55;
+  transition: opacity 300ms ease-out;
+}
+
+.glow-btn:hover {
+  transform: translateY(-2px);
+}
+
+.glow-btn:hover::after {
+  opacity: 0.9;
+}
+
+.glow-btn[data-state="clicked"] {
+  transform: scale(0.96);
+}
+
+.glow-btn:focus-visible {
+  outline: 2px solid #f3ede1;
+  outline-offset: 4px;
+}
+
+@keyframes glow-spin {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-btn::before,
+  .glow-btn::after {
+    animation: none;
+  }
+}
