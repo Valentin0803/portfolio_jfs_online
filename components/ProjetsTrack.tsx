@@ -121,7 +121,7 @@ const Carte = ({
         aria-label={`Voir le projet ${projet.title}, ${projet.category}`}
         className="group relative block w-full overflow-hidden rounded-[2rem] border border-creme/10 bg-[#100D08] text-left transition-colors duration-300 ease-out hover:border-or/40 focus:outline-none focus-visible:border-or/40 focus-visible:ring-2 focus-visible:ring-or focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
       >
-        <div className="relative aspect-video overflow-hidden rounded-[2rem]">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]">
           {/* Débord de 6 % : la parallaxe de ±4 % ne peut pas découvrir de vide. */}
           <motion.div
             className="absolute inset-[-6%]"
