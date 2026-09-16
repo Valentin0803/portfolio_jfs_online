@@ -111,6 +111,7 @@ export const VideoPlayer = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const noticeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   /** Position et état de lecture à restaurer après un changement de source. */
@@ -133,6 +134,16 @@ export const VideoPlayer = ({
   const [isBuffering, setIsBuffering] = useState(false);
   const [controlsVisible, setControlsVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Le menu qualité se referme dès qu'on clique ou touche en dehors.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) setMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown, true);
+    return () => document.removeEventListener("pointerdown", onPointerDown, true);
+  }, [menuOpen]);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [hasError, setHasError] = useState(false);
@@ -556,7 +567,7 @@ export const VideoPlayer = ({
             </div>
 
             {sources.length > 1 && (
-              <div className="relative">
+              <div className="relative" ref={menuRef}>
                 <button
                   type="button"
                   onClick={() => {
@@ -578,7 +589,10 @@ export const VideoPlayer = ({
                     aria-label="Qualité"
                     className="absolute bottom-12 right-0 min-w-[7.5rem] origin-bottom-right rounded-2xl border border-creme/10 bg-charcoal/95 p-1.5 backdrop-blur"
                   >
-                    {sources.map((source, index) => (
+                    {sources
+                      .map((source, index) => ({ source, index }))
+                      .sort((a, b) => b.source.height - a.source.height)
+                      .map(({ source, index }) => (
                       <button
                         key={source.label}
                         type="button"
