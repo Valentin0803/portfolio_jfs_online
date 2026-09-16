@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { reels, type Reel } from "@/lib/reels";
+import ClientResults from "./ClientResults";
+import { reels, type Reel, type ReelCategorie } from "@/lib/reels";
 
 /**
  * Part de la carte qui doit être visible pour que la lecture démarre : en
@@ -138,11 +139,6 @@ const ReelCard = ({
       >
         Voir le post de l&apos;agence ↗
       </a>
-      {reel.likes ? (
-        <p className="mt-1 font-dmSans text-xs text-creme/50">
-          {reel.likes.toLocaleString("fr-FR")} likes sur le compte de l&apos;agence
-        </p>
-      ) : null}
     </article>
   );
 };
@@ -152,6 +148,9 @@ const ReelCard = ({
  * produit pour les agences, avant toute promesse commerciale.
  */
 export const ReelsImmo = () => {
+  const [category, setCategory] = useState<ReelCategorie | null>(null);
+  const visibleReels = category ? reels.filter((reel) => reel.categorie === category) : reels;
+
   // Un seul reel peut avoir le son : activer celui-ci coupe les autres.
   const [soundSlug, setSoundSlug] = useState<string | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -171,15 +170,33 @@ export const ReelsImmo = () => {
     <section id="Immobilier" className="py-24 lg:py-40">
       <div className="max-w-3xl mx-auto mb-16 lg:mb-20 text-center px-6">
         <div className="font-dmSans text-xs tracking-[0.25em] uppercase text-or mb-5">
-          Immobilier
+          Immobilier · Cas client
         </div>
         <h2 className="font-unbounded font-bold text-3xl lg:text-5xl text-creme leading-tight">
-          Vos biens attirent l’œil. Votre agence gagne en visibilité.
+          Une présence qui grandit. Des résultats qui comptent.
         </h2>
         <p className="font-dmSans text-creme/70 mt-6 text-base max-w-xl mx-auto">
-          Présenter vos biens, faire connaître votre équipe et alimenter vos
-          réseaux : découvrez les contenus créés pour Guy Hoquet Caen Carpiquet.
+          Depuis un an, nous accompagnons Guy Hoquet Caen Carpiquet pour
+          développer ses réseaux sociaux, renforcer son image et soutenir ses ventes.
         </p>
+      </div>
+
+      <div className="mx-auto mb-10 max-w-6xl px-6">
+        <ClientResults />
+        <div className="mt-8 flex flex-wrap justify-center gap-3" role="group" aria-label="Choisir un objectif de contenu">
+          {([
+            [null, "Tous les contenus"],
+            ["Biens", "Valoriser un bien"],
+            ["Conseils", "Partager des conseils"],
+            ["Vie d’agence", "Faire connaître l’équipe"],
+          ] as const).map(([value, label]) => (
+            <button key={label} type="button" aria-pressed={category === value}
+              onClick={() => { setCategory(value); setSoundSlug(null); }}
+              className={`rounded-full border px-5 py-3 font-dmSans text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or ${category === value ? "border-or bg-or text-charcoal" : "border-creme/20 text-creme/80 hover:border-or hover:text-or"}`}>
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Défilement horizontal aimanté sur mobile, rangée centrée qui passe à
@@ -188,7 +205,7 @@ export const ReelsImmo = () => {
           et la laisse défiler dès qu'elle déborde. */}
       <div className="px-6">
         <div className="mx-auto flex w-fit max-w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:justify-center sm:overflow-visible lg:gap-8 [&::-webkit-scrollbar]:hidden">
-          {reels.map((reel) => (
+          {visibleReels.map((reel) => (
             <ReelCard
               key={reel.slug}
               reel={reel}

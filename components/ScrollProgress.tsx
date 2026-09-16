@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 /**
@@ -9,6 +10,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
  * largeur : c'est composité par le GPU, donc fluide et sans reflow.
  */
 function ScrollProgress() {
+  const pathname = usePathname();
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, {
     stiffness: 220,
@@ -34,7 +36,7 @@ function ScrollProgress() {
     };
   }, []);
 
-  if (!scrollable) return null;
+  if (!scrollable || pathname === "/contact" || pathname === "/contact/") return null;
 
   return (
     <motion.div

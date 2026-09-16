@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import ProcessEtapes from "@/components/ProcessEtapes";
 import VideoPlayer from "@/components/ui/video-player";
 import { boubetVideo } from "@/lib/media";
 
@@ -23,12 +22,6 @@ export default function ApercuProcess() {
         Aperçu temporaire, non visible dans le menu
       </div>
 
-      <h2 className="px-6 pt-16 font-unbounded text-xl font-bold text-or sm:text-2xl">
-        Proposition finale : Comment ça se passe
-      </h2>
-      <ProcessEtapes />
-
-      <div className="my-16 border-t border-creme/10" />
 
       <h2 className="px-6 pt-16 font-unbounded text-xl font-bold text-or sm:text-2xl">
         Proposition C : lecteur vidéo maison

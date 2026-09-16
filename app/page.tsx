@@ -2,7 +2,7 @@ import FaqSection from "@/components/FaqSection";
 import Hero from "@/components/Hero";
 import NosServicesSection from "@/components/NosServicesSection";
 import { Team } from "@/components/Team";
-import { Process } from "@/components/Process";
+import ProcessEtapes from "@/components/ProcessEtapes";
 import { Contact } from "@/components/Contact";
 import { Projects } from "@/components/Projets";
 import { BandeauLogo } from "@/components/BandeauLogo";
@@ -16,7 +16,7 @@ export default function Home() {
       <NosServicesSection />
       <Projects />
       <BandeauLogo />
-      <Process />
+      <ProcessEtapes />
       <Team />
       <FaqSection />
       <Contact />

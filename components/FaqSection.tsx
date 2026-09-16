@@ -34,11 +34,6 @@ const faqData: FAQItem[] = [
     answer:
       "Non. Écrivez-nous via le formulaire de contact pour nous parler de votre activité et de votre projet. Ce premier échange est sans engagement.",
   },
-  {
-    question: "Comment se déroule un projet avec vous ?",
-    answer:
-      "Nous commençons par préciser votre besoin, puis préparons le contenu et organisons le tournage. Après le montage, vous nous faites vos retours avant la livraison des fichiers. Le calendrier, les formats et votre participation sont précisés ensemble en amont.",
-  },
 ];
 
 export const FaqSection = () => {

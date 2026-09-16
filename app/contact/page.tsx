@@ -12,8 +12,6 @@ export const metadata: Metadata = {
 };
 
 // Coordonnées reprises telles quelles des mentions légales (app/mentionsLegales).
-const TELEPHONE = "+33602344339";
-const TELEPHONE_AFFICHE = "+33 6 02 34 43 39";
 const EMAIL = "jfsvisual@gmail.com";
 
 export default function Contact() {
@@ -32,7 +30,6 @@ export default function Contact() {
               <h2 className="font-dmSans text-sm font-bold text-creme">Nos coordonnées</h2>
               <dl className="mt-4 space-y-4 font-dmSans text-sm">
                 <div><dt className="mb-1 text-creme/60">E-mail</dt><dd><a href={`mailto:${EMAIL}`} className="text-creme hover:text-or">{EMAIL}</a></dd></div>
-                <div><dt className="mb-1 text-creme/60">Téléphone JFS Visual</dt><dd><a href={`tel:${TELEPHONE}`} className="text-creme hover:text-or">{TELEPHONE_AFFICHE}</a></dd></div>
                 <div className="border-t border-creme/10 pt-4"><dt className="mb-1 text-creme/60">Où nous trouver</dt><dd className="leading-relaxed text-creme/85">Caen · Normandie<br />Aix-les-Bains · Savoie</dd></div>
               </dl>
             </div>
