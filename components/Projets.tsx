@@ -6,6 +6,8 @@ import { GalleryCS } from "./ui/gallery-cs";
 import { ExpandingCards } from "./ui/expanding-cards";
 import VimeoPlayer from "./VimeoPlayer";
 import YouTubePlayer from "./YoutubePlayer";
+import { VideoPlayer } from "./ui/video-player";
+import { boubetVideo } from "@/lib/media";
 import Image from "next/image";
 import photoStadeRenACar from "@/public/projects/RENT_A_CAR/photostade.png";
 
@@ -68,6 +70,18 @@ export const Projects = () => {
 
 
 const dataProjets = [
+  {
+    category: "Événement",
+    title: "Boubet, 50 ans",
+    src: "/projects/COVERS/boubet-50-ans.jpg",
+    cover: "/projects/COVERS/boubet-50-ans.jpg",
+    coverAlt: "Image du film des 50 ans de Boubet",
+    content: (
+      <div className="mx-auto max-w-[420px]">
+        <VideoPlayer asset={boubetVideo} autoPlayMuted />
+      </div>
+    ),
+  },
   {
     category: "Présentation d'entreprise",
     title: "CCAS de Cenon",
