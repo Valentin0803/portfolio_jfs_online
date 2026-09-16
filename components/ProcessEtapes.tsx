@@ -288,9 +288,6 @@ export const ProcessEtapes = () => {
           ))}
         </ol>
 
-        <p className="mt-10 font-dmSans text-xs uppercase tracking-[0.2em] text-creme/40">
-          Délai indicatif
-        </p>
 
         <div className="mt-12">
           <Link
