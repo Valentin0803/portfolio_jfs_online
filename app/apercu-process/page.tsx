@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ProcessEtapes from "@/components/ProcessEtapes";
 import ProcessManifeste from "@/components/ProcessManifeste";
+import VideoPlayer from "@/components/ui/video-player";
+import { boubetVideo } from "@/lib/media";
 
 /**
  * Page d'aperçu temporaire : elle sert uniquement à montrer au client les deux
@@ -32,6 +34,17 @@ export default function ApercuProcess() {
         Proposition B
       </h2>
       <ProcessManifeste />
+
+      <div className="my-16 border-t border-creme/10" />
+
+      <h2 className="px-6 pt-16 font-unbounded text-xl font-bold text-or sm:text-2xl">
+        Proposition C : lecteur vidéo maison
+      </h2>
+      <section className="px-6 pb-24 pt-10">
+        <div className="mx-auto w-full max-w-[420px]">
+          <VideoPlayer asset={boubetVideo} />
+        </div>
+      </section>
     </main>
   );
 }
