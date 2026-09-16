@@ -57,13 +57,13 @@ const etapes: Etape[] = [
     numero: "03",
     segments: [{ texte: "On" }, { texte: "tourne.", accent: true }],
     texte:
-      "Une demi-journée sur place, avec votre conseiller à l’image si vous le souhaitez. Drone, intérieurs, interview.",
-    vous: "Une demi-journée",
+      "Une journée sur place, avec votre conseiller à l’image si vous le souhaitez. Drone, intérieurs, interview.",
+    vous: "Une journée",
     nous: "L’équipe, le matériel, la direction",
   },
   {
     numero: "04",
-    segments: [{ texte: "Vous" }, { texte: "publiez.", accent: true }],
+    segments: [{ texte: "Nous" }, { texte: "publions.", accent: true }],
     texte:
       "Montage, un aller-retour de retours, puis les fichiers au bon format pour chaque réseau, prêts à publier.",
     vous: "Un retour",
