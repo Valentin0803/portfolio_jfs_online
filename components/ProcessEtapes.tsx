@@ -65,7 +65,7 @@ const etapes: Etape[] = [
     numero: "04",
     segments: [{ texte: "Nous" }, { texte: "publions.", accent: true }],
     texte:
-      "Montage, un aller-retour de retours, puis les fichiers au bon format pour chaque réseau, prêts à publier.",
+      "Montage, un aller-retour si besoin. Vous validez, on se charge de la publication.",
     vous: "Un retour",
     nous: "Livraison sous 10 jours",
   },
