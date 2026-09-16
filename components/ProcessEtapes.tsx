@@ -8,21 +8,29 @@ import {
   useMotionValue,
   useScroll,
   useSpring,
+  type Variants,
 } from "framer-motion";
 import { CONTACT_LABEL, CONTACT_URL } from "@/lib/site";
 
 /**
- * Proposition A pour remplacer « Ce qui nous différencie » : le déroulé réel
- * d'un projet, étape par étape. La promesse n'est plus une liste d'arguments
- * mais un parcours, avec ce que le client donne et ce que l'on prend en charge.
+ * Section hybride « Comment ça se passe » : le déroulé réel d'un projet en
+ * quatre étapes, avec le rail or piloté par le scroll, mais des titres traités
+ * comme un manifeste, en très grand, révélés mot par mot à l'entrée dans
+ * l'écran.
  *
  * Les délais affichés sont des exemples : la mention « délai indicatif »
- * apparaît une seule fois, sous la dernière étape.
+ * apparaît une seule fois, sous la liste.
  */
+
+interface Segment {
+  texte: string;
+  /** Le mot clé de la phrase, affiché en or. */
+  accent?: boolean;
+}
 
 interface Etape {
   numero: string;
-  titre: string;
+  segments: Segment[];
   texte: string;
   vous: string;
   nous: string;
@@ -31,7 +39,7 @@ interface Etape {
 const etapes: Etape[] = [
   {
     numero: "01",
-    titre: "Échange",
+    segments: [{ texte: "On" }, { texte: "échange.", accent: true }],
     texte:
       "Vous nous écrivez, on cale un premier échange de 30 minutes pour comprendre votre activité et vos biens.",
     vous: "30 minutes",
@@ -39,7 +47,7 @@ const etapes: Etape[] = [
   },
   {
     numero: "02",
-    titre: "Préparation",
+    segments: [{ texte: "On" }, { texte: "prépare tout.", accent: true }],
     texte:
       "On écrit le script, on repère les lieux, on gère les autorisations de vol drone. Vous validez, rien d’autre.",
     vous: "Une validation",
@@ -47,7 +55,7 @@ const etapes: Etape[] = [
   },
   {
     numero: "03",
-    titre: "Tournage",
+    segments: [{ texte: "On" }, { texte: "tourne.", accent: true }],
     texte:
       "Une demi-journée sur place, avec votre conseiller à l’image si vous le souhaitez. Drone, intérieurs, interview.",
     vous: "Une demi-journée",
@@ -55,7 +63,7 @@ const etapes: Etape[] = [
   },
   {
     numero: "04",
-    titre: "Livraison",
+    segments: [{ texte: "Vous" }, { texte: "publiez.", accent: true }],
     texte:
       "Montage, un aller-retour de retours, puis les fichiers au bon format pour chaque réseau, prêts à publier.",
     vous: "Un retour",
@@ -84,56 +92,111 @@ const useMoinsAnimations = () => {
   return moinsAnimations;
 };
 
-const ETAT_CACHE = { opacity: 0, transform: "translateY(16px)" };
-const ETAT_VISIBLE = { opacity: 1, transform: "translateY(0px)" };
-const TRANSITION_ETAPE = { duration: 0.45, ease: EASE_OUT };
-const SANS_ANIMATION = { duration: 0 };
+const phraseVariants: Variants = { cachee: {}, visible: {} };
+
+// Les mots ne partent pas de zéro : ils restent lisibles en filigrane, la
+// révélation les amène au premier plan plutôt que de les faire apparaître.
+const motVariants: Variants = {
+  cachee: { opacity: 0.15, transform: "translateY(10px)" },
+  visible: { opacity: 1, transform: "translateY(0px)" },
+};
+
+const detailVariants: Variants = {
+  cachee: { opacity: 0, transform: "translateY(10px)" },
+  visible: { opacity: 1, transform: "translateY(0px)" },
+};
+
+// Les durées vivent dans les props et non dans les variantes : une variante
+// qui embarque sa transition ne peut plus être neutralisée d'un seul endroit.
+const TRANSITION_PHRASE = { staggerChildren: 0.04 };
+const TRANSITION_MOT = { duration: 0.5, ease: EASE_OUT };
+const TRANSITION_DETAIL = { duration: 0.5, ease: EASE_OUT, delay: 0.3 };
+const SANS_ANIMATION = { duration: 0, staggerChildren: 0, delay: 0 };
+
+/** La phrase complète, pour l'étiquette accessible du titre découpé en mots. */
+const phraseComplete = (segments: Segment[]) =>
+  segments.map((segment) => segment.texte).join(" ");
+
+/** Découpe les segments en mots, en gardant l'information d'accent. */
+const decouperEnMots = (segments: Segment[]) =>
+  segments.flatMap((segment, indexSegment) =>
+    segment.texte.split(" ").map((mot, indexMot) => ({
+      mot,
+      accent: Boolean(segment.accent),
+      cle: `${indexSegment}-${indexMot}`,
+    })),
+  );
 
 interface EtapeItemProps {
   etape: Etape;
+  premiere: boolean;
   reducedMotion: boolean;
 }
 
-const EtapeItem = ({ etape, reducedMotion }: EtapeItemProps) => {
+const EtapeItem = ({ etape, premiere, reducedMotion }: EtapeItemProps) => {
   const itemRef = useRef<HTMLLIElement>(null);
   // `once` : l'étape s'allume au premier passage et ne clignote plus si le
   // visiteur remonte. `amount` évite qu'elle s'allume avant d'être lisible.
-  const inView = useInView(itemRef, { once: true, amount: 0.4 });
-  // Sans animation, l'étape est posée à son état final dès le montage ; la
-  // couleur du numéro, elle, ne dépend que de la visibilité, sinon le premier
-  // rendu client ne correspondrait plus à celui du serveur.
-  const atteinte = reducedMotion || inView;
+  const inView = useInView(itemRef, { once: true, amount: 0.35 });
+
+  // Sans animation, le texte se pose à l'état final dès le montage, sans
+  // attendre le scroll ni jouer la moindre transition.
+  const revelation = reducedMotion
+    ? ({ animate: "visible" } as const)
+    : ({
+        whileInView: "visible",
+        viewport: { once: true, amount: 0.35 },
+      } as const);
 
   return (
     <li
       ref={itemRef}
-      className="relative pb-14 pl-8 last:pb-0 sm:pl-12 lg:pb-20 lg:pl-16"
+      className={`relative py-16 pl-8 sm:pl-12 lg:py-24 lg:pl-16 ${
+        premiere ? "" : "border-t border-creme/10"
+      }`}
     >
-      <motion.div
-        // Le HTML rendu côté serveur ne dépend jamais de « reduced motion » :
-        // seule la transition est neutralisée, l'hydratation reste intacte.
-        initial={ETAT_CACHE}
-        animate={atteinte ? ETAT_VISIBLE : ETAT_CACHE}
-        transition={reducedMotion ? SANS_ANIMATION : TRANSITION_ETAPE}
+      <span
+        aria-hidden="true"
+        className={`block font-unbounded text-xl font-bold leading-none tabular-nums transition-colors duration-500 sm:text-2xl ${
+          inView ? "text-or" : "text-or/30"
+        }`}
       >
-        <span
-          aria-hidden="true"
-          className={`block font-unbounded text-4xl font-bold leading-none tabular-nums transition-colors duration-500 sm:text-5xl ${
-            inView ? "text-or" : "text-or/30"
-          }`}
-        >
-          {etape.numero}
-        </span>
+        {etape.numero}
+      </span>
 
-        <h3 className="mt-4 font-unbounded text-2xl font-bold leading-tight text-creme">
-          {etape.titre}
-        </h3>
+      <motion.h3
+        // Le titre est découpé en mots pour la révélation : l'étiquette rend la
+        // phrase d'un seul tenant aux lecteurs d'écran.
+        aria-label={phraseComplete(etape.segments)}
+        variants={phraseVariants}
+        initial="cachee"
+        transition={reducedMotion ? SANS_ANIMATION : TRANSITION_PHRASE}
+        {...revelation}
+        className="mt-6 font-unbounded text-3xl font-extrabold leading-[1.05] tracking-[-0.02em] text-creme sm:text-5xl lg:text-6xl"
+      >
+        {decouperEnMots(etape.segments).map(({ mot, accent, cle }) => (
+          <motion.span
+            key={cle}
+            variants={motVariants}
+            transition={reducedMotion ? SANS_ANIMATION : TRANSITION_MOT}
+            className={`mr-[0.22em] inline-block ${accent ? "text-or" : ""}`}
+          >
+            {mot}
+          </motion.span>
+        ))}
+      </motion.h3>
 
-        <p className="mt-3 max-w-xl font-dmSans text-base leading-relaxed text-creme/70">
+      <motion.div
+        variants={detailVariants}
+        initial="cachee"
+        transition={reducedMotion ? SANS_ANIMATION : TRANSITION_DETAIL}
+        {...revelation}
+      >
+        <p className="mt-8 max-w-xl font-dmSans text-base leading-relaxed text-creme/70 lg:text-lg">
           {etape.texte}
         </p>
 
-        <dl className="mt-6 grid max-w-md grid-cols-2 gap-6 border-t border-creme/10 pt-5">
+        <dl className="mt-8 grid max-w-md grid-cols-2 gap-6">
           <div>
             <dt className="font-dmSans text-xs uppercase tracking-[0.2em] text-creme/50">
               Vous
@@ -189,8 +252,8 @@ export const ProcessEtapes = () => {
       id="process-etapes"
       className="border-y border-creme/10 bg-[#100D08] py-24 lg:py-40"
     >
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="mb-14 max-w-2xl lg:mb-20">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="mb-10 max-w-2xl lg:mb-16">
           <p className="mb-5 font-dmSans text-xs uppercase tracking-[0.25em] text-or">
             Comment ça se passe
           </p>
@@ -207,7 +270,7 @@ export const ProcessEtapes = () => {
           {/* Rail : fond discret, remplissage or piloté par le scroll. */}
           <div
             aria-hidden="true"
-            className="absolute bottom-0 left-0 top-2 w-px bg-creme/10"
+            className="absolute bottom-0 left-0 top-0 w-px bg-creme/10"
           >
             <motion.div
               className="h-full w-full origin-top bg-or"
@@ -215,10 +278,11 @@ export const ProcessEtapes = () => {
             />
           </div>
 
-          {etapes.map((etape) => (
+          {etapes.map((etape, index) => (
             <EtapeItem
               key={etape.numero}
               etape={etape}
+              premiere={index === 0}
               reducedMotion={reducedMotion}
             />
           ))}
