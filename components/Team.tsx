@@ -8,9 +8,9 @@ const team = [
   {
     image: Valentin,
     name: "Valentin Charlot",
-    role: "Vidéaste, photographe et pilote de drone",
+    role: "Vidéaste, photographe et pilote de drones",
     lieu: "Caen",
-    mission: "Cadre, pilote le drone et monte vos films.",
+    mission: "Cadre, pilote les drones et monte vos films.",
     contact: false,
   },
   {
@@ -24,9 +24,9 @@ const team = [
   {
     image: Lucas,
     name: "Lucas Morel",
-    role: "Vidéaste, photographe et pilote de drone",
+    role: "Vidéaste, photographe et pilote de drones",
     lieu: "Aix-les-Bains",
-    mission: "Filme, photographie et pilote le drone en Savoie.",
+    mission: "Filme, photographie et pilote les drones en Savoie.",
     contact: false,
   },
 ];
