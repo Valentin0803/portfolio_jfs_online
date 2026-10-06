@@ -2,7 +2,7 @@
 // Chaque entrée alimente une carte de <ReelsImmo /> : la vidéo est servie
 // depuis public/reels/ (mp4 720x1280 ré-encodé pour rester léger en mobile)
 // et renvoie vers le post publié par l'agence sur son propre compte.
-export type ReelCategorie = "Maison" | "Trend" | "Conseils";
+export type ReelCategorie = "Biens" | "Vie d’agence" | "Conseils";
 
 export interface Reel {
   /** Identifiant stable, utilisé comme clé de rendu. */
@@ -32,8 +32,8 @@ export const reels: Reel[] = [
     slug: "guy-hoquet-coulombs",
     src: "/reels/guy-hoquet-coulombs.mp4",
     poster: "/reels/guy-hoquet-coulombs.jpg",
-    categorie: "Maison",
-    titre: "Maison 183 m² avec piscine chauffée, 1 300 m² de jardin",
+    categorie: "Biens",
+    titre: "Une maison, du jardin aux intérieurs",
     lieu: "Coulombs (Calvados)",
     agence: AGENCE,
     instagramUrl: "https://www.instagram.com/reel/Dc_faRnNhnW/",
@@ -45,7 +45,7 @@ export const reels: Reel[] = [
     src: "/reels/guy-hoquet-conseils-emprunt.mp4",
     poster: "/reels/guy-hoquet-conseils-emprunt.jpg",
     categorie: "Conseils",
-    titre: "Emprunt immobilier : 3 idées reçues décryptées avec un courtier",
+    titre: "Trois idées reçues sur l’emprunt",
     lieu: "Jérôme, courtier chez Olisto",
     agence: AGENCE,
     instagramUrl: "https://www.instagram.com/reel/DUi3ZjCAoAD/",
@@ -56,8 +56,8 @@ export const reels: Reel[] = [
     slug: "guy-hoquet-val-d-arry",
     src: "/reels/guy-hoquet-val-d-arry.mp4",
     poster: "/reels/guy-hoquet-val-d-arry.jpg",
-    categorie: "Maison",
-    titre: "Maison de 2021, pièce de vie 54 m², pergola bioclimatique",
+    categorie: "Biens",
+    titre: "Faire découvrir les espaces de vie",
     lieu: "Val d'Arry (Calvados)",
     agence: AGENCE,
     instagramUrl: "https://www.instagram.com/reel/Da0chJTtg9L/",
@@ -68,8 +68,8 @@ export const reels: Reel[] = [
     slug: "guy-hoquet-equipe",
     src: "/reels/guy-hoquet-equipe.mp4",
     poster: "/reels/guy-hoquet-equipe.jpg",
-    categorie: "Trend",
-    titre: "L'équipe de l'agence, présentée en un trend",
+    categorie: "Vie d’agence",
+    titre: "Mettre des visages sur l’agence",
     lieu: "Carpiquet (Calvados)",
     agence: AGENCE,
     instagramUrl: "https://www.instagram.com/reel/DTsz9FzAu8B/",
@@ -80,8 +80,8 @@ export const reels: Reel[] = [
     slug: "guy-hoquet-trend-aout",
     src: "/reels/guy-hoquet-trend-aout.mp4",
     poster: "/reels/guy-hoquet-trend-aout.jpg",
-    categorie: "Trend",
-    titre: "Trend réseaux de l'agence",
+    categorie: "Vie d’agence",
+    titre: "Montrer la personnalité de l’équipe",
     lieu: "Carpiquet (Calvados)",
     agence: AGENCE,
     instagramUrl: "https://www.instagram.com/reel/DcbcWfINP99/",

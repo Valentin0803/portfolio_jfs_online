@@ -41,7 +41,7 @@ const etapes: Etape[] = [
     numero: "01",
     segments: [{ texte: "On" }, { texte: "échange.", accent: true }],
     texte:
-      "Vous nous écrivez, on cale un premier échange de 30 minutes pour comprendre votre activité et vos biens.",
+      "Agence immobilière ou entreprise, on prend 30 minutes pour comprendre votre activité, vos objectifs et le projet que vous avez en tête.",
     vous: "30 minutes",
     nous: "Brief et proposition sous 48 h",
   },
@@ -57,7 +57,7 @@ const etapes: Etape[] = [
     numero: "03",
     segments: [{ texte: "On" }, { texte: "tourne.", accent: true }],
     texte:
-      "Une journée sur place, avec votre conseiller à l’image si vous le souhaitez. Drone, intérieurs, interview.",
+      "Une journée sur place, avec un membre de votre équipe à l’image, si vous le souhaitez. Drone, intérieurs, interview.",
     vous: "Une journée",
     nous: "L’équipe, le matériel, la direction",
   },

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import SocialMenu from "./SocialMenu";
 import { CONTACT_LABEL, CONTACT_URL } from "@/lib/site";
 
 const LINKS = [
@@ -11,7 +12,6 @@ const LINKS = [
   { label: "Entreprises", hash: "#NotreTravail" },
   { label: "Services", hash: "#NosServices" },
   { label: "L’équipe", hash: "#APropos" },
-  { label: "Contact", hash: "#Contact" },
 ] as const;
 
 // Sur l'accueil, le CTA de la barre attend d'être bien engagé dans le scroll
@@ -120,6 +120,7 @@ function Nav() {
                   </a>
                 </motion.div>
               ))}
+              <SocialMenu mobile />
               {!isContact && (
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
@@ -168,6 +169,7 @@ function Nav() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-or transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
+          <SocialMenu />
         </nav>
 
         {/* L'espace reste réservé (opacité seule) pour ne pas décaler les liens. */}
