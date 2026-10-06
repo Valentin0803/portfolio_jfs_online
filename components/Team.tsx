@@ -91,7 +91,7 @@ export const Team = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={WHATSAPP_LABEL}
-                  className="mt-4 inline-flex items-center gap-2 rounded-full border border-creme/20 px-4 py-2 font-dmSans text-xs text-creme transition-colors duration-300 hover:border-[#25D366] hover:text-[#25D366]"
+                  className="btn-secondary btn-sm mt-4"
                 >
                   <WhatsAppIcon />
                   WhatsApp

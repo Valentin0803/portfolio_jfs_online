@@ -15,10 +15,8 @@ export const Contact = () => {
         projet.
       </p>
       <div className="flex flex-col items-center">
-        <Link href={CONTACT_URL}>
-          <span className="flex gap-3 items-center px-9 py-[18px] rounded-full bg-or font-bold text-xs tracking-[0.1em] uppercase border-or border text-charcoal transform hover:scale-105 hover:bg-charcoal hover:border-or hover:text-or transition-colors duration-500">
-            {CONTACT_LABEL}
-          </span>
+        <Link href={CONTACT_URL} className="btn-primary">
+          {CONTACT_LABEL}
         </Link>
       </div>
     </section>

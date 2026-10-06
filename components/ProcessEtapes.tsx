@@ -292,7 +292,7 @@ export const ProcessEtapes = () => {
         <div className="mt-12">
           <Link
             href={CONTACT_URL}
-            className="inline-block rounded-full border border-or bg-or px-7 py-4 font-dmSans text-xs font-bold uppercase tracking-widest text-charcoal transition-colors hover:bg-charcoal hover:text-or"
+            className="btn-primary"
           >
             {CONTACT_LABEL}
           </Link>

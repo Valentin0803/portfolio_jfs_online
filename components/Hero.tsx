@@ -38,15 +38,15 @@ export const Hero = () => {
           Une spécialité : la visibilité des agences immobilières.
           Et la même exigence pour vos films d’entreprise et interviews.
         </p>
-        <Link href={CONTACT_URL} className="inline-block px-10 py-[18px] rounded-full bg-or font-dmSans font-bold text-xs tracking-[0.1em] uppercase text-charcoal hover:bg-charcoal hover:text-or border border-or transition-colors duration-300">
+        <Link href={CONTACT_URL} className="btn-primary max-[399px]:mx-auto max-[399px]:flex max-[399px]:w-full max-[399px]:max-w-[22rem]">
             {CONTACT_LABEL}
         </Link>
-        <div className="mt-8 flex flex-wrap justify-center gap-3 font-dmSans text-sm">
-          <Link href="#Immobilier" className="rounded-full border border-or/60 bg-charcoal/60 px-6 py-3 text-creme transition-colors hover:border-or hover:text-or">
-            Immobilier <span aria-hidden="true">↗</span>
+        <div className="mx-auto mt-4 flex w-full max-w-[22rem] flex-col items-stretch justify-center gap-3 min-[400px]:max-w-none min-[400px]:flex-row min-[400px]:items-center">
+          <Link href="#Immobilier" className="btn-secondary bg-charcoal/40">
+            Immobilier
           </Link>
-          <Link href="#NotreTravail" className="rounded-full border border-creme/30 bg-charcoal/60 px-6 py-3 text-creme transition-colors hover:border-or hover:text-or">
-            Entreprises &amp; événements <span aria-hidden="true">↗</span>
+          <Link href="#NotreTravail" className="btn-secondary bg-charcoal/40">
+            Entreprises &amp; événements
           </Link>
         </div>
       </div>

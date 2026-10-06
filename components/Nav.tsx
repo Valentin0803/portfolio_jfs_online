@@ -131,7 +131,7 @@ function Nav() {
                   <Link
                     href={CONTACT_URL}
                     onClick={() => setOpen(false)}
-                    className="inline-block rounded-full border border-or bg-or px-8 py-4 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-colors duration-500 hover:bg-charcoal hover:text-or"
+                    className="btn-primary"
                   >
                     {CONTACT_LABEL}
                   </Link>
@@ -173,18 +173,23 @@ function Nav() {
         </nav>
 
         {/* L'espace reste réservé (opacité seule) pour ne pas décaler les liens. */}
-        <Link
-          href={CONTACT_URL}
-          aria-hidden={!ctaVisible}
-          tabIndex={ctaVisible ? undefined : -1}
-          className={`hidden rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-[0.1em] text-charcoal transition-all duration-300 hover:bg-charcoal hover:text-or lg:inline-block ${
+        {/* La visibilité (opacité, translation) est portée par le conteneur pour ne pas entrer en conflit avec l'effet d'appui du bouton. */}
+        <span
+          className={`hidden transition-[opacity,transform] duration-300 lg:inline-flex ${
             ctaVisible
               ? "translate-y-0 opacity-100"
               : "pointer-events-none -translate-y-1 opacity-0"
           }`}
         >
-          {CONTACT_LABEL}
-        </Link>
+          <Link
+            href={CONTACT_URL}
+            aria-hidden={!ctaVisible}
+            tabIndex={ctaVisible ? undefined : -1}
+            className="btn-primary btn-sm"
+          >
+            {CONTACT_LABEL}
+          </Link>
+        </span>
 
         <button
           type="button"

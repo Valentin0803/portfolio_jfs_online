@@ -111,18 +111,20 @@ export const ExpandingCards = ({
                 </p>
               )}
 
-              <button
-                type="button"
-                tabIndex={isActive ? 0 : -1}
-                aria-hidden={!isActive}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  onOpen(index);
-                }}
-                className="pointer-events-none mt-1 w-fit rounded-full border border-or px-4 py-2 font-dmSans text-xs uppercase tracking-widest text-or opacity-0 transition-all delay-300 duration-300 ease-out hover:bg-or hover:text-charcoal focus-visible:bg-or focus-visible:text-charcoal motion-reduce:transition-none group-data-[active=true]:pointer-events-auto group-data-[active=true]:opacity-100"
-              >
-                {cta}
-              </button>
+              <div className="pointer-events-none mt-1 opacity-0 transition-opacity delay-300 duration-300 ease-out motion-reduce:transition-none group-data-[active=true]:pointer-events-auto group-data-[active=true]:opacity-100">
+                <button
+                  type="button"
+                  tabIndex={isActive ? 0 : -1}
+                  aria-hidden={!isActive}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    onOpen(index);
+                  }}
+                  className="btn-secondary btn-sm"
+                >
+                  {cta}
+                </button>
+              </div>
             </article>
           </li>
         );

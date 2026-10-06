@@ -51,7 +51,7 @@ export default function ContactForm() {
         <p className="mb-4 font-dmSans text-xs uppercase tracking-[0.2em] text-or">Merci pour votre confiance</p>
         <h2 ref={confirmation} tabIndex={-1} className="font-unbounded text-2xl font-bold leading-tight text-creme outline-none sm:text-3xl">Votre message a bien été envoyé.</h2>
         <p className="mt-5 font-dmSans text-base leading-relaxed text-creme/75">Nous revenons vers vous sous 48 h pour échanger sur votre projet.</p>
-        <Link href="/#NotreTravail" className="mt-8 inline-block rounded-full border border-or bg-or px-6 py-3 font-dmSans text-xs font-bold uppercase tracking-widest text-charcoal transition-colors hover:bg-transparent hover:text-or">Découvrir nos réalisations</Link>
+        <Link href="/#NotreTravail" className="btn-primary mt-8">Découvrir nos réalisations</Link>
         <button type="button" onClick={() => setStatus("idle")} className="mt-6 block font-dmSans text-sm text-creme/70 underline underline-offset-4 hover:text-or">Envoyer un autre message</button>
       </div>
     );
@@ -195,7 +195,7 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full border border-or bg-or px-9 py-4 font-dmSans text-xs font-bold uppercase tracking-widest text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-or disabled:cursor-wait disabled:opacity-60"
+              className="btn-primary mt-6 flex w-full disabled:cursor-wait disabled:opacity-60"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

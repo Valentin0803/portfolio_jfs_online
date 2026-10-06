@@ -192,7 +192,7 @@ export const ReelsImmo = () => {
           ] as const).map(([value, label]) => (
             <button key={label} type="button" aria-pressed={category === value}
               onClick={() => { setCategory(value); setSoundSlug(null); }}
-              className={`rounded-full border px-5 py-3 font-dmSans text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or ${category === value ? "border-or bg-or text-charcoal" : "border-creme/20 text-creme/80 hover:border-or hover:text-or"}`}>
+              className={`rounded-[2px] border px-5 py-3 font-dmSans text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-or ${category === value ? "border-or bg-or text-charcoal" : "border-creme/20 text-creme/80 hover:border-or hover:text-or"}`}>
               {label}
             </button>
           ))}
