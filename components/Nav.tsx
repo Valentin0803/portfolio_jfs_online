@@ -9,8 +9,8 @@ import { CONTACT_LABEL, CONTACT_URL } from "@/lib/site";
 
 const LINKS = [
   { label: "Immobilier", hash: "#Immobilier" },
-  { label: "Entreprises", hash: "#NotreTravail" },
   { label: "Services", hash: "#NosServices" },
+  { label: "Entreprises", hash: "#NotreTravail" },
   { label: "L’équipe", hash: "#APropos" },
 ] as const;
 
